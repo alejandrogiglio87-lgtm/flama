@@ -17,8 +17,8 @@ try {
  * Genera contenido HTML para la lista de compras
  * @param {Object} groupedIngredients - Ingredientes agrupados
  * @param {string} groupBy - Criterio de agrupación
- * @param {boolean} includePDFLink - Incluir enlace para descargar PDF
- * @param {boolean} includeExcelLink - Incluir enlace para descargar Excel
+ * @param {boolean} includePDFLink - Incluir información sobre PDF
+ * @param {boolean} includeExcelLink - Incluir información sobre Excel
  * @returns {string} HTML para el email
  */
 function generateShoppingListHTML(groupedIngredients, groupBy, includePDFLink = false, includeExcelLink = false) {
@@ -29,19 +29,19 @@ function generateShoppingListHTML(groupedIngredients, groupBy, includePDFLink = 
   html += '<h2 style="color: #333; border-bottom: 2px solid #007bff; padding-bottom: 10px;">Lista de Compras - Recetario PAE</h2>';
   html += '<p style="color: #666;">Agrupado por: <strong>' + groupBy + '</strong></p>';
 
-  // Sección de descargas
+  // Sección de información de descargas
   if (includePDFLink || includeExcelLink) {
-    html += '<div style="background-color: #e7f3ff; border: 1px solid #007bff; border-radius: 5px; padding: 12px; margin: 15px 0;">';
-    html += '<p style="margin: 0 0 10px 0; color: #0056b3; font-weight: bold;">📥 Descargar Archivos:</p>';
+    html += '<div style="background-color: #fff3cd; border: 1px solid #ffc107; border-radius: 5px; padding: 12px; margin: 15px 0;">';
+    html += '<p style="margin: 0 0 8px 0; color: #856404; font-weight: bold;">📥 Archivos Disponibles:</p>';
+    html += '<p style="margin: 0; color: #856404; font-size: 13px;">';
 
-    if (includePDFLink) {
-      html += '<a href="data:application/pdf;base64,{{attachment_pdf}}" download="{{pdf_name}}" style="display: inline-block; background-color: #ff6b35; color: white; padding: 8px 12px; text-decoration: none; border-radius: 3px; margin-right: 8px; margin-bottom: 8px;">📄 Descargar PDF</a>';
-    }
+    const archivos = [];
+    if (includePDFLink) archivos.push('PDF con planificación completa (recetas, ingredientes por día, lista consolidada)');
+    if (includeExcelLink) archivos.push('Excel con 3 hojas (planificación, ingredientes por día, lista de compras)');
 
-    if (includeExcelLink) {
-      html += '<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{{attachment_excel}}" download="{{excel_name}}" style="display: inline-block; background-color: #28a745; color: white; padding: 8px 12px; text-decoration: none; border-radius: 3px; margin-bottom: 8px;">📊 Descargar Excel</a>';
-    }
-
+    html += archivos.map(a => '✓ ' + a).join('<br>');
+    html += '</p>';
+    html += '<p style="margin: 8px 0 0 0; color: #856404; font-size: 12px;"><strong>Nota:</strong> Descarga los archivos desde la aplicación (botones PDF y Excel en el Planificador)</p>';
     html += '</div>';
   }
 
@@ -101,7 +101,7 @@ export async function sendShoppingListEmail(recipientEmail, groupedIngredients, 
       throw new Error('Email inválido');
     }
 
-    // Generar HTML con enlaces de descarga si hay archivos
+    // Generar HTML con información sobre archivos disponibles
     const htmlContent = generateShoppingListHTML(groupedIngredients, groupBy, !!pdfBlob, !!excelBlob);
 
     const templateParams = {
@@ -110,26 +110,6 @@ export async function sendShoppingListEmail(recipientEmail, groupedIngredients, 
       subject: 'Planificacion Semanal - Recetario PAE',
       message_html: htmlContent.trim()
     };
-
-    // Convertir archivos a base64 para los enlaces en el email
-    // Pero NO los agregamos como parámetros para evitar exceder el límite de 50KB
-    if (pdfBlob) {
-      const pdfBase64 = await blobToBase64(pdfBlob);
-      // Reemplazar el placeholder en el HTML con el base64 real
-      templateParams.message_html = templateParams.message_html.replace(
-        'data:application/pdf;base64,{{attachment_pdf}}',
-        `data:application/pdf;base64,${pdfBase64}`
-      ).replace('{{pdf_name}}', `lista_compras_${new Date().toISOString().split('T')[0]}.pdf`);
-    }
-
-    if (excelBlob) {
-      const excelBase64 = await blobToBase64(excelBlob);
-      // Reemplazar el placeholder en el HTML con el base64 real
-      templateParams.message_html = templateParams.message_html.replace(
-        'data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{{attachment_excel}}',
-        `data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,${excelBase64}`
-      ).replace('{{excel_name}}', `planificacion_${new Date().toISOString().split('T')[0]}.xlsx`);
-    }
 
     const response = await emailjs.send(
       EMAILJS_SERVICE_ID,
@@ -143,7 +123,7 @@ export async function sendShoppingListEmail(recipientEmail, groupedIngredients, 
       if (pdfBlob) attachmentInfo.push('PDF');
       if (excelBlob) attachmentInfo.push('Excel');
       const message = attachmentInfo.length > 0
-        ? `Email enviado con enlaces de descarga: ${attachmentInfo.join(' y ')}`
+        ? `Email enviado. Los archivos (${attachmentInfo.join(' y ')}) están disponibles en la aplicación`
         : 'Email enviado exitosamente';
       return { success: true, message };
     } else {

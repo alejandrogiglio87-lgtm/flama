@@ -1,27 +1,23 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
-  <!-- Fondo blanco limpio -->
+  <!-- Fondo blanco -->
   <rect width="200" height="200" fill="#ffffff"/>
 
-  <!-- Cuchara -->
-  <g>
-    <!-- Mango de la cuchara -->
-    <line x1="60" y1="40" x2="60" y2="140" stroke="#ff6b35" stroke-width="8" stroke-linecap="round"/>
-    <!-- Bowl de la cuchara -->
-    <ellipse cx="60" cy="155" rx="20" ry="25" fill="#ff6b35"/>
-  </g>
+  <!-- Llama principal (roja) -->
+  <path d="M 100 50 Q 85 70 85 95 Q 85 125 100 145 Q 115 125 115 95 Q 115 70 100 50" fill="#ff4444" stroke="#cc0000" stroke-width="1"/>
 
-  <!-- Tenedor -->
-  <g>
-    <!-- Mango del tenedor -->
-    <line x1="140" y1="40" x2="140" y2="130" stroke="#4CAF50" stroke-width="8" stroke-linecap="round"/>
-    <!-- Puntas del tenedor -->
-    <line x1="125" y1="145" x2="125" y2="165" stroke="#4CAF50" stroke-width="6" stroke-linecap="round"/>
-    <line x1="140" y1="140" x2="140" y2="165" stroke="#4CAF50" stroke-width="6" stroke-linecap="round"/>
-    <line x1="155" y1="145" x2="155" y2="165" stroke="#4CAF50" stroke-width="6" stroke-linecap="round"/>
-    <!-- Conectar las puntas -->
-    <path d="M 125 145 Q 140 140 155 145" stroke="#4CAF50" stroke-width="6" fill="none" stroke-linecap="round"/>
-  </g>
+  <!-- Llama secundaria interior (naranja) -->
+  <path d="M 100 65 Q 90 78 90 95 Q 90 118 100 135 Q 110 118 110 95 Q 110 78 100 65" fill="#ff8c00" stroke="#ff6600" stroke-width="0.5"/>
 
-  <!-- Pequeña línea decorativa -->
-  <line x1="50" y1="95" x2="150" y2="95" stroke="#FFD700" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+  <!-- Llama interior amarilla (brillo) -->
+  <path d="M 100 80 Q 95 88 95 100 Q 95 115 100 125 Q 105 115 105 100 Q 105 88 100 80" fill="#ffdd00"/>
+
+  <!-- Puntas de fuego adicionales (más dinámicas) -->
+  <!-- Punta izquierda -->
+  <path d="M 80 85 Q 70 75 75 55 Q 85 70 80 85" fill="#ff6644" opacity="0.8"/>
+
+  <!-- Punta derecha -->
+  <path d="M 120 85 Q 130 75 125 55 Q 115 70 120 85" fill="#ff6644" opacity="0.8"/>
+
+  <!-- Punta superior -->
+  <path d="M 100 40 Q 95 25 105 15 Q 100 30 100 40" fill="#ff8c00" opacity="0.9"/>
 </svg>

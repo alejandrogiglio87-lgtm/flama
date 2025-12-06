@@ -17,15 +17,33 @@ try {
  * Genera contenido HTML para la lista de compras
  * @param {Object} groupedIngredients - Ingredientes agrupados
  * @param {string} groupBy - Criterio de agrupación
+ * @param {boolean} includePDFLink - Incluir enlace para descargar PDF
+ * @param {boolean} includeExcelLink - Incluir enlace para descargar Excel
  * @returns {string} HTML para el email
  */
-function generateShoppingListHTML(groupedIngredients, groupBy) {
+function generateShoppingListHTML(groupedIngredients, groupBy, includePDFLink = false, includeExcelLink = false) {
   let html = '';
 
   // Usar estilos inline para mejor compatibilidad con clientes de email
   html += '<div style="font-family: Arial, sans-serif; max-width: 600px;">';
   html += '<h2 style="color: #333; border-bottom: 2px solid #007bff; padding-bottom: 10px;">Lista de Compras - Recetario PAE</h2>';
   html += '<p style="color: #666;">Agrupado por: <strong>' + groupBy + '</strong></p>';
+
+  // Sección de descargas
+  if (includePDFLink || includeExcelLink) {
+    html += '<div style="background-color: #e7f3ff; border: 1px solid #007bff; border-radius: 5px; padding: 12px; margin: 15px 0;">';
+    html += '<p style="margin: 0 0 10px 0; color: #0056b3; font-weight: bold;">📥 Descargar Archivos:</p>';
+
+    if (includePDFLink) {
+      html += '<a href="data:application/pdf;base64,{{attachment_pdf}}" download="{{pdf_name}}" style="display: inline-block; background-color: #ff6b35; color: white; padding: 8px 12px; text-decoration: none; border-radius: 3px; margin-right: 8px; margin-bottom: 8px;">📄 Descargar PDF</a>';
+    }
+
+    if (includeExcelLink) {
+      html += '<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{{attachment_excel}}" download="{{excel_name}}" style="display: inline-block; background-color: #28a745; color: white; padding: 8px 12px; text-decoration: none; border-radius: 3px; margin-bottom: 8px;">📊 Descargar Excel</a>';
+    }
+
+    html += '</div>';
+  }
 
   Object.entries(groupedIngredients).forEach(([group, items]) => {
     html += '<h3 style="color: #0056b3; margin-top: 20px;">' + group + '</h3>';
@@ -83,7 +101,8 @@ export async function sendShoppingListEmail(recipientEmail, groupedIngredients, 
       throw new Error('Email inválido');
     }
 
-    const htmlContent = generateShoppingListHTML(groupedIngredients, groupBy);
+    // Generar HTML con enlaces de descarga si hay archivos
+    const htmlContent = generateShoppingListHTML(groupedIngredients, groupBy, !!pdfBlob, !!excelBlob);
 
     const templateParams = {
       to_email: recipientEmail,
@@ -92,17 +111,20 @@ export async function sendShoppingListEmail(recipientEmail, groupedIngredients, 
       message_html: htmlContent.trim()
     };
 
+    const pdfFileName = `lista_compras_${new Date().toISOString().split('T')[0]}.pdf`;
+    const excelFileName = `planificacion_${new Date().toISOString().split('T')[0]}.xlsx`;
+
     // Convertir archivos a base64 y agregar al template
     if (pdfBlob) {
       const pdfBase64 = await blobToBase64(pdfBlob);
       templateParams.attachment_pdf = pdfBase64;
-      templateParams.pdf_name = `lista_compras_${new Date().toISOString().split('T')[0]}.pdf`;
+      templateParams.pdf_name = pdfFileName;
     }
 
     if (excelBlob) {
       const excelBase64 = await blobToBase64(excelBlob);
       templateParams.attachment_excel = excelBase64;
-      templateParams.excel_name = `planificacion_${new Date().toISOString().split('T')[0]}.xlsx`;
+      templateParams.excel_name = excelFileName;
     }
 
     const response = await emailjs.send(
@@ -113,7 +135,13 @@ export async function sendShoppingListEmail(recipientEmail, groupedIngredients, 
     );
 
     if (response.status === 200) {
-      return { success: true, message: 'Email enviado exitosamente' };
+      const attachmentInfo = [];
+      if (pdfBlob) attachmentInfo.push('PDF');
+      if (excelBlob) attachmentInfo.push('Excel');
+      const message = attachmentInfo.length > 0
+        ? `Email enviado con enlaces de descarga: ${attachmentInfo.join(' y ')}`
+        : 'Email enviado exitosamente';
+      return { success: true, message };
     } else {
       throw new Error('Error al enviar el email');
     }

@@ -149,8 +149,8 @@ function App() {
             </div>
           </div>
           <div className="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400">
-            <p>© 2025 Recetario PAE • Planificación de menús escolares</p>
-            <p className="text-xs text-gray-500 mt-2">Herramienta oficial de ANEP para gestión de menús escolares</p>
+            <p>© 2025 Recetario PAE • Planificación de Menús Escolares</p>
+            <p className="text-xs text-gray-500 mt-2">Herramienta Oficial de ANEP para Gestión de Menús Escolares</p>
           </div>
         </div>
       </footer>

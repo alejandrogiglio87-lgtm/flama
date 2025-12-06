@@ -43,30 +43,46 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50 flex flex-col">
-      {/* Header Profesional */}
-      <header className="bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-800 text-white shadow-2xl sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto px-4 py-6">
+      {/* Header Profesional con Imagen de Fondo */}
+      <header
+        className="relative text-white shadow-2xl sticky top-0 z-40 overflow-hidden"
+        style={{
+          backgroundImage: 'url(https://images.unsplash.com/photo-1495521821757-a1efb6729352?w=1200&h=400&fit=crop)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          minHeight: '280px',
+          display: 'flex',
+          alignItems: 'center'
+        }}
+      >
+        {/* Overlay oscuro para legibilidad */}
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 via-blue-900/70 to-indigo-900/80"></div>
+
+        {/* Contenido */}
+        <div className="relative max-w-7xl mx-auto px-4 py-6 w-full">
           <div className="flex items-center gap-4 mb-4">
             {/* Logo */}
             <div className="flex-shrink-0">
               <img
                 src="/logo.jpg"
                 alt="Logo"
-                className="h-16 w-16 rounded-lg shadow-lg object-contain bg-white p-2"
+                className="h-20 w-20 rounded-lg shadow-lg object-contain bg-white p-2 border-4 border-white"
               />
             </div>
             {/* Título */}
             <div>
-              <h1 className="text-4xl font-bold tracking-tight">Recetario PAE</h1>
-              <p className="text-blue-100 text-sm mt-1">Planificación Inteligente de Menús Escolares</p>
+              <h1 className="text-5xl font-bold tracking-tight drop-shadow-lg">Recetario PAE</h1>
+              <p className="text-blue-100 text-lg mt-1 drop-shadow-md">Planificación Inteligente de Menús Escolares</p>
             </div>
           </div>
-          <p className="text-blue-100 text-sm">Calcula ingredientes, planifica tu semana y genera listas de compras automáticas</p>
+          <p className="text-blue-100 text-base max-w-3xl drop-shadow-md">
+            Calcula ingredientes, planifica tu semana y genera listas de compras automáticas con nuestra herramienta profesional
+          </p>
         </div>
       </header>
 
       {/* Navigation Tabs - Mejorado */}
-      <nav className="bg-white border-b border-gray-200 shadow-sm sticky top-[104px] z-40">
+      <nav className="bg-white border-b border-gray-200 shadow-sm sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex gap-0">
             {tabs.map(tab => {

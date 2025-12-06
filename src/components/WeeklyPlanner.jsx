@@ -338,10 +338,12 @@ export default function WeeklyPlanner({ recetas }) {
 
         {/* Sidebar: Planes guardados y resumen */}
         <div className="space-y-6 max-h-[calc(100vh-120px)] overflow-y-auto">
-          {/* Resumen semanal */}
+          {/* Resumen semanal e ingredientes totales */}
           <div className="bg-white rounded-lg shadow-md p-6">
             <h3 className="text-xl font-bold text-gray-800 mb-4">Resumen Semanal</h3>
-            <div className="space-y-3">
+
+            {/* Días de la semana */}
+            <div className="space-y-3 mb-4">
               {DIAS.map((dia, idx) => (
                 <div key={dia} className="flex justify-between items-center pb-2 border-b border-gray-100 last:border-b-0">
                   <span className="text-sm text-gray-700">{DIAS_DISPLAY[idx]}</span>
@@ -354,33 +356,43 @@ export default function WeeklyPlanner({ recetas }) {
                   </span>
                 </div>
               ))}
-              <div className="pt-3 mt-3 border-t border-gray-200">
+            </div>
+
+            {/* Total de recetas y porciones */}
+            <div className="pt-3 mb-4 border-t border-gray-200">
+              <div className="space-y-2">
                 <div className="flex justify-between font-bold">
-                  <span className="text-gray-800">Total Semana</span>
-                  <span className="text-blue-600">{getTotalRecipes()} recetas</span>
+                  <span className="text-gray-800">Total Recetas</span>
+                  <span className="text-blue-600">{getTotalRecipes()}</span>
+                </div>
+                <div className="flex justify-between font-bold">
+                  <span className="text-gray-800">Total Porciones</span>
+                  <span className="text-green-600">
+                    {Object.values(planificacion).reduce((sum, day) => sum + day.reduce((daySum, recipe) => daySum + recipe.porciones, 0), 0)}
+                  </span>
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Suma de ingredientes semanales */}
-          <div className="bg-white rounded-lg shadow-md p-6">
-            <h3 className="text-xl font-bold text-gray-800 mb-4">Ingredientes Totales de la Semana</h3>
-            <div className="space-y-3 max-h-96 overflow-y-auto">
-              {(() => {
-                const weeklyIngredients = consolidateWeeklyIngredients(planificacion, recetas);
-                if (Object.keys(weeklyIngredients).length === 0) {
-                  return <p className="text-gray-500 text-sm italic">Sin ingredientes planificados</p>;
-                }
-                return Object.values(weeklyIngredients).map((ing, idx) => (
-                  <div key={idx} className="flex justify-between items-center pb-2 border-b border-gray-100 last:border-b-0">
-                    <span className="text-sm text-gray-700 font-medium">{ing.nombre}</span>
-                    <span className="text-sm font-semibold text-green-600">
-                      {formatNumber(ing.cantidad_total)} {ing.unidad}
-                    </span>
-                  </div>
-                ));
-              })()}
+            {/* Ingredientes totales de la semana */}
+            <div className="pt-4 border-t border-gray-200">
+              <h4 className="text-lg font-bold text-gray-800 mb-3">Ingredientes Totales</h4>
+              <div className="space-y-2 max-h-60 overflow-y-auto">
+                {(() => {
+                  const weeklyIngredients = consolidateWeeklyIngredients(planificacion, recetas);
+                  if (Object.keys(weeklyIngredients).length === 0) {
+                    return <p className="text-gray-500 text-sm italic">Sin ingredientes planificados</p>;
+                  }
+                  return Object.values(weeklyIngredients).map((ing, idx) => (
+                    <div key={idx} className="flex justify-between items-center text-sm">
+                      <span className="text-gray-700">{ing.nombre}</span>
+                      <span className="font-semibold text-green-600">
+                        {formatNumber(ing.cantidad_total)} {ing.unidad}
+                      </span>
+                    </div>
+                  ));
+                })()}
+              </div>
             </div>
           </div>
 

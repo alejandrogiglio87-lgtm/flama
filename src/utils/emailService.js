@@ -20,51 +20,28 @@ try {
  * @returns {string} HTML para el email
  */
 function generateShoppingListHTML(groupedIngredients, groupBy) {
-  let html = `
-    <h2 style="color: #1e40af; text-align: center;">Lista de Compras - Recetario PAE</h2>
-    <p style="text-align: center; color: #666;">Agrupado por: <strong>${groupBy}</strong></p>
-    <hr style="border: none; border-top: 2px solid #e0e7ff;">
-  `;
+  let html = '<h2>Lista de Compras - Recetario PAE</h2>';
+  html += '<p>Agrupado por: <strong>' + groupBy + '</strong></p>';
+  html += '<hr>';
 
   Object.entries(groupedIngredients).forEach(([group, items]) => {
-    html += `
-      <h3 style="color: #1e40af; margin-top: 20px; padding: 10px; background: #f0f4ff; border-radius: 5px;">
-        ${group}
-      </h3>
-      <table style="width: 100%; border-collapse: collapse; margin: 10px 0;">
-        <thead>
-          <tr style="background: #e0e7ff;">
-            <th style="padding: 10px; text-align: left; border: 1px solid #bfdbfe;">Ingrediente</th>
-            <th style="padding: 10px; text-align: right; border: 1px solid #bfdbfe;">Cantidad</th>
-            <th style="padding: 10px; text-align: left; border: 1px solid #bfdbfe;">Unidad</th>
-          </tr>
-        </thead>
-        <tbody>
-    `;
+    html += '<h3>' + group + '</h3>';
+    html += '<table border="1" cellpadding="10">';
+    html += '<tr><th>Ingrediente</th><th>Cantidad</th><th>Unidad</th></tr>';
 
-    items.forEach((ing, idx) => {
-      const bgColor = idx % 2 === 0 ? '#ffffff' : '#f9fafb';
-      html += `
-        <tr style="background: ${bgColor};">
-          <td style="padding: 10px; border: 1px solid #e0e7ff;">${ing.nombre}</td>
-          <td style="padding: 10px; text-align: right; border: 1px solid #e0e7ff; font-weight: bold;">${formatNumberEmail(ing.cantidad_total)}</td>
-          <td style="padding: 10px; border: 1px solid #e0e7ff;">${ing.unidad || ''}</td>
-        </tr>
-      `;
+    items.forEach((ing) => {
+      html += '<tr>';
+      html += '<td>' + ing.nombre + '</td>';
+      html += '<td>' + formatNumberEmail(ing.cantidad_total) + '</td>';
+      html += '<td>' + (ing.unidad || '') + '</td>';
+      html += '</tr>';
     });
 
-    html += `
-        </tbody>
-      </table>
-    `;
+    html += '</table>';
   });
 
-  html += `
-    <hr style="border: none; border-top: 2px solid #e0e7ff; margin-top: 20px;">
-    <p style="text-align: center; color: #999; font-size: 12px;">
-      Generado con Recetario PAE • ${new Date().toLocaleDateString('es-AR')}
-    </p>
-  `;
+  html += '<hr>';
+  html += '<p style="font-size: 12px; color: #999;">Generado con Recetario PAE • ' + new Date().toLocaleDateString('es-AR') + '</p>';
 
   return html;
 }
@@ -84,9 +61,11 @@ function formatNumberEmail(numero) {
  * @param {string} recipientEmail - Email del destinatario
  * @param {Object} groupedIngredients - Ingredientes agrupados
  * @param {string} groupBy - Criterio de agrupación
+ * @param {Blob} pdfBlob - Archivo PDF (opcional)
+ * @param {Blob} excelBlob - Archivo Excel (opcional)
  * @returns {Promise}
  */
-export async function sendShoppingListEmail(recipientEmail, groupedIngredients, groupBy) {
+export async function sendShoppingListEmail(recipientEmail, groupedIngredients, groupBy, pdfBlob = null, excelBlob = null) {
   try {
     // Validar email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -102,6 +81,25 @@ export async function sendShoppingListEmail(recipientEmail, groupedIngredients, 
       subject: `Lista de Compras - ${new Date().toLocaleDateString('es-AR')}`,
       message_html: htmlContent
     };
+
+    // Agregar archivos adjuntos si existen
+    if (pdfBlob) {
+      const pdfBase64 = await blobToBase64(pdfBlob);
+      templateParams.attachment = {
+        filename: `lista_compras_${new Date().toISOString().split('T')[0]}.pdf`,
+        base64: pdfBase64,
+        type: 'application/pdf'
+      };
+    }
+
+    if (excelBlob) {
+      const excelBase64 = await blobToBase64(excelBlob);
+      templateParams.attachment_excel = {
+        filename: `planificacion_${new Date().toISOString().split('T')[0]}.xlsx`,
+        base64: excelBase64,
+        type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+      };
+    }
 
     const response = await emailjs.send(
       EMAILJS_SERVICE_ID,
@@ -123,6 +121,18 @@ export async function sendShoppingListEmail(recipientEmail, groupedIngredients, 
       error
     };
   }
+}
+
+/**
+ * Convierte un Blob a Base64
+ */
+async function blobToBase64(blob) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onloadend = () => resolve(reader.result.split(',')[1]);
+    reader.onerror = reject;
+    reader.readAsDataURL(blob);
+  });
 }
 
 /**

@@ -76,7 +76,7 @@ function App() {
             </div>
             {/* Título */}
             <div>
-              <h1 className="text-5xl font-bold tracking-tight drop-shadow-lg">Recetario PAE - v2.0</h1>
+              <h1 className="text-5xl font-bold tracking-tight drop-shadow-lg">Recetario PAE</h1>
               <p className="text-blue-100 text-lg mt-1 drop-shadow-md">Planificación Inteligente de Menús Escolares</p>
             </div>
           </div>

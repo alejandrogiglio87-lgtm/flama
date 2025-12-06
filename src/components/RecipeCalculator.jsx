@@ -40,7 +40,8 @@ export default function RecipeCalculator({ recetas, onAddToPlanner = null }) {
       onAddToPlanner({
         recetaId: selectedReceta.id,
         nombre: selectedReceta.nombre,
-        porciones: porciones
+        porciones: porciones,
+        peso_porcion_g: selectedReceta.peso_porcion_g || 0
       });
       handleBackToSearch();
     }

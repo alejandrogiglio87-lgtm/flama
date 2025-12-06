@@ -47,19 +47,20 @@ function App() {
   ];
 
   return (
-    <div
-      className="min-h-screen flex flex-col relative"
-      style={{
+    <div className="min-h-screen flex flex-col" style={{
+      background: 'linear-gradient(to bottom right, rgb(249, 250, 251), rgb(240, 245, 250), rgb(224, 242, 254))',
+      backgroundAttachment: 'fixed'
+    }}>
+      {/* Patrón en los bordes - visible solo en pantallas grandes */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none" style={{
         backgroundImage: `url('/food-pattern.jpg')`,
-        backgroundAttachment: 'fixed',
+        backgroundRepeat: 'repeat',
         backgroundSize: 'auto',
-        backgroundRepeat: 'repeat'
-      }}
-    >
-      {/* Overlay para mantener legibilidad */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-50/95 via-blue-50/95 to-indigo-50/95 pointer-events-none"></div>
+        opacity: 0.15,
+        zIndex: 0
+      }}></div>
 
-      <div className="relative min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50 flex flex-col">
+      <div className="relative flex flex-col z-10">
       {/* Header Profesional con Imagen de Fondo */}
       <header
         className="relative text-white shadow-2xl overflow-hidden"

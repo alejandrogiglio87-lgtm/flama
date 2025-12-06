@@ -336,6 +336,27 @@ export default function WeeklyPlanner({ recetas }) {
           })}
         </div>
 
+        {/* Ingredientes Totales de la Semana - Centro */}
+        <div className="lg:col-span-3 bg-white rounded-lg shadow-md p-6">
+          <h3 className="text-xl font-bold text-gray-800 mb-4">Ingredientes Totales de la Semana</h3>
+          <div className="space-y-2 max-h-64 overflow-y-auto">
+            {(() => {
+              const weeklyIngredients = consolidateWeeklyIngredients(planificacion, recetas);
+              if (Object.keys(weeklyIngredients).length === 0) {
+                return <p className="text-gray-500 text-sm italic">Sin ingredientes planificados</p>;
+              }
+              return Object.values(weeklyIngredients).map((ing, idx) => (
+                <div key={idx} className="flex justify-between items-center pb-2 border-b border-gray-100 last:border-b-0">
+                  <span className="text-sm text-gray-700 font-medium">{ing.nombre}</span>
+                  <span className="text-sm font-semibold text-green-600">
+                    {formatNumber(ing.cantidad_total)} {ing.unidad}
+                  </span>
+                </div>
+              ));
+            })()}
+          </div>
+        </div>
+
         {/* Sidebar: Planes guardados y resumen */}
         <div className="space-y-6 max-h-[calc(100vh-120px)] overflow-y-auto">
           {/* Resumen semanal e ingredientes totales */}
@@ -358,29 +379,8 @@ export default function WeeklyPlanner({ recetas }) {
               ))}
             </div>
 
-            {/* Ingredientes totales de la semana - Debajo de los días */}
-            <div className="pt-4 pb-4 border-t border-b border-gray-200 mb-4">
-              <h4 className="text-lg font-bold text-gray-800 mb-3">Ingredientes Totales</h4>
-              <div className="space-y-2 max-h-60 overflow-y-auto">
-                {(() => {
-                  const weeklyIngredients = consolidateWeeklyIngredients(planificacion, recetas);
-                  if (Object.keys(weeklyIngredients).length === 0) {
-                    return <p className="text-gray-500 text-sm italic">Sin ingredientes planificados</p>;
-                  }
-                  return Object.values(weeklyIngredients).map((ing, idx) => (
-                    <div key={idx} className="flex justify-between items-center text-sm">
-                      <span className="text-gray-700">{ing.nombre}</span>
-                      <span className="font-semibold text-green-600">
-                        {formatNumber(ing.cantidad_total)} {ing.unidad}
-                      </span>
-                    </div>
-                  ));
-                })()}
-              </div>
-            </div>
-
             {/* Total de recetas y porciones */}
-            <div className="pt-3">
+            <div className="pt-4 border-t border-gray-200">
               <div className="space-y-2">
                 <div className="flex justify-between font-bold">
                   <span className="text-gray-800">Total Recetas</span>

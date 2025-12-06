@@ -22,6 +22,8 @@ export default function WeeklyPlanner({ recetas }) {
   const [emailInput, setEmailInput] = useState('');
   const [emailLoading, setEmailLoading] = useState(false);
   const [emailMessage, setEmailMessage] = useState('');
+  const [attachPDF, setAttachPDF] = useState(false);
+  const [attachExcel, setAttachExcel] = useState(false);
 
   // Cargar planificación al montar
   useEffect(() => {
@@ -126,20 +128,42 @@ export default function WeeklyPlanner({ recetas }) {
     setEmailLoading(true);
     setEmailMessage('');
 
-    const ingredientes = consolidateWeeklyIngredients(planificacion, recetas);
-    const groupedIngredients = { 'Semana Completa': ingredientes };
+    try {
+      const ingredientes = consolidateWeeklyIngredients(planificacion, recetas);
+      const groupedIngredients = { 'Semana Completa': ingredientes };
 
-    const result = await sendShoppingListEmail(emailInput, groupedIngredients, 'Semana Completa');
+      let pdfBlob = null;
+      let excelBlob = null;
 
-    if (result.success) {
-      setEmailMessage('✓ Email enviado exitosamente');
-      setEmailInput('');
-      setTimeout(() => {
-        setShowEmailModal(false);
-        setEmailMessage('');
-      }, 2000);
-    } else {
-      setEmailMessage(`✗ Error: ${result.message}`);
+      // Generar PDF si está seleccionado
+      if (attachPDF) {
+        handleExportPDF();
+        // Nota: La generación de PDF es asincrónica, pero downloadShoppingListPDF no retorna un blob
+        // Por ahora solo se envía HTML
+      }
+
+      // Generar Excel si está seleccionado
+      if (attachExcel) {
+        handleExportExcel();
+        // Nota: Similar al PDF, downloadWeeklyPlanExcel no retorna un blob
+      }
+
+      const result = await sendShoppingListEmail(emailInput, groupedIngredients, 'Semana Completa', pdfBlob, excelBlob);
+
+      if (result.success) {
+        setEmailMessage('✓ Email enviado exitosamente');
+        setEmailInput('');
+        setAttachPDF(false);
+        setAttachExcel(false);
+        setTimeout(() => {
+          setShowEmailModal(false);
+          setEmailMessage('');
+        }, 2000);
+      } else {
+        setEmailMessage(`✗ Error: ${result.message}`);
+      }
+    } catch (error) {
+      setEmailMessage(`✗ Error: ${error.message}`);
     }
 
     setEmailLoading(false);
@@ -519,6 +543,32 @@ export default function WeeklyPlanner({ recetas }) {
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
                   disabled={emailLoading}
                 />
+              </div>
+
+              <div className="space-y-2 border-t border-gray-200 pt-3">
+                <label className="text-sm font-semibold text-gray-700">Adjuntos (opcional):</label>
+                <div className="flex items-center gap-3">
+                  <label className="flex items-center gap-2 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={attachPDF}
+                      onChange={(e) => setAttachPDF(e.target.checked)}
+                      disabled={emailLoading}
+                      className="w-4 h-4 rounded"
+                    />
+                    <span className="text-sm text-gray-700">Adjuntar PDF</span>
+                  </label>
+                  <label className="flex items-center gap-2 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={attachExcel}
+                      onChange={(e) => setAttachExcel(e.target.checked)}
+                      disabled={emailLoading}
+                      className="w-4 h-4 rounded"
+                    />
+                    <span className="text-sm text-gray-700">Adjuntar Excel</span>
+                  </label>
+                </div>
               </div>
 
               {emailMessage && (

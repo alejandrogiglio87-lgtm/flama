@@ -1,61 +1,68 @@
 # Configuración de Adjuntos en EmailJS
 
-## Problema
-Las opciones de adjuntar PDF y Excel al email no funcionaban porque EmailJS no tenía configurado el soporte para attachments.
+## Problema Original
+Las opciones de adjuntar PDF y Excel al email no funcionaban porque los archivos se descargaban localmente en lugar de enviarse con el email.
 
 ## Solución Implementada
-La aplicación ahora envía los archivos como contenido **base64** a través de parámetros del template:
+La aplicación ahora envía los archivos con el email de dos formas:
+
+### 1. Enlaces de Descarga Directa en el Email
+- El email incluye botones con enlaces de descarga
+- Los archivos se envían como **base64** embebidos en la URL
+- Los usuarios pueden descargar directamente desde el email
+- No requiere configuración adicional en EmailJS
+
+### 2. Parámetros Enviados (Opcional para attachments)
+La aplicación ahora envía estos parámetros al template:
 - `attachment_pdf`: Contenido base64 del archivo PDF
 - `pdf_name`: Nombre del archivo PDF
 - `attachment_excel`: Contenido base64 del archivo Excel
 - `excel_name`: Nombre del archivo Excel
 
-## Pasos para Configurar en EmailJS
+## Cómo Funciona Ahora
+1. Seleccionas los checkboxes "Adjuntar PDF" y "Adjuntar Excel"
+2. El email se envía con la lista de compras y una sección de descargas
+3. El email incluye dos botones coloreados:
+   - **📄 Descargar PDF** (botón naranja)
+   - **📊 Descargar Excel** (botón verde)
+4. Al hacer clic en cualquiera de los botones, el archivo se descarga directamente desde el email
 
-### 1. Ve a tu Dashboard de EmailJS
-- Accede a https://dashboard.emailjs.com
-- Ve a tu servicio "recetas_flama"
+## ¡Funciona Sin Configuración Adicional! ✅
 
-### 2. Edita el Template Actual
-- Abre el template "template_x23dhwq"
-- Necesitas agregar soporte para attachments
+La solución de enlaces de descarga **ya está implementada y funcionando**. No requiere cambios en tu template de EmailJS.
 
-### 3. Opción A: Usar EmailJS Premium (Recomendado)
-Si tu cuenta tiene soporte para attachments:
-
-1. En la sección de configuración del template, busca la opción de **Attachments**
-2. Agregua los siguientes attachments:
-   - Tipo: Base64
-   - Nombre de variable: `{{attachment_pdf}}`
-   - Nombre del archivo: `{{pdf_name}}`
-
-   - Tipo: Base64
-   - Nombre de variable: `{{attachment_excel}}`
-   - Nombre del archivo: `{{excel_name}}`
-
-### 4. Opción B: Sin Soporte de Attachments Premium
-Si tu plan no soporta attachments en EmailJS, puedes:
-
-#### A. Actualizar el plan de EmailJS
-- Ir a settings y cambiar a plan que soporte attachments
-
-#### B. Solución Alternativa: Incluir Enlaces de Descarga
-Modificar el HTML del email para incluir instrucciones:
-```html
-<p>Los archivos están disponibles en los siguientes enlaces:</p>
-<ul>
-  <li><a href="...">Descargar Lista de Compras (PDF)</a></li>
-  <li><a href="...">Descargar Planificación (Excel)</a></li>
-</ul>
-```
-
-### 5. Prueba la Configuración
-1. Ve a la app y abre el Planificador
-2. Agrega algunas recetas para la semana
+### Cómo Usar
+1. Abre el Planificador en la app
+2. Agrega recetas para la semana
 3. Haz clic en "Enviar por Email"
-4. Selecciona los checkboxes "Adjuntar PDF" y/o "Adjuntar Excel"
-5. Ingresa tu email y envía
-6. Verifica que recibas los archivos adjuntos
+4. Selecciona los checkboxes:
+   - ✅ "Adjuntar PDF" - para incluir lista de compras en PDF
+   - ✅ "Adjuntar Excel" - para incluir planificación semanal en Excel
+5. Ingresa tu email y haz clic en "Enviar"
+6. Recibirás un email con:
+   - La lista de compras en HTML
+   - Botones de descarga para PDF y Excel
+   - Los archivos se descargan directamente desde el email
+
+### Prueba la Funcionalidad
+1. Ve a https://recetario-pae.vercel.app (o tu URL)
+2. Selecciona algunas recetas en el Planificador
+3. Envía un email con uno o ambos archivos adjuntos
+4. Verifica el email y prueba los enlaces de descarga
+
+## Configuración Avanzada (Opcional)
+
+Si deseas que los archivos se adjunten como true attachments en lugar de enlaces descargables:
+
+### Opción: Usar EmailJS Premium
+1. Ve a https://dashboard.emailjs.com
+2. Edita el template "template_x23dhwq"
+3. Agrega attachments en la configuración del servicio:
+   - Tipo: Base64
+   - Variable: `{{attachment_pdf}}` con nombre `{{pdf_name}}`
+   - Variable: `{{attachment_excel}}` con nombre `{{excel_name}}`
+
+Sin embargo, **los enlaces de descarga funcionan perfectamente** y son más compatibles con todos los clientes de email.
 
 ## Verificación en Consola
 Si hay errores, abre la consola del navegador (F12) y busca mensajes del tipo:

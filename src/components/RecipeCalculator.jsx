@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Search, X, Plus, ArrowLeft } from 'lucide-react';
 import RecipeCard from './RecipeCard';
 import { calculateIngredients, formatNumber, isValidQuantity } from '../utils/recipeCalculations';
+import { getRecipeImage } from '../utils/recipeImages';
 
 export default function RecipeCalculator({ recetas, onAddToPlanner = null }) {
   const [selectedReceta, setSelectedReceta] = useState(null);
@@ -146,7 +147,7 @@ export default function RecipeCalculator({ recetas, onAddToPlanner = null }) {
         {/* Imagen de la receta */}
         <div className="relative h-64 bg-gray-200">
           <img
-            src={require('../utils/recipeImages').getRecipeImage(selectedReceta.id)}
+            src={getRecipeImage(selectedReceta.id)}
             alt={selectedReceta.nombre}
             className="w-full h-full object-cover"
             onError={(e) => {

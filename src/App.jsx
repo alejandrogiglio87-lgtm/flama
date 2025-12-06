@@ -50,7 +50,7 @@ function App() {
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50 flex flex-col">
       {/* Header Profesional con Imagen de Fondo */}
       <header
-        className="relative text-white shadow-2xl sticky top-0 z-40 overflow-hidden"
+        className="relative text-white shadow-2xl overflow-hidden"
         style={{
           backgroundImage: 'url(https://images.unsplash.com/photo-1495521821757-a1efb6729352?w=1200&h=400&fit=crop)',
           backgroundSize: 'cover',

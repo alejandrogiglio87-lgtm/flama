@@ -129,5 +129,6 @@ export async function sendShoppingListEmail(recipientEmail, groupedIngredients, 
  * @returns {boolean}
  */
 export function isEmailJSConfigured() {
-  return EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY';
+  // Retornar true si hay alguna credencial configurada (no es la default)
+  return EMAILJS_PUBLIC_KEY && EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY' && EMAILJS_PUBLIC_KEY.length > 0;
 }

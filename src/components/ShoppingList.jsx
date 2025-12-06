@@ -157,15 +157,13 @@ export default function ShoppingList({ recetas }) {
               <Printer size={20} />
               Imprimir
             </button>
-            {isEmailJSConfigured() && (
-              <button
-                onClick={() => setShowEmailModal(true)}
-                className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-medium flex items-center gap-2 transition-colors"
-              >
-                <Mail size={20} />
-                Enviar por Email
-              </button>
-            )}
+            <button
+              onClick={() => setShowEmailModal(true)}
+              className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-medium flex items-center gap-2 transition-colors"
+            >
+              <Mail size={20} />
+              Enviar por Email
+            </button>
           </div>
         </div>
 

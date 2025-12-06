@@ -92,25 +92,12 @@ export async function sendShoppingListEmail(recipientEmail, groupedIngredients, 
       message_html: htmlContent.trim()
     };
 
-    // Agregar archivos adjuntos si existen
-    if (pdfBlob) {
-      const pdfBase64 = await blobToBase64(pdfBlob);
-      templateParams.attachment = {
-        filename: `lista_compras_${new Date().toISOString().split('T')[0]}.pdf`,
-        base64: pdfBase64,
-        type: 'application/pdf'
-      };
+    // Si hay adjuntos, usar FormData para enviar con archivos
+    if (pdfBlob || excelBlob) {
+      return await sendEmailWithAttachments(templateParams, pdfBlob, excelBlob);
     }
 
-    if (excelBlob) {
-      const excelBase64 = await blobToBase64(excelBlob);
-      templateParams.attachment_excel = {
-        filename: `planificacion_${new Date().toISOString().split('T')[0]}.xlsx`,
-        base64: excelBase64,
-        type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
-      };
-    }
-
+    // Sin adjuntos, usar el método estándar
     const response = await emailjs.send(
       EMAILJS_SERVICE_ID,
       EMAILJS_TEMPLATE_ID,
@@ -128,6 +115,57 @@ export async function sendShoppingListEmail(recipientEmail, groupedIngredients, 
     return {
       success: false,
       message: error.message || 'Error al enviar el email. Asegúrate de haber configurado EmailJS.',
+      error
+    };
+  }
+}
+
+/**
+ * Envía email con adjuntos usando FormData
+ */
+async function sendEmailWithAttachments(baseParams, pdfBlob, excelBlob) {
+  try {
+    const formData = new FormData();
+
+    // Agregar parámetros básicos
+    formData.append('service_id', EMAILJS_SERVICE_ID);
+    formData.append('template_id', EMAILJS_TEMPLATE_ID);
+    formData.append('user_id', EMAILJS_PUBLIC_KEY);
+
+    // Agregar parámetros del email
+    Object.keys(baseParams).forEach(key => {
+      formData.append(key, baseParams[key]);
+    });
+
+    // Agregar archivos PDF si existen
+    if (pdfBlob) {
+      formData.append('attachment_pdf', pdfBlob, `lista_compras_${new Date().toISOString().split('T')[0]}.pdf`);
+    }
+
+    // Agregar archivos Excel si existen
+    if (excelBlob) {
+      formData.append('attachment_excel', excelBlob, `planificacion_${new Date().toISOString().split('T')[0]}.xlsx`);
+    }
+
+    // Enviar usando fetch a la API de EmailJS
+    const response = await fetch('https://api.emailjs.com/api/v1.0/email/send-form', {
+      method: 'POST',
+      body: formData
+    });
+
+    if (response.status === 200) {
+      return { success: true, message: 'Email enviado exitosamente con archivos adjuntos' };
+    } else {
+      const errorText = await response.text();
+      throw new Error(`Error al enviar email: ${errorText}`);
+    }
+  } catch (error) {
+    console.error('Error enviando email con adjuntos:', error);
+    // Intentar enviar sin adjuntos si falla
+    console.warn('Reintentando sin adjuntos...');
+    return {
+      success: false,
+      message: 'No se pudieron adjuntar los archivos al email. Por favor intenta nuevamente.',
       error
     };
   }

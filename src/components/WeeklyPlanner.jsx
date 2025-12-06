@@ -358,24 +358,8 @@ export default function WeeklyPlanner({ recetas }) {
               ))}
             </div>
 
-            {/* Total de recetas y porciones */}
-            <div className="pt-3 mb-4 border-t border-gray-200">
-              <div className="space-y-2">
-                <div className="flex justify-between font-bold">
-                  <span className="text-gray-800">Total Recetas</span>
-                  <span className="text-blue-600">{getTotalRecipes()}</span>
-                </div>
-                <div className="flex justify-between font-bold">
-                  <span className="text-gray-800">Total Porciones</span>
-                  <span className="text-green-600">
-                    {Object.values(planificacion).reduce((sum, day) => sum + day.reduce((daySum, recipe) => daySum + recipe.porciones, 0), 0)}
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* Ingredientes totales de la semana */}
-            <div className="pt-4 border-t border-gray-200">
+            {/* Ingredientes totales de la semana - Debajo de los días */}
+            <div className="pt-4 pb-4 border-t border-b border-gray-200 mb-4">
               <h4 className="text-lg font-bold text-gray-800 mb-3">Ingredientes Totales</h4>
               <div className="space-y-2 max-h-60 overflow-y-auto">
                 {(() => {
@@ -392,6 +376,22 @@ export default function WeeklyPlanner({ recetas }) {
                     </div>
                   ));
                 })()}
+              </div>
+            </div>
+
+            {/* Total de recetas y porciones */}
+            <div className="pt-3">
+              <div className="space-y-2">
+                <div className="flex justify-between font-bold">
+                  <span className="text-gray-800">Total Recetas</span>
+                  <span className="text-blue-600">{getTotalRecipes()}</span>
+                </div>
+                <div className="flex justify-between font-bold">
+                  <span className="text-gray-800">Total Porciones</span>
+                  <span className="text-green-600">
+                    {Object.values(planificacion).reduce((sum, day) => sum + day.reduce((daySum, recipe) => daySum + recipe.porciones, 0), 0)}
+                  </span>
+                </div>
               </div>
             </div>
           </div>

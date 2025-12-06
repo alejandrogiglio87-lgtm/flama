@@ -64,7 +64,7 @@ function App() {
             {/* Logo */}
             <div className="flex-shrink-0">
               <img
-                src="/logo.jpg"
+                src="/logo2.jpg"
                 alt="Logo"
                 className="h-20 w-20 rounded-lg shadow-lg object-contain bg-white p-2 border-4 border-white"
               />
@@ -117,7 +117,16 @@ function App() {
       {/* Footer Profesional */}
       <footer className="bg-gradient-to-r from-gray-900 to-gray-800 text-gray-300 border-t border-gray-700 mt-12">
         <div className="max-w-7xl mx-auto px-4 py-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            {/* Logo en footer */}
+            <div className="flex items-start">
+              <img
+                src="/logo2.jpg"
+                alt="ANEP Logo"
+                className="h-20 w-20 object-contain rounded-lg"
+              />
+            </div>
+
             <div>
               <h3 className="text-white font-semibold mb-2">Sobre Recetario PAE</h3>
               <p className="text-sm text-gray-400">
@@ -141,6 +150,7 @@ function App() {
           </div>
           <div className="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400">
             <p>© 2025 Recetario PAE • Planificación de menús escolares</p>
+            <p className="text-xs text-gray-500 mt-2">Herramienta oficial de ANEP para gestión de menús escolares</p>
           </div>
         </div>
       </footer>

@@ -3,7 +3,7 @@ import emailjs from '@emailjs/browser';
 // Inicializar EmailJS (necesitas obtener una PUBLIC KEY gratuita en emailjs.com)
 // Para desarrollo, puedes usar una clave pública de prueba
 const EMAILJS_SERVICE_ID = 'recetas_flama';
-const EMAILJS_TEMPLATE_ID = 'yjQPVGxxzArERJjj-';
+const EMAILJS_TEMPLATE_ID = 'template_x23dhwq';
 const EMAILJS_PUBLIC_KEY = 'yjQPVGxxzArERJjj-'; // Reemplazar con tu clave pública
 
 // Inicializar EmailJS

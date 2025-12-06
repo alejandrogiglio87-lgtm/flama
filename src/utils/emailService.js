@@ -106,7 +106,8 @@ export async function sendShoppingListEmail(recipientEmail, groupedIngredients, 
     const response = await emailjs.send(
       EMAILJS_SERVICE_ID,
       EMAILJS_TEMPLATE_ID,
-      templateParams
+      templateParams,
+      EMAILJS_PUBLIC_KEY
     );
 
     if (response.status === 200) {

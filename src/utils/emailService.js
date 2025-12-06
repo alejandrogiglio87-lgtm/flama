@@ -111,20 +111,24 @@ export async function sendShoppingListEmail(recipientEmail, groupedIngredients, 
       message_html: htmlContent.trim()
     };
 
-    const pdfFileName = `lista_compras_${new Date().toISOString().split('T')[0]}.pdf`;
-    const excelFileName = `planificacion_${new Date().toISOString().split('T')[0]}.xlsx`;
-
-    // Convertir archivos a base64 y agregar al template
+    // Convertir archivos a base64 para los enlaces en el email
+    // Pero NO los agregamos como parámetros para evitar exceder el límite de 50KB
     if (pdfBlob) {
       const pdfBase64 = await blobToBase64(pdfBlob);
-      templateParams.attachment_pdf = pdfBase64;
-      templateParams.pdf_name = pdfFileName;
+      // Reemplazar el placeholder en el HTML con el base64 real
+      templateParams.message_html = templateParams.message_html.replace(
+        'data:application/pdf;base64,{{attachment_pdf}}',
+        `data:application/pdf;base64,${pdfBase64}`
+      ).replace('{{pdf_name}}', `lista_compras_${new Date().toISOString().split('T')[0]}.pdf`);
     }
 
     if (excelBlob) {
       const excelBase64 = await blobToBase64(excelBlob);
-      templateParams.attachment_excel = excelBase64;
-      templateParams.excel_name = excelFileName;
+      // Reemplazar el placeholder en el HTML con el base64 real
+      templateParams.message_html = templateParams.message_html.replace(
+        'data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{{attachment_excel}}',
+        `data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,${excelBase64}`
+      ).replace('{{excel_name}}', `planificacion_${new Date().toISOString().split('T')[0]}.xlsx`);
     }
 
     const response = await emailjs.send(

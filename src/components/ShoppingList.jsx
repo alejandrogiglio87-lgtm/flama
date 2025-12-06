@@ -56,7 +56,7 @@ export default function ShoppingList({ recetas }) {
     setCheckedItems(new Set());
   };
 
-  const groupedIngredients = groupIngredients(ingredientes, groupBy);
+  const groupedIngredients = groupIngredients(ingredientes, groupBy, planificacion, recetas);
 
   if (loading) {
     return (
@@ -137,8 +137,11 @@ export default function ShoppingList({ recetas }) {
           </label>
           <div className="flex flex-wrap gap-2">
             {[
+              { value: 'dia', label: 'Por Día' },
+              { value: 'receta', label: 'Por Receta' },
               { value: 'nombre', label: 'Nombre (A-Z)' },
               { value: 'unidad', label: 'Unidad de Medida' },
+              { value: 'semana', label: 'Semana Completa' },
               { value: 'ninguno', label: 'Sin Agrupar' }
             ].map(option => (
               <button

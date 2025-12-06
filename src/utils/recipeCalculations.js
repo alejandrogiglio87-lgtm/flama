@@ -81,12 +81,100 @@ export function consolidateWeeklyIngredients(planificacionSemanal, todasLasRecet
 }
 
 /**
+ * Consolida ingredientes por día manteniendo información de origen
+ * @param {Object} planificacionSemanal - Plan de la semana
+ * @param {Array} todasLasRecetas - Todas las recetas
+ * @returns {Object} Ingredientes agrupados por día
+ */
+export function consolidateByDay(planificacionSemanal, todasLasRecetas) {
+  const dias = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo'];
+  const diasDisplay = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
+  const byDay = {};
+
+  dias.forEach((dia, idx) => {
+    const recetasDelDia = planificacionSemanal[dia] || [];
+    const ingredientesDelDia = consolidateIngredients(recetasDelDia, todasLasRecetas);
+    if (Object.keys(ingredientesDelDia).length > 0) {
+      byDay[diasDisplay[idx]] = Object.values(ingredientesDelDia);
+    }
+  });
+
+  return byDay;
+}
+
+/**
+ * Consolida ingredientes por receta manteniendo información de origen
+ * @param {Object} planificacionSemanal - Plan de la semana
+ * @param {Array} todasLasRecetas - Todas las recetas
+ * @returns {Object} Ingredientes agrupados por receta
+ */
+export function consolidateByRecipe(planificacionSemanal, todasLasRecetas) {
+  const dias = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo'];
+  const byRecipe = {};
+
+  dias.forEach(dia => {
+    const recetasDelDia = planificacionSemanal[dia] || [];
+    recetasDelDia.forEach(({ recetaId, porciones, nombre }) => {
+      const receta = todasLasRecetas.find(r => r.id === recetaId);
+      if (!receta) return;
+
+      const calculados = calculateIngredients(receta.ingredientes, porciones);
+      if (!byRecipe[nombre]) {
+        byRecipe[nombre] = [];
+      }
+      byRecipe[nombre].push(...calculados.map(ing => ({
+        ...ing,
+        cantidad_total: ing.cantidad_total
+      })));
+    });
+  });
+
+  // Consolidar cantidad para cada receta
+  const consolidated = {};
+  Object.entries(byRecipe).forEach(([receta, ings]) => {
+    const consolidada = {};
+    ings.forEach(ing => {
+      const key = `${ing.nombre}|${ing.unidad}`;
+      if (consolidada[key]) {
+        consolidada[key].cantidad_total += ing.cantidad_total;
+      } else {
+        consolidada[key] = {
+          nombre: ing.nombre,
+          unidad: ing.unidad,
+          cantidad_total: ing.cantidad_total
+        };
+      }
+    });
+    consolidated[receta] = Object.values(consolidada);
+  });
+
+  return consolidated;
+}
+
+/**
  * Agrupa ingredientes por categoría o criterio
  * @param {Array} ingredientes - Array de ingredientes consolidados
- * @param {string} criterio - 'nombre' (alfabético), 'unidad', o 'ninguno'
+ * @param {string} criterio - 'nombre' (alfabético), 'unidad', 'ninguno', 'dia', 'receta', 'semana'
+ * @param {Object} planificacionSemanal - Plan de la semana (requerido para día y receta)
+ * @param {Array} todasLasRecetas - Todas las recetas (requerido para día y receta)
  * @returns {Object} Ingredientes agrupados
  */
-export function groupIngredients(ingredientes, criterio = 'nombre') {
+export function groupIngredients(ingredientes, criterio = 'nombre', planificacionSemanal = null, todasLasRecetas = null) {
+  // Agrupación por día
+  if (criterio === 'dia' && planificacionSemanal && todasLasRecetas) {
+    return consolidateByDay(planificacionSemanal, todasLasRecetas);
+  }
+
+  // Agrupación por receta
+  if (criterio === 'receta' && planificacionSemanal && todasLasRecetas) {
+    return consolidateByRecipe(planificacionSemanal, todasLasRecetas);
+  }
+
+  // Agrupación por semana (sin agrupar internamente, solo una sección)
+  if (criterio === 'semana') {
+    return { 'Semana Completa': ingredientes };
+  }
+
   if (criterio === 'ninguno') {
     return { 'Todos': ingredientes };
   }

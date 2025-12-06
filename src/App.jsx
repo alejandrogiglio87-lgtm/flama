@@ -6,6 +6,11 @@ import ShoppingList from './components/ShoppingList';
 import './App.css';
 
 function App() {
+  // Update document title
+  if (typeof window !== 'undefined') {
+    document.title = 'Recetario PAE - Planificación de Menús Escolares';
+  }
+
   const [activeTab, setActiveTab] = useState('calculator');
   const [recetas, setRecetas] = useState([]);
   const [loading, setLoading] = useState(true);

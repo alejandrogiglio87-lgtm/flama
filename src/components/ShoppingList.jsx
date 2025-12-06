@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react';
-import { Download, Printer, CheckCircle2, Circle, Mail, X } from 'lucide-react';
+import { Download, Printer, CheckCircle2, Circle } from 'lucide-react';
 import { loadPlanification } from '../utils/storageManager';
 import { consolidateWeeklyIngredients, groupIngredients, formatNumber } from '../utils/recipeCalculations';
 import { downloadShoppingListPDF, printShoppingList } from '../utils/pdfGenerator';
-import { sendShoppingListEmail, isEmailJSConfigured } from '../utils/emailService';
 
 export default function ShoppingList({ recetas }) {
   const [planificacion, setPlanificacion] = useState(null);
@@ -11,10 +10,6 @@ export default function ShoppingList({ recetas }) {
   const [groupBy, setGroupBy] = useState('nombre');
   const [checkedItems, setCheckedItems] = useState(new Set());
   const [loading, setLoading] = useState(true);
-  const [showEmailModal, setShowEmailModal] = useState(false);
-  const [emailInput, setEmailInput] = useState('');
-  const [emailLoading, setEmailLoading] = useState(false);
-  const [emailMessage, setEmailMessage] = useState('');
 
   // Cargar planificación
   useEffect(() => {
@@ -59,33 +54,6 @@ export default function ShoppingList({ recetas }) {
 
   const handleClearChecks = () => {
     setCheckedItems(new Set());
-  };
-
-  const handleSendEmail = async () => {
-    if (!emailInput.trim()) {
-      setEmailMessage('Por favor ingresa un email válido');
-      return;
-    }
-
-    setEmailLoading(true);
-    setEmailMessage('');
-
-    console.log('Enviando email a:', emailInput, 'Agrupado por:', groupBy);
-
-    const result = await sendShoppingListEmail(emailInput, groupedIngredients, groupBy);
-
-    if (result.success) {
-      setEmailMessage('✓ Email enviado exitosamente');
-      setEmailInput('');
-      setTimeout(() => {
-        setShowEmailModal(false);
-        setEmailMessage('');
-      }, 2000);
-    } else {
-      setEmailMessage(`✗ Error: ${result.message}`);
-    }
-
-    setEmailLoading(false);
   };
 
   const groupedIngredients = groupIngredients(ingredientes, groupBy, planificacion, recetas);
@@ -158,13 +126,6 @@ export default function ShoppingList({ recetas }) {
             >
               <Printer size={20} />
               Imprimir
-            </button>
-            <button
-              onClick={() => setShowEmailModal(true)}
-              className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-medium flex items-center gap-2 transition-colors"
-            >
-              <Mail size={20} />
-              Enviar por Email
             </button>
           </div>
         </div>
@@ -260,75 +221,6 @@ export default function ShoppingList({ recetas }) {
           <p className="text-green-800 font-medium">
             Excelente! Has completado {checkedCount} de {totalIngredientes} ingredientes
           </p>
-        </div>
-      )}
-
-      {/* Modal de Email */}
-      {showEmailModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-lg shadow-xl max-w-md w-full">
-            <div className="flex items-center justify-between border-b border-gray-200 p-6">
-              <h3 className="text-xl font-bold text-gray-800">Enviar por Email</h3>
-              <button
-                onClick={() => {
-                  setShowEmailModal(false);
-                  setEmailMessage('');
-                  setEmailInput('');
-                }}
-                className="text-gray-500 hover:text-gray-700"
-              >
-                <X size={24} />
-              </button>
-            </div>
-
-            <div className="p-6 space-y-4">
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  Correo Electrónico
-                </label>
-                <input
-                  type="email"
-                  value={emailInput}
-                  onChange={(e) => setEmailInput(e.target.value)}
-                  placeholder="tu@email.com"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-                  disabled={emailLoading}
-                />
-              </div>
-
-              {emailMessage && (
-                <div className={`p-3 rounded-lg text-sm font-medium ${
-                  emailMessage.includes('✓')
-                    ? 'bg-green-50 text-green-700'
-                    : 'bg-red-50 text-red-700'
-                }`}>
-                  {emailMessage}
-                </div>
-              )}
-
-              <div className="flex gap-3">
-                <button
-                  onClick={handleSendEmail}
-                  disabled={emailLoading || !emailInput.trim()}
-                  className="flex-1 bg-green-600 hover:bg-green-700 disabled:bg-gray-400 text-white px-4 py-2 rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
-                >
-                  <Mail size={18} />
-                  {emailLoading ? 'Enviando...' : 'Enviar'}
-                </button>
-                <button
-                  onClick={() => {
-                    setShowEmailModal(false);
-                    setEmailMessage('');
-                    setEmailInput('');
-                  }}
-                  disabled={emailLoading}
-                  className="flex-1 bg-gray-300 hover:bg-gray-400 text-gray-800 px-4 py-2 rounded-lg font-medium transition-colors"
-                >
-                  Cancelar
-                </button>
-              </div>
-            </div>
-          </div>
         </div>
       )}
     </div>

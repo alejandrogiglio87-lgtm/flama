@@ -223,137 +223,140 @@ export default function WeeklyPlanner({ recetas }) {
       </div>
 
       <div className="grid lg:grid-cols-4 gap-6">
-        {/* Planificación de la semana */}
-        <div className="lg:col-span-3 space-y-3 w-full">
-          {DIAS.map((dia, idx) => {
-            const recetasDelDia = planificacion[dia] || [];
-            const ingredientesDelDia = getDayIngredients(dia);
-            const isExpanded = expandedDay === dia;
+        {/* Contenedor principal: Planificación + Ingredientes */}
+        <div className="lg:col-span-3 space-y-6">
+          {/* Planificación de la semana */}
+          <div className="space-y-3">
+            {DIAS.map((dia, idx) => {
+              const recetasDelDia = planificacion[dia] || [];
+              const ingredientesDelDia = getDayIngredients(dia);
+              const isExpanded = expandedDay === dia;
 
-            return (
-              <div key={dia} className="bg-white rounded-lg shadow-md overflow-hidden">
-                {/* Header del día */}
-                <button
-                  onClick={() => setExpandedDay(isExpanded ? null : dia)}
-                  className="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 px-6 py-4 flex items-center justify-between text-white transition-all"
-                >
-                  <div className="flex items-center gap-4">
-                    <h3 className="text-lg font-bold">{DIAS_DISPLAY[idx]}</h3>
-                    <span className="text-sm bg-white bg-opacity-20 px-3 py-1 rounded-full">
-                      {recetasDelDia.length} receta{recetasDelDia.length !== 1 ? 's' : ''}
-                    </span>
-                  </div>
-                  {isExpanded ? <ChevronUp size={24} /> : <ChevronDown size={24} />}
-                </button>
-
-                {/* Contenido expandible */}
-                {isExpanded && (
-                  <div className="p-6 space-y-4 bg-gray-50">
-                    {/* Recetas del día */}
-                    <div>
-                      <h4 className="font-semibold text-gray-800 mb-3">Recetas</h4>
-                      {recetasDelDia.length === 0 ? (
-                        <p className="text-gray-500 text-sm italic">Sin recetas programadas</p>
-                      ) : (
-                        <div className="space-y-2">
-                          {recetasDelDia.map((recipe, idx) => (
-                            <div
-                              key={idx}
-                              className="bg-white border border-gray-200 rounded-lg p-3 flex items-center justify-between hover:border-blue-300 transition-colors"
-                            >
-                              <div className="flex-1">
-                                <p className="font-medium text-gray-800">{recipe.nombre}</p>
-                                <div className="text-sm text-gray-600 space-y-1">
-                                  <p>{recipe.porciones} porción{recipe.porciones !== 1 ? 'es' : ''}</p>
-                                  {recipe.peso_porcion_g && recipe.peso_porcion_g > 0 ? (
-                                    <p className="text-blue-600 font-semibold">⚖️ Peso: {recipe.peso_porcion_g}g/porción × {recipe.porciones} = {recipe.peso_porcion_g * recipe.porciones}g total</p>
-                                  ) : (
-                                    recipe.peso_porcion_g !== undefined && recipe.peso_porcion_g !== null && (
-                                      <p className="text-gray-500 text-xs">Sin peso definido</p>
-                                    )
-                                  )}
-                                </div>
-                              </div>
-                              <button
-                                onClick={() => handleRemoveRecipe(dia, idx)}
-                                className="text-red-600 hover:text-red-700 p-2 transition-colors"
-                              >
-                                <Trash2 size={18} />
-                              </button>
-                            </div>
-                          ))}
-                        </div>
-                      )}
-                      <button
-                        onClick={() => {
-                          setDiaActual(dia);
-                          setShowCalculator(true);
-                        }}
-                        className="mt-3 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg text-sm font-medium transition-colors flex items-center justify-center gap-2"
-                      >
-                        <Plus size={16} />
-                        Agregar Receta
-                      </button>
+              return (
+                <div key={dia} className="bg-white rounded-lg shadow-md overflow-hidden">
+                  {/* Header del día */}
+                  <button
+                    onClick={() => setExpandedDay(isExpanded ? null : dia)}
+                    className="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 px-6 py-4 flex items-center justify-between text-white transition-all"
+                  >
+                    <div className="flex items-center gap-4">
+                      <h3 className="text-lg font-bold">{DIAS_DISPLAY[idx]}</h3>
+                      <span className="text-sm bg-white bg-opacity-20 px-3 py-1 rounded-full">
+                        {recetasDelDia.length} receta{recetasDelDia.length !== 1 ? 's' : ''}
+                      </span>
                     </div>
+                    {isExpanded ? <ChevronUp size={24} /> : <ChevronDown size={24} />}
+                  </button>
 
-                    {/* Divisor */}
-                    {recetasDelDia.length > 0 && <hr className="border-gray-200" />}
-
-                    {/* Ingredientes del día */}
-                    {recetasDelDia.length > 0 && (
+                  {/* Contenido expandible */}
+                  {isExpanded && (
+                    <div className="p-6 space-y-4 bg-gray-50">
+                      {/* Recetas del día */}
                       <div>
-                        <h4 className="font-semibold text-gray-800 mb-3">
-                          Ingredientes Totales ({Object.keys(ingredientesDelDia).length})
-                        </h4>
-                        <div className="bg-white rounded-lg p-3 max-h-48 overflow-y-auto">
-                          <div className="space-y-1">
-                            {Object.values(ingredientesDelDia).map((ing, idx) => (
-                              <div key={idx} className="flex justify-between text-sm">
-                                <span className="text-gray-700">{ing.nombre}</span>
-                                <span className="font-semibold text-blue-600">
-                                  {formatNumber(ing.cantidad_total)} {ing.unidad}
-                                </span>
+                        <h4 className="font-semibold text-gray-800 mb-3">Recetas</h4>
+                        {recetasDelDia.length === 0 ? (
+                          <p className="text-gray-500 text-sm italic">Sin recetas programadas</p>
+                        ) : (
+                          <div className="space-y-2">
+                            {recetasDelDia.map((recipe, idx) => (
+                              <div
+                                key={idx}
+                                className="bg-white border border-gray-200 rounded-lg p-3 flex items-center justify-between hover:border-blue-300 transition-colors"
+                              >
+                                <div className="flex-1">
+                                  <p className="font-medium text-gray-800">{recipe.nombre}</p>
+                                  <div className="text-sm text-gray-600 space-y-1">
+                                    <p>{recipe.porciones} porción{recipe.porciones !== 1 ? 'es' : ''}</p>
+                                    {recipe.peso_porcion_g && recipe.peso_porcion_g > 0 ? (
+                                      <p className="text-blue-600 font-semibold">⚖️ Peso: {recipe.peso_porcion_g}g/porción × {recipe.porciones} = {recipe.peso_porcion_g * recipe.porciones}g total</p>
+                                    ) : (
+                                      recipe.peso_porcion_g !== undefined && recipe.peso_porcion_g !== null && (
+                                        <p className="text-gray-500 text-xs">Sin peso definido</p>
+                                      )
+                                    )}
+                                  </div>
+                                </div>
+                                <button
+                                  onClick={() => handleRemoveRecipe(dia, idx)}
+                                  className="text-red-600 hover:text-red-700 p-2 transition-colors"
+                                >
+                                  <Trash2 size={18} />
+                                </button>
                               </div>
                             ))}
                           </div>
-                        </div>
+                        )}
+                        <button
+                          onClick={() => {
+                            setDiaActual(dia);
+                            setShowCalculator(true);
+                          }}
+                          className="mt-3 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg text-sm font-medium transition-colors flex items-center justify-center gap-2"
+                        >
+                          <Plus size={16} />
+                          Agregar Receta
+                        </button>
                       </div>
-                    )}
 
-                    {/* Botones */}
-                    {recetasDelDia.length > 0 && (
-                      <button
-                        onClick={() => handleClearDay(dia)}
-                        className="w-full bg-red-100 hover:bg-red-200 text-red-700 py-2 rounded-lg text-sm font-medium transition-colors"
-                      >
-                        Limpiar {DIAS_DISPLAY[idx]}
-                      </button>
-                    )}
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </div>
+                      {/* Divisor */}
+                      {recetasDelDia.length > 0 && <hr className="border-gray-200" />}
 
-        {/* Ingredientes Totales de la Semana - Centro */}
-        <div className="lg:col-span-3 bg-white rounded-lg shadow-md p-6">
-          <h3 className="text-xl font-bold text-gray-800 mb-4">Ingredientes Totales de la Semana</h3>
-          <div className="space-y-2 max-h-64 overflow-y-auto">
-            {(() => {
-              const weeklyIngredients = consolidateWeeklyIngredients(planificacion, recetas);
-              if (Object.keys(weeklyIngredients).length === 0) {
-                return <p className="text-gray-500 text-sm italic">Sin ingredientes planificados</p>;
-              }
-              return Object.values(weeklyIngredients).map((ing, idx) => (
-                <div key={idx} className="flex justify-between items-center pb-2 border-b border-gray-100 last:border-b-0">
-                  <span className="text-sm text-gray-700 font-medium">{ing.nombre}</span>
-                  <span className="text-sm font-semibold text-green-600">
-                    {formatNumber(ing.cantidad_total)} {ing.unidad}
-                  </span>
+                      {/* Ingredientes del día */}
+                      {recetasDelDia.length > 0 && (
+                        <div>
+                          <h4 className="font-semibold text-gray-800 mb-3">
+                            Ingredientes Totales ({Object.keys(ingredientesDelDia).length})
+                          </h4>
+                          <div className="bg-white rounded-lg p-3 max-h-48 overflow-y-auto">
+                            <div className="space-y-1">
+                              {Object.values(ingredientesDelDia).map((ing, idx) => (
+                                <div key={idx} className="flex justify-between text-sm">
+                                  <span className="text-gray-700">{ing.nombre}</span>
+                                  <span className="font-semibold text-blue-600">
+                                    {formatNumber(ing.cantidad_total)} {ing.unidad}
+                                  </span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Botones */}
+                      {recetasDelDia.length > 0 && (
+                        <button
+                          onClick={() => handleClearDay(dia)}
+                          className="w-full bg-red-100 hover:bg-red-200 text-red-700 py-2 rounded-lg text-sm font-medium transition-colors"
+                        >
+                          Limpiar {DIAS_DISPLAY[idx]}
+                        </button>
+                      )}
+                    </div>
+                  )}
                 </div>
-              ));
-            })()}
+              );
+            })}
+          </div>
+
+          {/* Ingredientes Totales de la Semana - Debajo de días */}
+          <div className="bg-white rounded-lg shadow-md p-6">
+            <h3 className="text-xl font-bold text-gray-800 mb-4">Ingredientes Totales de la Semana</h3>
+            <div className="space-y-2 max-h-64 overflow-y-auto">
+              {(() => {
+                const weeklyIngredients = consolidateWeeklyIngredients(planificacion, recetas);
+                if (Object.keys(weeklyIngredients).length === 0) {
+                  return <p className="text-gray-500 text-sm italic">Sin ingredientes planificados</p>;
+                }
+                return Object.values(weeklyIngredients).map((ing, idx) => (
+                  <div key={idx} className="flex justify-between items-center pb-2 border-b border-gray-100 last:border-b-0">
+                    <span className="text-sm text-gray-700 font-medium">{ing.nombre}</span>
+                    <span className="text-sm font-semibold text-green-600">
+                      {formatNumber(ing.cantidad_total)} {ing.unidad}
+                    </span>
+                  </div>
+                ));
+              })()}
+            </div>
           </div>
         </div>
 

@@ -126,7 +126,7 @@ function App() {
             {/* Logo en footer */}
             <div className="flex items-start">
               <img
-                src="/logo2.jpg"
+                src="/footer-logo.jpg"
                 alt="ANEP Logo"
                 className="h-20 w-20 object-contain rounded-lg"
               />

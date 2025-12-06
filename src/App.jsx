@@ -56,7 +56,7 @@ function App() {
         backgroundImage: `url('/food-pattern.jpg')`,
         backgroundRepeat: 'repeat',
         backgroundSize: 'auto',
-        opacity: 0.15,
+        opacity: 0.35,
         zIndex: 0
       }}></div>
 

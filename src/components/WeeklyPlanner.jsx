@@ -265,8 +265,12 @@ export default function WeeklyPlanner({ recetas }) {
                                 <p className="font-medium text-gray-800">{recipe.nombre}</p>
                                 <div className="text-sm text-gray-600 space-y-1">
                                   <p>{recipe.porciones} porción{recipe.porciones !== 1 ? 'es' : ''}</p>
-                                  {recipe.peso_porcion_g > 0 && (
-                                    <p className="text-blue-600 font-semibold">⚖️ {recipe.peso_porcion_g}g por porción</p>
+                                  {recipe.peso_porcion_g && recipe.peso_porcion_g > 0 ? (
+                                    <p className="text-blue-600 font-semibold">⚖️ {recipe.peso_porcion_g}g × {recipe.porciones} = {recipe.peso_porcion_g * recipe.porciones}g</p>
+                                  ) : (
+                                    recipe.peso_porcion_g !== undefined && recipe.peso_porcion_g !== null && (
+                                      <p className="text-gray-500 text-xs">Sin peso definido</p>
+                                    )
                                   )}
                                 </div>
                               </div>

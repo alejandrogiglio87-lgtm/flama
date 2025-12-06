@@ -133,6 +133,53 @@ export function generateWeeklyPlanExcel(planificacion, recetas) {
   ws2['!cols'] = [{ wch: 35 }, { wch: 15 }, { wch: 12 }];
   XLSX.utils.book_append_sheet(wb, ws2, 'Ingredientes por Día');
 
+  // Hoja 3: Lista consolidada de toda la semana
+  const weeklyListData = [
+    ['LISTA DE COMPRAS - SEMANA COMPLETA'],
+    ['Fecha:', new Date().toLocaleDateString('es-AR')],
+    [],
+    ['Ingrediente', 'Cantidad Total', 'Unidad']
+  ];
+
+  const ingredientesSemanales = {};
+
+  dias.forEach(dia => {
+    const recetasDelDia = planificacion[dia] || [];
+    recetasDelDia.forEach(r => {
+      const receta = recetas.find(rec => rec.id === r.recetaId);
+      if (receta) {
+        receta.ingredientes.forEach(ing => {
+          const key = `${ing.nombre}|${ing.unidad}`;
+          if (!ingredientesSemanales[key]) {
+            ingredientesSemanales[key] = {
+              nombre: ing.nombre,
+              cantidad: 0,
+              unidad: ing.unidad
+            };
+          }
+          ingredientesSemanales[key].cantidad += ing.cantidad * r.porciones;
+        });
+      }
+    });
+  });
+
+  // Ordenar ingredientes alfabéticamente
+  const ingredientesOrdenados = Object.values(ingredientesSemanales).sort((a, b) =>
+    a.nombre.localeCompare(b.nombre, 'es')
+  );
+
+  ingredientesOrdenados.forEach(ing => {
+    weeklyListData.push([
+      ing.nombre,
+      formatNumber(ing.cantidad),
+      ing.unidad || ''
+    ]);
+  });
+
+  const ws3 = XLSX.utils.aoa_to_sheet(weeklyListData);
+  ws3['!cols'] = [{ wch: 35 }, { wch: 15 }, { wch: 12 }];
+  XLSX.utils.book_append_sheet(wb, ws3, 'Lista Compras Semana');
+
   return wb;
 }
 

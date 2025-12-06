@@ -1,8 +1,225 @@
 import jsPDF from 'jspdf';
-import { formatNumber } from './recipeCalculations.js';
+import { formatNumber, consolidateIngredients } from './recipeCalculations.js';
 
 /**
- * Genera un PDF con la lista de compras
+ * Genera un PDF con la planificación semanal completa
+ * @param {Object} planificacion - Planificación semanal
+ * @param {Array} recetas - Array de todas las recetas
+ * @returns {Blob} El PDF generado
+ */
+export function generateWeeklyPlanPDF(planificacion, recetas) {
+  const doc = new jsPDF();
+  const pageWidth = doc.internal.pageSize.getWidth();
+  const dias = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo'];
+  const diasDisplay = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
+  const cellHeight = 6;
+  const margin = 10;
+  const pageHeight = doc.internal.pageSize.getHeight();
+  const bottomMargin = 10;
+  const maxY = pageHeight - bottomMargin;
+
+  // Título
+  doc.setFontSize(18);
+  doc.setFont(undefined, 'bold');
+  doc.text('Planificador Semanal - Recetario PAE', margin, 12);
+
+  // Fecha
+  doc.setFontSize(10);
+  doc.setFont(undefined, 'normal');
+  const fechaActual = new Date().toLocaleDateString('es-AR');
+  doc.text(`Generado: ${fechaActual}`, margin, 18);
+
+  let currentY = 25;
+
+  // ========== SECCIÓN 1: RECETAS POR DÍA ==========
+  doc.setFontSize(14);
+  doc.setFont(undefined, 'bold');
+  doc.text('1. RECETAS POR DÍA', margin, currentY);
+  currentY += 8;
+
+  dias.forEach((dia, idx) => {
+    if (currentY > maxY - 15) {
+      doc.addPage();
+      currentY = margin;
+    }
+
+    // Día
+    doc.setFontSize(11);
+    doc.setFont(undefined, 'bold');
+    doc.setTextColor(0, 86, 179); // Azul
+    doc.text(`${diasDisplay[idx]}`, margin, currentY);
+    currentY += 6;
+
+    const recetasDelDia = planificacion[dia] || [];
+    if (recetasDelDia.length === 0) {
+      doc.setFontSize(10);
+      doc.setFont(undefined, 'normal');
+      doc.setTextColor(150, 150, 150);
+      doc.text('Sin recetas programadas', margin + 5, currentY);
+      currentY += 5;
+    } else {
+      doc.setFontSize(10);
+      doc.setFont(undefined, 'normal');
+      doc.setTextColor(0, 0, 0);
+      recetasDelDia.forEach(r => {
+        doc.text(`• ${r.nombre} (${r.porciones} porciones)`, margin + 5, currentY);
+        currentY += 5;
+      });
+    }
+    currentY += 2;
+  });
+
+  // ========== SECCIÓN 2: INGREDIENTES POR DÍA ==========
+  doc.addPage();
+  currentY = margin;
+
+  doc.setFontSize(14);
+  doc.setFont(undefined, 'bold');
+  doc.setTextColor(0, 0, 0);
+  doc.text('2. INGREDIENTES POR DÍA', margin, currentY);
+  currentY += 8;
+
+  dias.forEach((dia, idx) => {
+    if (currentY > maxY - 20) {
+      doc.addPage();
+      currentY = margin;
+    }
+
+    // Encabezado de día
+    doc.setFontSize(11);
+    doc.setFont(undefined, 'bold');
+    doc.setTextColor(0, 86, 179);
+    doc.text(`${diasDisplay[idx]}`, margin, currentY);
+    currentY += 6;
+
+    const recetasDelDia = planificacion[dia] || [];
+    const ingredientesDelDia = consolidateIngredients(recetasDelDia, recetas);
+
+    if (Object.keys(ingredientesDelDia).length === 0) {
+      doc.setFontSize(10);
+      doc.setFont(undefined, 'normal');
+      doc.setTextColor(150, 150, 150);
+      doc.text('Sin ingredientes', margin + 5, currentY);
+      currentY += 4;
+    } else {
+      // Encabezados de tabla
+      doc.setFontSize(9);
+      doc.setFont(undefined, 'bold');
+      doc.setTextColor(0, 0, 0);
+      doc.text('Ingrediente', margin + 2, currentY);
+      doc.text('Cantidad', 130, currentY);
+      doc.text('Unidad', 160, currentY);
+
+      doc.setDrawColor(150);
+      doc.line(margin, currentY + 1, pageWidth - margin, currentY + 1);
+      currentY += 5;
+
+      // Ingredientes
+      doc.setFontSize(9);
+      doc.setFont(undefined, 'normal');
+      Object.entries(ingredientesDelDia).forEach(([key, ing], idx2) => {
+        if (idx2 % 2 === 0) {
+          doc.setFillColor(245, 245, 245);
+          doc.rect(margin, currentY - 3, pageWidth - 2 * margin, cellHeight, 'F');
+        }
+
+        const nombreTruncado = ing.nombre.length > 50
+          ? ing.nombre.substring(0, 50) + '...'
+          : ing.nombre;
+
+        doc.text(nombreTruncado, margin + 2, currentY);
+        doc.text(formatNumber(ing.cantidad_total), 130, currentY);
+        doc.text(ing.unidad || '', 160, currentY);
+        currentY += cellHeight;
+      });
+    }
+    currentY += 3;
+  });
+
+  // ========== SECCIÓN 3: LISTA CONSOLIDADA SEMANAL ==========
+  doc.addPage();
+  currentY = margin;
+
+  doc.setFontSize(14);
+  doc.setFont(undefined, 'bold');
+  doc.text('3. LISTA DE COMPRAS - SEMANA COMPLETA', margin, currentY);
+  currentY += 8;
+
+  // Consolidar ingredientes de toda la semana
+  const ingredientesSemanales = {};
+  dias.forEach(dia => {
+    const recetasDelDia = planificacion[dia] || [];
+    const ingredientes = consolidateIngredients(recetasDelDia, recetas);
+    Object.entries(ingredientes).forEach(([key, ing]) => {
+      if (!ingredientesSemanales[key]) {
+        ingredientesSemanales[key] = {
+          nombre: ing.nombre,
+          cantidad_total: 0,
+          unidad: ing.unidad
+        };
+      }
+      ingredientesSemanales[key].cantidad_total += ing.cantidad_total;
+    });
+  });
+
+  // Ordenar alfabéticamente
+  const ingredientesOrdenados = Object.values(ingredientesSemanales).sort((a, b) =>
+    a.nombre.localeCompare(b.nombre, 'es')
+  );
+
+  // Encabezados
+  doc.setFontSize(10);
+  doc.setFont(undefined, 'bold');
+  doc.text('Ingrediente', margin + 2, currentY);
+  doc.text('Cantidad Total', 130, currentY);
+  doc.text('Unidad', 160, currentY);
+
+  doc.setDrawColor(100);
+  doc.line(margin, currentY + 1, pageWidth - margin, currentY + 1);
+  currentY += 6;
+
+  // Ingredientes
+  doc.setFontSize(10);
+  doc.setFont(undefined, 'normal');
+  ingredientesOrdenados.forEach((ing, idx) => {
+    if (currentY > maxY) {
+      doc.addPage();
+      currentY = margin;
+
+      // Repetir encabezados
+      doc.setFont(undefined, 'bold');
+      doc.setFontSize(10);
+      doc.text('Ingrediente', margin + 2, currentY);
+      doc.text('Cantidad Total', 130, currentY);
+      doc.text('Unidad', 160, currentY);
+
+      doc.setDrawColor(100);
+      doc.line(margin, currentY + 1, pageWidth - margin, currentY + 1);
+      currentY += 6;
+      doc.setFont(undefined, 'normal');
+    }
+
+    if (idx % 2 === 0) {
+      doc.setFillColor(240, 240, 240);
+      doc.rect(margin, currentY - 4, pageWidth - 2 * margin, cellHeight, 'F');
+    }
+
+    const nombreTruncado = ing.nombre.length > 60
+      ? ing.nombre.substring(0, 60) + '...'
+      : ing.nombre;
+
+    doc.text(nombreTruncado, margin + 2, currentY);
+    doc.text(formatNumber(ing.cantidad_total), 130, currentY);
+    doc.text(ing.unidad || '', 160, currentY);
+
+    currentY += cellHeight;
+  });
+
+  return doc.output('blob');
+}
+
+/**
+ * Genera un PDF con la lista de compras (versión legacy)
  * @param {Array} ingredientes - Array de ingredientes consolidados
  * @param {Object} planificacion - Objeto con la planificación (para referencias)
  * @returns {Blob} El PDF generado

@@ -1,31 +1,48 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
-  <!-- Fondo blanco -->
-  <rect width="200" height="200" fill="#ffffff"/>
+  <defs>
+    <linearGradient id="hatGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f0f0f0;stop-opacity:1" />
+    </linearGradient>
+  </defs>
 
-  <!-- Gorro de cocinero (Chef Hat) -->
+  <!-- Fondo con degradado sutil -->
+  <rect width="200" height="200" fill="#fafafa"/>
 
-  <!-- Banda inferior (white band) -->
-  <ellipse cx="100" cy="140" rx="70" ry="18" fill="#ffffff" stroke="#cccccc" stroke-width="1.5"/>
+  <!-- GORRO DE COCINERO (Chef Hat) - GRANDE Y AUDAZ -->
 
-  <!-- Cuerpo principal del gorro (blanco) -->
-  <path d="M 35 140 Q 35 80 100 50 Q 165 80 165 140" fill="#ffffff" stroke="#333333" stroke-width="2"/>
+  <!-- Banda inferior gruesa (blanco puro) -->
+  <rect x="30" y="135" width="140" height="28" fill="#ffffff" stroke="#000000" stroke-width="2.5" rx="0"/>
 
-  <!-- Volantes/ondas en la parte superior -->
-  <path d="M 50 90 Q 50 60 100 40 Q 150 60 150 90" fill="#f5f5f5" stroke="#cccccc" stroke-width="1"/>
+  <!-- Sombra bajo la banda -->
+  <ellipse cx="100" cy="165" rx="70" ry="12" fill="#00000020"/>
 
-  <!-- Detalle de arruga/textura central -->
-  <path d="M 100 50 Q 95 65 100 85 Q 105 65 100 50" fill="#eeeeee" opacity="0.6"/>
+  <!-- Cuerpo principal del gorro - MÁS GRANDE -->
+  <path d="M 40 135 Q 40 60 100 25 Q 160 60 160 135" fill="url(#hatGradient)" stroke="#000000" stroke-width="3"/>
 
-  <!-- Sombra interna para profundidad -->
-  <path d="M 50 110 Q 50 95 100 75 Q 150 95 150 110" fill="#f0f0f0" opacity="0.4"/>
+  <!-- Volante superior - PROMINENTE -->
+  <path d="M 50 75 Q 50 45 100 30 Q 150 45 150 75" fill="#ffffff" stroke="#000000" stroke-width="2.5"/>
 
-  <!-- Botón superior del gorro (decorativo) -->
-  <circle cx="100" cy="45" r="6" fill="#ffcc00" stroke="#ffaa00" stroke-width="1"/>
+  <!-- Divisiones de volantes para dar profundidad -->
+  <path d="M 70 65 Q 70 50 100 40 Q 130 50 130 65" fill="#f5f5f5" stroke="#333333" stroke-width="1.5"/>
+  <path d="M 85 58 Q 85 48 100 43 Q 115 48 115 58" fill="#eeeeee" stroke="#666666" stroke-width="1"/>
 
-  <!-- Brillo/luz en el gorro -->
-  <ellipse cx="85" cy="70" rx="12" ry="25" fill="#ffffff" opacity="0.4"/>
+  <!-- Línea central para dar forma -->
+  <path d="M 100 30 L 100 135" stroke="#cccccc" stroke-width="1.5" opacity="0.6"/>
 
-  <!-- Banda decorativa con patrón (rojo) -->
-  <ellipse cx="100" cy="135" rx="68" ry="6" fill="#dc143c"/>
-  <ellipse cx="100" cy="138" rx="68" ry="4" fill="#ff4444" opacity="0.8"/>
+  <!-- Botón superior - DORADO Y VISIBLE -->
+  <circle cx="100" cy="25" r="8" fill="#FFD700" stroke="#000000" stroke-width="2"/>
+  <circle cx="100" cy="25" r="5" fill="#FFF8DC" opacity="0.7"/>
+
+  <!-- Banda roja decorativa - AUDAZ -->
+  <rect x="38" y="142" width="124" height="14" fill="#DC143C" stroke="#8B0000" stroke-width="1.5" rx="2"/>
+  <rect x="38" y="149" width="124" height="5" fill="#FF6B6B" opacity="0.8" rx="1"/>
+
+  <!-- Puntos blancos en la banda roja para decoración -->
+  <circle cx="55" cy="149" r="2" fill="#ffffff" opacity="0.9"/>
+  <circle cx="75" cy="149" r="2" fill="#ffffff" opacity="0.9"/>
+  <circle cx="95" cy="149" r="2" fill="#ffffff" opacity="0.9"/>
+  <circle cx="115" cy="149" r="2" fill="#ffffff" opacity="0.9"/>
+  <circle cx="135" cy="149" r="2" fill="#ffffff" opacity="0.9"/>
+  <circle cx="155" cy="149" r="2" fill="#ffffff" opacity="0.9"/>
 </svg>

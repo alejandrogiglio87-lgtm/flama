@@ -3,7 +3,7 @@ import { Plus, Trash2, Save, Download, Upload, ChevronDown, ChevronUp, Mail, X, 
 import RecipeCalculator from './RecipeCalculator';
 import { savePlanification, loadPlanification, clearPlanification, createEmptyPlanification, savePlan, getSavedPlans, loadPlan, deletePlan } from '../utils/storageManager';
 import { consolidateWeeklyIngredients, consolidateIngredients, formatNumber } from '../utils/recipeCalculations';
-import { downloadShoppingListPDF, printShoppingList, getShoppingListPDFBlob } from '../utils/pdfGenerator';
+import { downloadShoppingListPDF, printShoppingList, getShoppingListPDFBlob, generateWeeklyPlanPDF } from '../utils/pdfGenerator';
 import { downloadWeeklyPlanExcel, generateWeeklyPlanExcelBlob } from '../utils/excelGenerator';
 import { sendShoppingListEmail } from '../utils/emailService';
 
@@ -106,8 +106,15 @@ export default function WeeklyPlanner({ recetas }) {
   };
 
   const handleExportPDF = () => {
-    const ingredientes = consolidateWeeklyIngredients(planificacion, recetas);
-    downloadShoppingListPDF(ingredientes, planificacion);
+    const pdfBlob = generateWeeklyPlanPDF(planificacion, recetas);
+    const url = window.URL.createObjectURL(pdfBlob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `planificacion-semanal-${new Date().toISOString().split('T')[0]}.pdf`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    window.URL.revokeObjectURL(url);
   };
 
   const handleExportExcel = () => {
@@ -137,7 +144,7 @@ export default function WeeklyPlanner({ recetas }) {
 
       // Generar PDF si está seleccionado
       if (attachPDF) {
-        pdfBlob = getShoppingListPDFBlob(ingredientes, planificacion);
+        pdfBlob = generateWeeklyPlanPDF(planificacion, recetas);
       }
 
       // Generar Excel si está seleccionado

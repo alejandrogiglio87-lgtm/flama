@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
-import { UtensilsCrossed, Calendar, ShoppingCart } from 'lucide-react';
+import { UtensilsCrossed, Calendar } from 'lucide-react';
 import RecipeCalculator from './components/RecipeCalculator';
 import WeeklyPlanner from './components/WeeklyPlanner';
-import ShoppingList from './components/ShoppingList';
 import './App.css';
 
 function App() {
@@ -42,8 +41,7 @@ function App() {
 
   const tabs = [
     { id: 'calculator', label: 'Calculadora', icon: UtensilsCrossed },
-    { id: 'planner', label: 'Planificador', icon: Calendar },
-    { id: 'shopping', label: 'Lista de Compras', icon: ShoppingCart }
+    { id: 'planner', label: 'Planificador', icon: Calendar }
   ];
 
   return (
@@ -129,7 +127,6 @@ function App() {
       <main className="flex-1 max-w-7xl mx-auto px-4 py-8 w-full">
         {activeTab === 'calculator' && <RecipeCalculator recetas={recetas} />}
         {activeTab === 'planner' && <WeeklyPlanner recetas={recetas} />}
-        {activeTab === 'shopping' && <ShoppingList recetas={recetas} />}
       </main>
 
       {/* Footer Profesional */}

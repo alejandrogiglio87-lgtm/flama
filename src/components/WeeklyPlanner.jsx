@@ -153,13 +153,6 @@ export default function WeeklyPlanner({ recetas }) {
           </div>
           <div className="flex flex-wrap gap-2">
             <button
-              onClick={() => setShowCalculator(true)}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium flex items-center gap-2 transition-colors"
-            >
-              <Plus size={20} />
-              Agregar Receta
-            </button>
-            <button
               onClick={() => setShowSavePlan(true)}
               className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-medium flex items-center gap-2 transition-colors"
             >

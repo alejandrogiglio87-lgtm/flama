@@ -124,11 +124,11 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 py-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
             {/* Logo en footer */}
-            <div className="flex items-start">
+            <div className="flex items-start md:col-span-1">
               <img
                 src="/footer-logo.jpg"
                 alt="ANEP Logo"
-                className="h-20 w-20 object-contain rounded-lg"
+                className="h-40 w-40 object-contain rounded-lg"
               />
             </div>
 

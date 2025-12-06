@@ -37,6 +37,17 @@ export function generateShoppingListExcel(ingredientes, planificacion = null) {
 }
 
 /**
+ * Genera un Blob Excel para la lista de compras
+ * @param {Array} ingredientes - Array de ingredientes consolidados
+ * @param {Object} planificacion - Objeto con la planificación (opcional)
+ * @returns {Blob} El archivo Excel como blob
+ */
+export function generateShoppingListExcelBlob(ingredientes, planificacion = null) {
+  const wb = generateShoppingListExcel(ingredientes, planificacion);
+  return XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
+}
+
+/**
  * Descarga el Excel de la lista de compras
  * @param {Array} ingredientes - Array de ingredientes consolidados
  * @param {Object} planificacion - Objeto con la planificación (opcional)
@@ -123,6 +134,17 @@ export function generateWeeklyPlanExcel(planificacion, recetas) {
   XLSX.utils.book_append_sheet(wb, ws2, 'Ingredientes por Día');
 
   return wb;
+}
+
+/**
+ * Genera un Blob Excel para la planificación semanal
+ * @param {Object} planificacion - Planificación semanal
+ * @param {Array} recetas - Array de todas las recetas
+ * @returns {Blob} El archivo Excel como blob
+ */
+export function generateWeeklyPlanExcelBlob(planificacion, recetas) {
+  const wb = generateWeeklyPlanExcel(planificacion, recetas);
+  return XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
 }
 
 /**

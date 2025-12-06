@@ -3,8 +3,8 @@ import { Plus, Trash2, Save, Download, Upload, ChevronDown, ChevronUp, Mail, X, 
 import RecipeCalculator from './RecipeCalculator';
 import { savePlanification, loadPlanification, clearPlanification, createEmptyPlanification, savePlan, getSavedPlans, loadPlan, deletePlan } from '../utils/storageManager';
 import { consolidateWeeklyIngredients, consolidateIngredients, formatNumber } from '../utils/recipeCalculations';
-import { downloadShoppingListPDF, printShoppingList } from '../utils/pdfGenerator';
-import { downloadWeeklyPlanExcel } from '../utils/excelGenerator';
+import { downloadShoppingListPDF, printShoppingList, getShoppingListPDFBlob } from '../utils/pdfGenerator';
+import { downloadWeeklyPlanExcel, generateWeeklyPlanExcelBlob } from '../utils/excelGenerator';
 import { sendShoppingListEmail } from '../utils/emailService';
 
 const DIAS = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo'];
@@ -137,15 +137,13 @@ export default function WeeklyPlanner({ recetas }) {
 
       // Generar PDF si está seleccionado
       if (attachPDF) {
-        handleExportPDF();
-        // Nota: La generación de PDF es asincrónica, pero downloadShoppingListPDF no retorna un blob
-        // Por ahora solo se envía HTML
+        pdfBlob = getShoppingListPDFBlob(ingredientes, planificacion);
       }
 
       // Generar Excel si está seleccionado
       if (attachExcel) {
-        handleExportExcel();
-        // Nota: Similar al PDF, downloadWeeklyPlanExcel no retorna un blob
+        const excelArrayBuffer = generateWeeklyPlanExcelBlob(planificacion, recetas);
+        excelBlob = new Blob([excelArrayBuffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
       }
 
       const result = await sendShoppingListEmail(emailInput, groupedIngredients, 'Semana Completa', pdfBlob, excelBlob);

@@ -90,6 +90,16 @@ export function generateShoppingListPDF(ingredientes, planificacion = null) {
 }
 
 /**
+ * Obtiene el Blob PDF de la lista de compras (para email)
+ * @param {Array} ingredientes - Array de ingredientes consolidados
+ * @param {Object} planificacion - Objeto con la planificación (opcional)
+ * @returns {Blob} El blob PDF
+ */
+export function getShoppingListPDFBlob(ingredientes, planificacion = null) {
+  return generateShoppingListPDF(ingredientes, planificacion);
+}
+
+/**
  * Descarga el PDF de la lista de compras
  * @param {Array} ingredientes - Array de ingredientes consolidados
  * @param {Object} planificacion - Objeto con la planificación (opcional)

@@ -20,28 +20,38 @@ try {
  * @returns {string} HTML para el email
  */
 function generateShoppingListHTML(groupedIngredients, groupBy) {
-  let html = '<h2>Lista de Compras - Recetario PAE</h2>';
-  html += '<p>Agrupado por: <strong>' + groupBy + '</strong></p>';
-  html += '<hr>';
+  let html = '';
+
+  // Usar estilos inline para mejor compatibilidad con clientes de email
+  html += '<div style="font-family: Arial, sans-serif; max-width: 600px;">';
+  html += '<h2 style="color: #333; border-bottom: 2px solid #007bff; padding-bottom: 10px;">Lista de Compras - Recetario PAE</h2>';
+  html += '<p style="color: #666;">Agrupado por: <strong>' + groupBy + '</strong></p>';
 
   Object.entries(groupedIngredients).forEach(([group, items]) => {
-    html += '<h3>' + group + '</h3>';
-    html += '<table border="1" cellpadding="10">';
-    html += '<tr><th>Ingrediente</th><th>Cantidad</th><th>Unidad</th></tr>';
+    html += '<h3 style="color: #0056b3; margin-top: 20px;">' + group + '</h3>';
+    html += '<table style="width: 100%; border-collapse: collapse; margin: 10px 0;">';
+    html += '<thead><tr style="background-color: #e7f3ff;">';
+    html += '<th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Ingrediente</th>';
+    html += '<th style="border: 1px solid #ddd; padding: 8px; text-align: center;">Cantidad</th>';
+    html += '<th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Unidad</th>';
+    html += '</tr></thead>';
+    html += '<tbody>';
 
-    items.forEach((ing) => {
-      html += '<tr>';
-      html += '<td>' + ing.nombre + '</td>';
-      html += '<td>' + formatNumberEmail(ing.cantidad_total) + '</td>';
-      html += '<td>' + (ing.unidad || '') + '</td>';
+    items.forEach((ing, idx) => {
+      const bgColor = idx % 2 === 0 ? '#f9f9f9' : '#ffffff';
+      html += '<tr style="background-color: ' + bgColor + ';">';
+      html += '<td style="border: 1px solid #ddd; padding: 8px;">' + ing.nombre + '</td>';
+      html += '<td style="border: 1px solid #ddd; padding: 8px; text-align: center;">' + formatNumberEmail(ing.cantidad_total) + '</td>';
+      html += '<td style="border: 1px solid #ddd; padding: 8px;">' + (ing.unidad || '') + '</td>';
       html += '</tr>';
     });
 
-    html += '</table>';
+    html += '</tbody></table>';
   });
 
-  html += '<hr>';
+  html += '<hr style="border: none; border-top: 1px solid #ddd; margin: 20px 0;">';
   html += '<p style="font-size: 12px; color: #999;">Generado con Recetario PAE • ' + new Date().toLocaleDateString('es-AR') + '</p>';
+  html += '</div>';
 
   return html;
 }
@@ -78,8 +88,8 @@ export async function sendShoppingListEmail(recipientEmail, groupedIngredients, 
     const templateParams = {
       to_email: recipientEmail,
       from_name: 'Recetario PAE',
-      subject: `Planificacion Semanal - Recetario PAE`,
-      message_html: htmlContent
+      subject: 'Planificacion Semanal - Recetario PAE',
+      message_html: htmlContent.trim()
     };
 
     // Agregar archivos adjuntos si existen

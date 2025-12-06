@@ -223,7 +223,7 @@ export default function WeeklyPlanner({ recetas }) {
 
       <div className="grid lg:grid-cols-4 gap-6">
         {/* Planificación de la semana */}
-        <div className="lg:col-span-3 space-y-3">
+        <div className="lg:col-span-3 space-y-3 w-full">
           {DIAS.map((dia, idx) => {
             const recetasDelDia = planificacion[dia] || [];
             const ingredientesDelDia = getDayIngredients(dia);
@@ -329,7 +329,7 @@ export default function WeeklyPlanner({ recetas }) {
         {/* Sidebar: Planes guardados y resumen */}
         <div className="space-y-6">
           {/* Resumen semanal */}
-          <div className="bg-white rounded-lg shadow-md p-6 sticky top-[280px]">
+          <div className="bg-white rounded-lg shadow-md p-6 sticky top-24 z-10">
             <h3 className="text-xl font-bold text-gray-800 mb-4">Resumen Semanal</h3>
             <div className="space-y-3">
               {DIAS.map((dia, idx) => (

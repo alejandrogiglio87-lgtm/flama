@@ -173,8 +173,8 @@ export default function RecipeCalculator({ recetas, onAddToPlanner = null }) {
             <div className="flex items-center gap-4">
               <input
                 type="number"
-                min="0.5"
-                step="0.5"
+                min="1"
+                step="1"
                 value={porciones}
                 onChange={handlePortionesChange}
                 className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg"

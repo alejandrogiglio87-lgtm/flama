@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu } from 'lucide-react';
+import { UtensilsCrossed, Calendar, ShoppingCart } from 'lucide-react';
 import RecipeCalculator from './components/RecipeCalculator';
 import WeeklyPlanner from './components/WeeklyPlanner';
 import ShoppingList from './components/ShoppingList';
@@ -26,77 +26,106 @@ function App() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-gray-50">
+      <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
         <div className="text-center">
-          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mb-4"></div>
-          <p className="text-gray-600">Cargando recetario...</p>
+          <div className="inline-block animate-spin rounded-full h-16 w-16 border-4 border-blue-200 border-t-blue-600 mb-6"></div>
+          <p className="text-gray-700 text-lg font-medium">Cargando recetario...</p>
         </div>
       </div>
     );
   }
 
+  const tabs = [
+    { id: 'calculator', label: 'Calculadora', icon: UtensilsCrossed },
+    { id: 'planner', label: 'Planificador', icon: Calendar },
+    { id: 'shopping', label: 'Lista de Compras', icon: ShoppingCart }
+  ];
+
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <header className="bg-blue-600 text-white shadow-lg">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50 flex flex-col">
+      {/* Header Profesional */}
+      <header className="bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-800 text-white shadow-2xl sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 py-6">
-          <div className="flex items-center gap-3">
-            <Menu size={32} />
-            <h1 className="text-3xl font-bold">Recetario PAE</h1>
+          <div className="flex items-center gap-4 mb-4">
+            {/* Logo */}
+            <div className="flex-shrink-0">
+              <img
+                src="/logo.jpg"
+                alt="Logo"
+                className="h-16 w-16 rounded-lg shadow-lg object-contain bg-white p-2"
+              />
+            </div>
+            {/* Título */}
+            <div>
+              <h1 className="text-4xl font-bold tracking-tight">Recetario PAE</h1>
+              <p className="text-blue-100 text-sm mt-1">Planificación Inteligente de Menús Escolares</p>
+            </div>
           </div>
-          <p className="text-blue-100 mt-2">Calcula ingredientes, planifica tu semana y genera listas de compras</p>
+          <p className="text-blue-100 text-sm">Calcula ingredientes, planifica tu semana y genera listas de compras automáticas</p>
         </div>
       </header>
 
-      {/* Navigation Tabs */}
-      <nav className="bg-white border-b border-gray-200 shadow-sm sticky top-0 z-50">
+      {/* Navigation Tabs - Mejorado */}
+      <nav className="bg-white border-b border-gray-200 shadow-sm sticky top-[104px] z-40">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex gap-0">
-            <button
-              onClick={() => setActiveTab('calculator')}
-              className={`px-6 py-4 font-medium border-b-2 transition-colors ${
-                activeTab === 'calculator'
-                  ? 'border-blue-600 text-blue-600'
-                  : 'border-transparent text-gray-600 hover:text-gray-900'
-              }`}
-            >
-              Calculadora
-            </button>
-            <button
-              onClick={() => setActiveTab('planner')}
-              className={`px-6 py-4 font-medium border-b-2 transition-colors ${
-                activeTab === 'planner'
-                  ? 'border-blue-600 text-blue-600'
-                  : 'border-transparent text-gray-600 hover:text-gray-900'
-              }`}
-            >
-              Planificador Semanal
-            </button>
-            <button
-              onClick={() => setActiveTab('shopping')}
-              className={`px-6 py-4 font-medium border-b-2 transition-colors ${
-                activeTab === 'shopping'
-                  ? 'border-blue-600 text-blue-600'
-                  : 'border-transparent text-gray-600 hover:text-gray-900'
-              }`}
-            >
-              Lista de Compras
-            </button>
+            {tabs.map(tab => {
+              const Icon = tab.icon;
+              const isActive = activeTab === tab.id;
+              return (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`flex items-center gap-2 px-6 py-4 font-medium border-b-2 transition-all duration-200 ${
+                    isActive
+                      ? 'border-blue-600 text-blue-600 bg-blue-50'
+                      : 'border-transparent text-gray-600 hover:text-blue-600 hover:bg-blue-50'
+                  }`}
+                >
+                  <Icon size={20} />
+                  {tab.label}
+                </button>
+              );
+            })}
           </div>
         </div>
       </nav>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 py-8">
+      <main className="flex-1 max-w-7xl mx-auto px-4 py-8 w-full">
         {activeTab === 'calculator' && <RecipeCalculator recetas={recetas} />}
         {activeTab === 'planner' && <WeeklyPlanner recetas={recetas} />}
         {activeTab === 'shopping' && <ShoppingList recetas={recetas} />}
       </main>
 
-      {/* Footer */}
-      <footer className="bg-gray-100 border-t border-gray-200 mt-12">
-        <div className="max-w-7xl mx-auto px-4 py-6 text-center text-gray-600 text-sm">
-          <p>Recetario PAE • Planificación de menús escolares</p>
+      {/* Footer Profesional */}
+      <footer className="bg-gradient-to-r from-gray-900 to-gray-800 text-gray-300 border-t border-gray-700 mt-12">
+        <div className="max-w-7xl mx-auto px-4 py-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              <h3 className="text-white font-semibold mb-2">Sobre Recetario PAE</h3>
+              <p className="text-sm text-gray-400">
+                Herramienta moderna para planificar menús escolares, calcular ingredientes y generar listas de compras automáticas.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-white font-semibold mb-2">Características</h3>
+              <ul className="text-sm text-gray-400 space-y-1">
+                <li>✓ 45+ recetas del PAE</li>
+                <li>✓ Cálculo automático de ingredientes</li>
+                <li>✓ Exportación a PDF y Excel</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-white font-semibold mb-2">Información</h3>
+              <p className="text-sm text-gray-400">
+                Todos tus datos se guardan localmente en tu navegador. Privacidad garantizada.
+              </p>
+            </div>
+          </div>
+          <div className="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400">
+            <p>© 2025 Recetario PAE • Planificación de menús escolares</p>
+          </div>
         </div>
       </footer>
     </div>

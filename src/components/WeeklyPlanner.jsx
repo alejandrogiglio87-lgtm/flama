@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
-import { Plus, Trash2, Save, Download, Upload } from 'lucide-react';
+import { Plus, Trash2, Save, Download, Upload, ChevronDown, ChevronUp } from 'lucide-react';
 import RecipeCalculator from './RecipeCalculator';
 import { savePlanification, loadPlanification, clearPlanification, createEmptyPlanification, savePlan, getSavedPlans, loadPlan, deletePlan } from '../utils/storageManager';
-import { consolidateWeeklyIngredients } from '../utils/recipeCalculations';
+import { consolidateWeeklyIngredients, consolidateIngredients, formatNumber } from '../utils/recipeCalculations';
 import { downloadShoppingListPDF } from '../utils/pdfGenerator';
+import { downloadWeeklyPlanExcel } from '../utils/excelGenerator';
 
 const DIAS = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo'];
 const DIAS_DISPLAY = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
@@ -15,8 +16,9 @@ export default function WeeklyPlanner({ recetas }) {
   const [showSavePlan, setShowSavePlan] = useState(false);
   const [planName, setPlanName] = useState('');
   const [savedPlans, setSavedPlans] = useState([]);
+  const [expandedDay, setExpandedDay] = useState('lunes');
 
-  // Cargar planificación al montar el componente
+  // Cargar planificación al montar
   useEffect(() => {
     const saved = loadPlanification();
     if (saved) {
@@ -25,7 +27,7 @@ export default function WeeklyPlanner({ recetas }) {
     setSavedPlans(getSavedPlans());
   }, []);
 
-  // Guardar planificación automáticamente
+  // Guardar automáticamente
   useEffect(() => {
     savePlanification(planificacion);
   }, [planificacion]);
@@ -53,10 +55,12 @@ export default function WeeklyPlanner({ recetas }) {
   };
 
   const handleClearDay = (dia) => {
-    setPlanificacion(prev => ({
-      ...prev,
-      [dia]: []
-    }));
+    if (window.confirm(`¿Limpiar todas las recetas del ${DIAS_DISPLAY[DIAS.indexOf(dia)]}?`)) {
+      setPlanificacion(prev => ({
+        ...prev,
+        [dia]: []
+      }));
+    }
   };
 
   const handleClearAll = () => {
@@ -98,28 +102,57 @@ export default function WeeklyPlanner({ recetas }) {
     downloadShoppingListPDF(ingredientes, planificacion);
   };
 
+  const handleExportExcel = () => {
+    downloadWeeklyPlanExcel(planificacion, recetas);
+  };
+
   const getTotalRecipes = () => {
     return Object.values(planificacion).reduce((sum, day) => sum + day.length, 0);
   };
 
-  const getRecipeDetails = (recetaId) => {
-    return recetas.find(r => r.id === recetaId);
+  const getDayIngredients = (dia) => {
+    const recetasDelDia = planificacion[dia] || [];
+    return consolidateIngredients(recetasDelDia, recetas);
   };
 
+  const getDayTotal = (dia) => {
+    const ingredients = getDayIngredients(dia);
+    return Object.values(ingredients).length;
+  };
+
+  // VISTA: Calculadora
+  if (showCalculator) {
+    return (
+      <div>
+        <button
+          onClick={() => setShowCalculator(false)}
+          className="mb-6 px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-lg font-medium"
+        >
+          ← Volver al Planificador
+        </button>
+        <RecipeCalculator
+          recetas={recetas}
+          onAddToPlanner={handleAddRecipe}
+        />
+      </div>
+    );
+  }
+
+  // VISTA: Planificador Principal
   return (
     <div className="space-y-6">
       {/* Header con controles */}
       <div className="bg-white rounded-lg shadow-md p-6">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-4">
           <div>
             <h2 className="text-2xl font-bold text-gray-800">Planificador Semanal</h2>
             <p className="text-gray-600 text-sm mt-1">
-              Total de recetas: {getTotalRecipes()}
+              {getTotalRecipes()} receta{getTotalRecipes() !== 1 ? 's' : ''} planificadas
             </p>
           </div>
           <div className="flex flex-wrap gap-2">
             <button
-              onClick={() => setShowCalculator(!showCalculator)}
+              onClick={() => setShowCalculator(true)}
               className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium flex items-center gap-2 transition-colors"
             >
               <Plus size={20} />
@@ -130,7 +163,7 @@ export default function WeeklyPlanner({ recetas }) {
               className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-medium flex items-center gap-2 transition-colors"
             >
               <Save size={20} />
-              Guardar Plan
+              Guardar
             </button>
             <button
               onClick={handleExportPDF}
@@ -138,7 +171,15 @@ export default function WeeklyPlanner({ recetas }) {
               disabled={getTotalRecipes() === 0}
             >
               <Download size={20} />
-              Exportar PDF
+              PDF
+            </button>
+            <button
+              onClick={handleExportExcel}
+              className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg font-medium flex items-center gap-2 transition-colors"
+              disabled={getTotalRecipes() === 0}
+            >
+              <Download size={20} />
+              Excel
             </button>
             <button
               onClick={handleClearAll}
@@ -148,132 +189,191 @@ export default function WeeklyPlanner({ recetas }) {
             </button>
           </div>
         </div>
+
+        {/* Guardador de planes */}
+        {showSavePlan && (
+          <div className="mt-4 pb-4 border-b border-gray-200">
+            <div className="flex gap-2">
+              <input
+                type="text"
+                placeholder="Nombre del plan (ej: Semana escolar)"
+                value={planName}
+                onChange={(e) => setPlanName(e.target.value)}
+                className="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <button
+                onClick={handleSavePlan}
+                className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded text-sm font-medium transition-colors"
+              >
+                Guardar
+              </button>
+              <button
+                onClick={() => {
+                  setShowSavePlan(false);
+                  setPlanName('');
+                }}
+                className="bg-gray-300 hover:bg-gray-400 text-gray-800 px-4 py-2 rounded text-sm font-medium transition-colors"
+              >
+                Cancelar
+              </button>
+            </div>
+          </div>
+        )}
       </div>
 
-      {/* Selector de día y planes guardados */}
-      <div className="grid md:grid-cols-3 gap-6">
-        <div className="md:col-span-2">
-          {/* Calculadora */}
-          {showCalculator && (
-            <div className="mb-6">
-              <RecipeCalculator
-                recetas={recetas}
-                onAddToPlanner={handleAddRecipe}
-              />
-            </div>
-          )}
+      <div className="grid lg:grid-cols-4 gap-6">
+        {/* Planificación de la semana */}
+        <div className="lg:col-span-3 space-y-3">
+          {DIAS.map((dia, idx) => {
+            const recetasDelDia = planificacion[dia] || [];
+            const ingredientesDelDia = getDayIngredients(dia);
+            const isExpanded = expandedDay === dia;
 
-          {/* Planificación de la semana */}
-          <div className="space-y-4">
-            {DIAS.map((dia, idx) => (
+            return (
               <div key={dia} className="bg-white rounded-lg shadow-md overflow-hidden">
-                <div className="bg-gradient-to-r from-blue-600 to-blue-500 px-6 py-3 flex items-center justify-between">
-                  <h3 className="text-white font-bold text-lg">{DIAS_DISPLAY[idx]}</h3>
-                  <div className="flex gap-2">
-                    <button
-                      onClick={() => setDiaActual(dia)}
-                      className={`px-3 py-1 rounded text-sm font-medium transition-colors ${
-                        diaActual === dia
-                          ? 'bg-white text-blue-600'
-                          : 'bg-blue-400 text-white hover:bg-blue-300'
-                      }`}
-                    >
-                      Agregar
-                    </button>
-                    {planificacion[dia].length > 0 && (
+                {/* Header del día */}
+                <button
+                  onClick={() => setExpandedDay(isExpanded ? null : dia)}
+                  className="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 px-6 py-4 flex items-center justify-between text-white transition-all"
+                >
+                  <div className="flex items-center gap-4">
+                    <h3 className="text-lg font-bold">{DIAS_DISPLAY[idx]}</h3>
+                    <span className="text-sm bg-white bg-opacity-20 px-3 py-1 rounded-full">
+                      {recetasDelDia.length} receta{recetasDelDia.length !== 1 ? 's' : ''}
+                    </span>
+                  </div>
+                  {isExpanded ? <ChevronUp size={24} /> : <ChevronDown size={24} />}
+                </button>
+
+                {/* Contenido expandible */}
+                {isExpanded && (
+                  <div className="p-6 space-y-4 bg-gray-50">
+                    {/* Recetas del día */}
+                    <div>
+                      <h4 className="font-semibold text-gray-800 mb-3">Recetas</h4>
+                      {recetasDelDia.length === 0 ? (
+                        <p className="text-gray-500 text-sm italic">Sin recetas programadas</p>
+                      ) : (
+                        <div className="space-y-2">
+                          {recetasDelDia.map((recipe, idx) => (
+                            <div
+                              key={idx}
+                              className="bg-white border border-gray-200 rounded-lg p-3 flex items-center justify-between hover:border-blue-300 transition-colors"
+                            >
+                              <div className="flex-1">
+                                <p className="font-medium text-gray-800">{recipe.nombre}</p>
+                                <p className="text-sm text-gray-600">{recipe.porciones} porción{recipe.porciones !== 1 ? 'es' : ''}</p>
+                              </div>
+                              <button
+                                onClick={() => handleRemoveRecipe(dia, idx)}
+                                className="text-red-600 hover:text-red-700 p-2 transition-colors"
+                              >
+                                <Trash2 size={18} />
+                              </button>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                      <button
+                        onClick={() => {
+                          setDiaActual(dia);
+                          setShowCalculator(true);
+                        }}
+                        className="mt-3 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg text-sm font-medium transition-colors flex items-center justify-center gap-2"
+                      >
+                        <Plus size={16} />
+                        Agregar Receta
+                      </button>
+                    </div>
+
+                    {/* Divisor */}
+                    {recetasDelDia.length > 0 && <hr className="border-gray-200" />}
+
+                    {/* Ingredientes del día */}
+                    {recetasDelDia.length > 0 && (
+                      <div>
+                        <h4 className="font-semibold text-gray-800 mb-3">
+                          Ingredientes Totales ({Object.keys(ingredientesDelDia).length})
+                        </h4>
+                        <div className="bg-white rounded-lg p-3 max-h-48 overflow-y-auto">
+                          <div className="space-y-1">
+                            {Object.values(ingredientesDelDia).map((ing, idx) => (
+                              <div key={idx} className="flex justify-between text-sm">
+                                <span className="text-gray-700">{ing.nombre}</span>
+                                <span className="font-semibold text-blue-600">
+                                  {formatNumber(ing.cantidad_total)} {ing.unidad}
+                                </span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Botones */}
+                    {recetasDelDia.length > 0 && (
                       <button
                         onClick={() => handleClearDay(dia)}
-                        className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded text-sm font-medium transition-colors"
+                        className="w-full bg-red-100 hover:bg-red-200 text-red-700 py-2 rounded-lg text-sm font-medium transition-colors"
                       >
-                        Limpiar
+                        Limpiar {DIAS_DISPLAY[idx]}
                       </button>
                     )}
                   </div>
-                </div>
-
-                <div className="p-4">
-                  {planificacion[dia].length === 0 ? (
-                    <p className="text-gray-500 text-sm italic">Sin recetas programadas</p>
-                  ) : (
-                    <div className="space-y-2">
-                      {planificacion[dia].map((recipe, idx) => (
-                        <div
-                          key={idx}
-                          className="bg-gray-50 border border-gray-200 rounded-lg p-3 flex items-center justify-between"
-                        >
-                          <div className="flex-1">
-                            <p className="font-medium text-gray-800">{recipe.nombre}</p>
-                            <p className="text-sm text-gray-600">
-                              {recipe.porciones} porción{recipe.porciones !== 1 ? 'es' : ''}
-                            </p>
-                          </div>
-                          <button
-                            onClick={() => handleRemoveRecipe(dia, idx)}
-                            className="text-red-600 hover:text-red-700 p-2 transition-colors"
-                          >
-                            <Trash2 size={18} />
-                          </button>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
+                )}
               </div>
-            ))}
-          </div>
+            );
+          })}
         </div>
 
-        {/* Planes guardados */}
-        <div className="md:col-span-1">
-          <div className="bg-white rounded-lg shadow-md p-6 sticky top-20">
-            <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+        {/* Sidebar: Planes guardados y resumen */}
+        <div className="space-y-6">
+          {/* Resumen semanal */}
+          <div className="bg-white rounded-lg shadow-md p-6 sticky top-[280px]">
+            <h3 className="text-xl font-bold text-gray-800 mb-4">Resumen Semanal</h3>
+            <div className="space-y-3">
+              {DIAS.map((dia, idx) => (
+                <div key={dia} className="flex justify-between items-center pb-2 border-b border-gray-100 last:border-b-0">
+                  <span className="text-sm text-gray-700">{DIAS_DISPLAY[idx]}</span>
+                  <span className={`text-xs font-semibold px-2 py-1 rounded-full ${
+                    planificacion[dia].length > 0
+                      ? 'bg-blue-100 text-blue-700'
+                      : 'bg-gray-100 text-gray-500'
+                  }`}>
+                    {planificacion[dia].length} receta{planificacion[dia].length !== 1 ? 's' : ''}
+                  </span>
+                </div>
+              ))}
+              <div className="pt-3 mt-3 border-t border-gray-200">
+                <div className="flex justify-between font-bold">
+                  <span className="text-gray-800">Total Semana</span>
+                  <span className="text-blue-600">{getTotalRecipes()} recetas</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Planes guardados */}
+          <div className="bg-white rounded-lg shadow-md p-6">
+            <h3 className="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
               <Upload size={20} />
               Planes Guardados
             </h3>
 
-            {showSavePlan && (
-              <div className="mb-4 pb-4 border-b border-gray-200">
-                <input
-                  type="text"
-                  placeholder="Nombre del plan"
-                  value={planName}
-                  onChange={(e) => setPlanName(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm mb-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-                <div className="flex gap-2">
-                  <button
-                    onClick={handleSavePlan}
-                    className="flex-1 bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded text-sm font-medium transition-colors"
-                  >
-                    Guardar
-                  </button>
-                  <button
-                    onClick={() => {
-                      setShowSavePlan(false);
-                      setPlanName('');
-                    }}
-                    className="flex-1 bg-gray-300 hover:bg-gray-400 text-gray-800 px-3 py-2 rounded text-sm font-medium transition-colors"
-                  >
-                    Cancelar
-                  </button>
-                </div>
-              </div>
-            )}
-
             {savedPlans.length === 0 ? (
-              <p className="text-gray-500 text-sm italic">No hay planes guardados</p>
+              <p className="text-gray-500 text-sm italic">No hay planes guardados aún</p>
             ) : (
-              <div className="space-y-2 max-h-96 overflow-y-auto">
+              <div className="space-y-2 max-h-64 overflow-y-auto">
                 {savedPlans.map(plan => (
                   <div
                     key={plan.id}
-                    className="bg-gray-50 border border-gray-200 rounded-lg p-3"
+                    className="bg-gray-50 border border-gray-200 rounded-lg p-3 hover:bg-gray-100 transition-colors"
                   >
                     <p className="font-medium text-gray-800 text-sm mb-1">{plan.nombre}</p>
                     <p className="text-xs text-gray-600 mb-2">
                       {new Date(plan.fecha).toLocaleDateString('es-AR')}
                     </p>
-                    <div className="flex gap-2">
+                    <div className="flex gap-1">
                       <button
                         onClick={() => handleLoadPlan(plan.id)}
                         className="flex-1 bg-blue-600 hover:bg-blue-700 text-white px-2 py-1 rounded text-xs font-medium transition-colors"

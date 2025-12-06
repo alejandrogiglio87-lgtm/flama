@@ -1,11 +1,11 @@
 /**
  * Mapeo de recetas a imágenes locales
  * Las imágenes se encuentran en /public/images/
- * Los nombres de archivo corresponden a los IDs de las recetas
+ * Todas las 45 recetas del PAE tienen foto
  */
 
 const recipeImages = {
-  // Platos Principales
+  // Platos Principales (19)
   'bocaditos-de-pollo': '/images/bocaditos_de_pollo.png',
   'budin-de-pescado': '/images/budin_de_pescado.png',
   'carbonada-criolla': '/images/carbonada_criolla.png',
@@ -15,57 +15,57 @@ const recipeImages = {
   'chupin-de-pescado-y-verduras': '/images/chupin_de_pescado_y_verduras.png',
   'croquetas-de-atun-y-papas': '/images/croquetas_de_atun_y_papas.png',
   'hamburguesa-de-pescado': '/images/hamburguesa_de_pescado.png',
-  'lasaña': '/images/lasana.png',
-  'pan-de-carne-hamburguesa': '/images/pan_de_carne.png',
+  'lasaña': '/images/lasaña.png',
+  'pan-de-carne-hamburguesa': '/images/pan_de_carne_hamburguesa.png',
   'pasta-sorpresa': '/images/pasta_sorpresa.png',
-  'pastel-de-carne-con-papa': '/images/pastel_de_carne_y_papa.png',
+  'pastel-de-carne-con-papa': '/images/pastel_de_carne_con_papa.png',
   'pastel-de-carne-y-berenjenas': '/images/pastel_de_carne_y_berenjenas.png',
   'pollo-colorido': '/images/pollo_colorido.png',
   'pollo-con-salsa-blanca-y-verduras': '/images/pollo_con_salsa_blanca_y_verduras.png',
   'torta-de-atun': '/images/torta_de_atun.png',
   'torta-de-carne-y-vegetales': '/images/torta_de_carne_y_vegetales.png',
-  'tortilla-de-papa,-vegetales-y-pollo': '/images/tortilla_de_papa_vegetales_y_pollo.png',
+  'tortilla-de-papa,-vegetales-y-pollo': '/images/tortilla_de_papa,_vegetales_y_pollo.png',
   'ensalada-completa': '/images/ensalada_completa.png',
 
-  // Arroz y Fideos
+  // Arroz y Fideos (5)
   'arroz-amarillo': '/images/arroz_amarillo.png',
+  'arroz-con-leche': '/images/arroz_con_leche.png',
   'arroz-con-vegetales-salteados': '/images/arroz_con_vegetales_salteados.png',
   'arroz-fideos': '/images/arroz_fideos.png',
   'arroz-fideos-plato-principal': '/images/arroz_fideos_plato_principal.png',
-  'polenta-plato-principal': '/images/polenta_plato_principal.png',
 
-  // Ensaladas y Verduras
+  // Ensaladas y Verduras (5)
   'ensalada-de-vegetales': '/images/ensalada_de_vegetales.png',
   'ensalada-jardinera': '/images/ensalada_jardinera.png',
   'ensalada-de-leguminosas-y-vegetales': '/images/ensalada_de_leguminosas_y_vegetales.png',
   'ensalada-primavera': '/images/ensalada_primavera.png',
   'hortalizas-asadas': '/images/hortalizas_asadas.png',
 
-  // Papas y Acompañamientos
+  // Papas y Acompañamientos (5)
   'papas-al-natural': '/images/papas_al_natural.png',
   'pure-de-papas': '/images/pure_de_papas.png',
   'pure-de-papas-instantaneo': '/images/pure_de_papas_instantaneo.png',
   'pure-triple': '/images/pure_triple.png',
+  'polenta-plato-principal': '/images/polenta_plato_principal.png',
+
+  // Salsas y Bases (4)
+  'masa-basica-para-tortas-tartas': '/images/masa_basica_para_tortas_tartas.png',
+  'filloas': '/images/filloas.png',
+  'mayonesa-vegetal-de-papa': '/images/mayonesa_vegetal_de_papa.png',
+  'mayonesa-vegetal-de-zanahoria': '/images/mayonesa_vegetal_de_zanahoria.png',
   'salsa-blanca-liviana': '/images/salsa_blanca_liviana.png',
 
-  // Salsas y Bases (sin fotos aún)
-  'masa-basica-para-tortas-tartas': null,
-  'filloas': null,
-  'mayonesa-vegetal-de-papa': null,
-  'mayonesa-vegetal-de-zanahoria': null,
-
-  // Postres (sin fotos aún)
-  'arroz-con-leche': null,
-  'crema-de-naranja': null,
-  'crema-de-vainilla': null,
-  'budin-de-zapallo-y-coco': null,
-  'budin-de-harina-de-maiz': null,
+  // Postres (5)
+  'crema-de-naranja': '/images/crema_de_naranja.png',
+  'crema-de-vainilla': '/images/crema_de_vainilla.png',
+  'budin-de-zapallo-y-coco': '/images/budin_de_zapallo_y_coco.png',
+  'budin-de-harina-de-maiz': '/images/budin_de_harina_de_maiz.png',
   'pasta-con-verdusalsa': '/images/pasta_con_verdusalsa.png',
 };
 
 /**
  * Obtiene la URL de imagen para una receta
- * Intenta usar imagen local, si no existe intenta búsqueda en Unsplash con nombre
+ * Todas las recetas tienen foto local
  */
 export function getRecipeImage(recetaId, recetaNombre) {
   if (!recetaId) return getDefaultImage();
@@ -77,17 +77,7 @@ export function getRecipeImage(recetaId, recetaNombre) {
     return localImage;
   }
 
-  // Si existe en el mapeo pero es null, devuelve imagen por defecto
-  if (recetaId in recipeImages) {
-    return getDefaultImage();
-  }
-
-  // Si no está en el mapeo, intenta búsqueda en Unsplash con nombre
-  if (recetaNombre) {
-    const searchQuery = recetaNombre.toLowerCase().trim();
-    return `https://source.unsplash.com/500x400/?${encodeURIComponent(searchQuery)},food`;
-  }
-
+  // Si no está en el mapeo, devuelve imagen por defecto
   return getDefaultImage();
 }
 

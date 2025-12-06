@@ -45,9 +45,16 @@ export default function RecipeCard({ receta, onSelect, isSelected = false, actio
           {receta.nombre}
         </h3>
 
-        <div className="flex items-center gap-2 mb-3 text-sm text-gray-600">
-          <ChefHat size={16} className="flex-shrink-0" />
-          <span>{receta.ingredientes.length} ingredientes</span>
+        <div className="space-y-2 mb-3 text-sm text-gray-600">
+          <div className="flex items-center gap-2">
+            <ChefHat size={16} className="flex-shrink-0" />
+            <span>{receta.ingredientes.length} ingredientes</span>
+          </div>
+          {receta.peso_porcion_g > 0 && (
+            <div className="flex items-center gap-2 text-blue-600 font-semibold">
+              <span>⚖️ {receta.peso_porcion_g}g por porción</span>
+            </div>
+          )}
         </div>
 
         <button

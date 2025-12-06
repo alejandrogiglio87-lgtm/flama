@@ -41,7 +41,8 @@
           "cantidad": 80,
           "unidad": "ml"
         }
-      ]
+      ],
+      "peso_porcion_g": 120
     },
     {
       "id": "arroz-con-leche",
@@ -79,7 +80,8 @@
           "cantidad": 0.25,
           "unidad": "g"
         }
-      ]
+      ],
+      "peso_porcion_g": 140
     },
     {
       "id": "arroz-con-vegetales-salteados",
@@ -122,7 +124,8 @@
           "cantidad": 5,
           "unidad": "g"
         }
-      ]
+      ],
+      "peso_porcion_g": 140
     },
     {
       "id": "arroz-fideos",
@@ -150,7 +153,8 @@
           "cantidad": 5,
           "unidad": "g"
         }
-      ]
+      ],
+      "peso_porcion_g": 100
     },
     {
       "id": "arroz-fideos-plato-principal",
@@ -178,7 +182,8 @@
           "cantidad": 5,
           "unidad": "g"
         }
-      ]
+      ],
+      "peso_porcion_g": 140
     },
     {
       "id": "bocaditos-de-pollo",
@@ -216,7 +221,8 @@
           "cantidad": 5,
           "unidad": "g"
         }
-      ]
+      ],
+      "peso_porcion_g": 100
     },
     {
       "id": "budin-de-harina-de-maiz",
@@ -254,7 +260,8 @@
           "cantidad": 0.2,
           "unidad": "g"
         }
-      ]
+      ],
+      "peso_porcion_g": 150
     },
     {
       "id": "budin-de-pescado",
@@ -327,7 +334,8 @@
           "cantidad": 5,
           "unidad": "g"
         }
-      ]
+      ],
+      "peso_porcion_g": 120
     },
     {
       "id": "budin-de-zapallo-y-coco",
@@ -370,7 +378,8 @@
           "cantidad": 0.2,
           "unidad": "g"
         }
-      ]
+      ],
+      "peso_porcion_g": 150
     },
     {
       "id": "carbonada-criolla",
@@ -448,7 +457,8 @@
           "cantidad": 2,
           "unidad": "g"
         }
-      ]
+      ],
+      "peso_porcion_g": 300
     },
     {
       "id": "carne-a-la-portuguesa",
@@ -511,7 +521,8 @@
           "cantidad": 10,
           "unidad": "ml"
         }
-      ]
+      ],
+      "peso_porcion_g": 160
     },
     {
       "id": "cazuela-de-lentejas",
@@ -599,7 +610,8 @@
           "cantidad": 250,
           "unidad": "ml"
         }
-      ]
+      ],
+      "peso_porcion_g": 300
     },
     {
       "id": "chop-suey-de-cerdo",
@@ -662,7 +674,8 @@
           "cantidad": 5,
           "unidad": "g"
         }
-      ]
+      ],
+      "peso_porcion_g": 120
     },
     {
       "id": "chupin-de-pescado-y-verduras",
@@ -730,7 +743,8 @@
           "cantidad": 25,
           "unidad": "ml"
         }
-      ]
+      ],
+      "peso_porcion_g": 300
     },
     {
       "id": "crema-de-naranja",
@@ -763,7 +777,8 @@
           "cantidad": 50,
           "unidad": "g"
         }
-      ]
+      ],
+      "peso_porcion_g": 140
     },
     {
       "id": "crema-de-vainilla",
@@ -791,7 +806,8 @@
           "cantidad": 0.5,
           "unidad": "g"
         }
-      ]
+      ],
+      "peso_porcion_g": 140
     },
     {
       "id": "croquetas-de-atun-y-papas",
@@ -844,7 +860,8 @@
           "cantidad": 7.5,
           "unidad": "g"
         }
-      ]
+      ],
+      "peso_porcion_g": 150
     },
     {
       "id": "ensalada-completa",
@@ -897,7 +914,8 @@
           "cantidad": 15,
           "unidad": "g"
         }
-      ]
+      ],
+      "peso_porcion_g": 260
     },
     {
       "id": "ensalada-de-leguminosas-y-vegetales",
@@ -945,7 +963,8 @@
           "cantidad": 0.25,
           "unidad": "g"
         }
-      ]
+      ],
+      "peso_porcion_g": 120
     },
     {
       "id": "ensalada-de-vegetales",
@@ -973,7 +992,8 @@
           "cantidad": 0.25,
           "unidad": "g"
         }
-      ]
+      ],
+      "peso_porcion_g": 35
     },
     {
       "id": "ensalada-jardinera",
@@ -1006,7 +1026,8 @@
           "cantidad": 0.25,
           "unidad": "g"
         }
-      ]
+      ],
+      "peso_porcion_g": 160
     },
     {
       "id": "ensalada-primavera",
@@ -1044,7 +1065,8 @@
           "cantidad": 0.25,
           "unidad": "g"
         }
-      ]
+      ],
+      "peso_porcion_g": 150
     },
     {
       "id": "filloas",
@@ -1077,7 +1099,8 @@
           "cantidad": 0.25,
           "unidad": "g"
         }
-      ]
+      ],
+      "peso_porcion_g": 0
     },
     {
       "id": "hamburguesa-de-pescado",
@@ -1135,7 +1158,8 @@
           "cantidad": 2.25,
           "unidad": "g"
         }
-      ]
+      ],
+      "peso_porcion_g": 100
     },
     {
       "id": "hortalizas-asadas",
@@ -1173,7 +1197,8 @@
           "cantidad": 0.5,
           "unidad": "g"
         }
-      ]
+      ],
+      "peso_porcion_g": 120
     },
     {
       "id": "lasaña",
@@ -1241,7 +1266,8 @@
           "cantidad": 5,
           "unidad": "g"
         }
-      ]
+      ],
+      "peso_porcion_g": 300
     },
     {
       "id": "masa-basica-para-tortas-tartas",
@@ -1274,7 +1300,8 @@
           "cantidad": 0.25,
           "unidad": "g"
         }
-      ]
+      ],
+      "peso_porcion_g": 0
     },
     {
       "id": "mayonesa-vegetal-de-papa",
@@ -1307,7 +1334,8 @@
           "cantidad": 0.3,
           "unidad": "ml"
         }
-      ]
+      ],
+      "peso_porcion_g": 0
     },
     {
       "id": "mayonesa-vegetal-de-zanahoria",
@@ -1340,7 +1368,8 @@
           "cantidad": 0.1,
           "unidad": "g"
         }
-      ]
+      ],
+      "peso_porcion_g": 0
     },
     {
       "id": "pan-de-carne-hamburguesa",
@@ -1398,7 +1427,8 @@
           "cantidad": 5,
           "unidad": "g"
         }
-      ]
+      ],
+      "peso_porcion_g": 100
     },
     {
       "id": "papas-al-natural",
@@ -1421,7 +1451,8 @@
           "cantidad": 0.25,
           "unidad": "g"
         }
-      ]
+      ],
+      "peso_porcion_g": 130
     },
     {
       "id": "pasta-con-verdusalsa",
@@ -1489,7 +1520,8 @@
           "cantidad": 5,
           "unidad": "g"
         }
-      ]
+      ],
+      "peso_porcion_g": 150
     },
     {
       "id": "pasta-sorpresa",
@@ -1542,7 +1574,8 @@
           "cantidad": 1,
           "unidad": "g"
         }
-      ]
+      ],
+      "peso_porcion_g": 250
     },
     {
       "id": "pastel-de-carne-con-papa",
@@ -1595,7 +1628,8 @@
           "cantidad": 5,
           "unidad": "g"
         }
-      ]
+      ],
+      "peso_porcion_g": 270
     },
     {
       "id": "pastel-de-carne-y-berenjenas",
@@ -1663,7 +1697,8 @@
           "cantidad": 5,
           "unidad": "g"
         }
-      ]
+      ],
+      "peso_porcion_g": 230
     },
     {
       "id": "polenta-plato-principal",
@@ -1691,7 +1726,8 @@
           "cantidad": 0.5,
           "unidad": "g"
         }
-      ]
+      ],
+      "peso_porcion_g": 200
     },
     {
       "id": "pollo-colorido",
@@ -1769,7 +1805,8 @@
           "cantidad": 10,
           "unidad": "ml"
         }
-      ]
+      ],
+      "peso_porcion_g": 160
     },
     {
       "id": "pollo-con-salsa-blanca-y-verduras",
@@ -1822,7 +1859,8 @@
           "cantidad": 5,
           "unidad": "g"
         }
-      ]
+      ],
+      "peso_porcion_g": 150
     },
     {
       "id": "pure-de-papas",
@@ -1855,7 +1893,8 @@
           "cantidad": 0.1,
           "unidad": "g"
         }
-      ]
+      ],
+      "peso_porcion_g": 160
     },
     {
       "id": "pure-de-papas-instantaneo",
@@ -1893,7 +1932,8 @@
           "cantidad": 0.1,
           "unidad": "g"
         }
-      ]
+      ],
+      "peso_porcion_g": 160
     },
     {
       "id": "pure-triple",
@@ -1936,7 +1976,8 @@
           "cantidad": 0.1,
           "unidad": "g"
         }
-      ]
+      ],
+      "peso_porcion_g": 180
     },
     {
       "id": "salsa-blanca-liviana",
@@ -1964,7 +2005,8 @@
           "cantidad": 0.2,
           "unidad": "g"
         }
-      ]
+      ],
+      "peso_porcion_g": 0
     },
     {
       "id": "torta-de-atun",
@@ -2002,7 +2044,8 @@
           "cantidad": 0.15,
           "unidad": "g"
         }
-      ]
+      ],
+      "peso_porcion_g": 160
     },
     {
       "id": "torta-de-carne-y-vegetales",
@@ -2055,7 +2098,8 @@
           "cantidad": 0.5,
           "unidad": "g"
         }
-      ]
+      ],
+      "peso_porcion_g": 160
     },
     {
       "id": "tortilla-de-papa,-vegetales-y-pollo",
@@ -2118,7 +2162,8 @@
           "cantidad": 5,
           "unidad": "g"
         }
-      ]
+      ],
+      "peso_porcion_g": 200
     }
   ],
   "categorias": [

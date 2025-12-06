@@ -40,7 +40,8 @@ export default function WeeklyPlanner({ recetas }) {
         {
           recetaId: recipe.recetaId,
           nombre: recipe.nombre,
-          porciones: recipe.porciones
+          porciones: recipe.porciones,
+          peso_porcion_g: recipe.peso_porcion_g || 0
         }
       ]
     }));
@@ -262,7 +263,12 @@ export default function WeeklyPlanner({ recetas }) {
                             >
                               <div className="flex-1">
                                 <p className="font-medium text-gray-800">{recipe.nombre}</p>
-                                <p className="text-sm text-gray-600">{recipe.porciones} porción{recipe.porciones !== 1 ? 'es' : ''}</p>
+                                <div className="text-sm text-gray-600 space-y-1">
+                                  <p>{recipe.porciones} porción{recipe.porciones !== 1 ? 'es' : ''}</p>
+                                  {recipe.peso_porcion_g > 0 && (
+                                    <p className="text-blue-600 font-semibold">⚖️ {recipe.peso_porcion_g}g por porción</p>
+                                  )}
+                                </div>
                               </div>
                               <button
                                 onClick={() => handleRemoveRecipe(dia, idx)}

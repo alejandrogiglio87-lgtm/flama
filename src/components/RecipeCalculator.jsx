@@ -162,6 +162,9 @@ export default function RecipeCalculator({ recetas, onAddToPlanner = null }) {
             <h2 className="text-3xl font-bold text-gray-800 mb-2">{selectedReceta.nombre}</h2>
             <p className="text-gray-600">
               {selectedReceta.categoria} • {selectedReceta.ingredientes.length} ingredientes
+              {selectedReceta.peso_porcion_g > 0 && (
+                <> • <span className="font-semibold text-blue-600">⚖️ {selectedReceta.peso_porcion_g}g por porción</span></>
+              )}
             </p>
           </div>
 

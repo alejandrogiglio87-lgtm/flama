@@ -266,7 +266,7 @@ export default function WeeklyPlanner({ recetas }) {
                                 <div className="text-sm text-gray-600 space-y-1">
                                   <p>{recipe.porciones} porción{recipe.porciones !== 1 ? 'es' : ''}</p>
                                   {recipe.peso_porcion_g && recipe.peso_porcion_g > 0 ? (
-                                    <p className="text-blue-600 font-semibold">⚖️ {recipe.peso_porcion_g}g × {recipe.porciones} = {recipe.peso_porcion_g * recipe.porciones}g</p>
+                                    <p className="text-blue-600 font-semibold">⚖️ Peso: {recipe.peso_porcion_g}g/porción × {recipe.porciones} = {recipe.peso_porcion_g * recipe.porciones}g total</p>
                                   ) : (
                                     recipe.peso_porcion_g !== undefined && recipe.peso_porcion_g !== null && (
                                       <p className="text-gray-500 text-xs">Sin peso definido</p>
@@ -337,9 +337,9 @@ export default function WeeklyPlanner({ recetas }) {
         </div>
 
         {/* Sidebar: Planes guardados y resumen */}
-        <div className="space-y-6">
+        <div className="space-y-6 max-h-[calc(100vh-120px)] overflow-y-auto">
           {/* Resumen semanal */}
-          <div className="bg-white rounded-lg shadow-md p-6 sticky top-24 z-10">
+          <div className="bg-white rounded-lg shadow-md p-6">
             <h3 className="text-xl font-bold text-gray-800 mb-4">Resumen Semanal</h3>
             <div className="space-y-3">
               {DIAS.map((dia, idx) => (
@@ -360,6 +360,27 @@ export default function WeeklyPlanner({ recetas }) {
                   <span className="text-blue-600">{getTotalRecipes()} recetas</span>
                 </div>
               </div>
+            </div>
+          </div>
+
+          {/* Suma de ingredientes semanales */}
+          <div className="bg-white rounded-lg shadow-md p-6">
+            <h3 className="text-xl font-bold text-gray-800 mb-4">Ingredientes Totales de la Semana</h3>
+            <div className="space-y-3 max-h-96 overflow-y-auto">
+              {(() => {
+                const weeklyIngredients = consolidateWeeklyIngredients(planificacion, recetas);
+                if (Object.keys(weeklyIngredients).length === 0) {
+                  return <p className="text-gray-500 text-sm italic">Sin ingredientes planificados</p>;
+                }
+                return Object.values(weeklyIngredients).map((ing, idx) => (
+                  <div key={idx} className="flex justify-between items-center pb-2 border-b border-gray-100 last:border-b-0">
+                    <span className="text-sm text-gray-700 font-medium">{ing.nombre}</span>
+                    <span className="text-sm font-semibold text-green-600">
+                      {formatNumber(ing.cantidad_total)} {ing.unidad}
+                    </span>
+                  </div>
+                ));
+              })()}
             </div>
           </div>
 

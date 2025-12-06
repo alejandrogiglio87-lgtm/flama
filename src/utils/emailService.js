@@ -78,7 +78,7 @@ export async function sendShoppingListEmail(recipientEmail, groupedIngredients, 
     const templateParams = {
       to_email: recipientEmail,
       from_name: 'Recetario PAE',
-      subject: `Lista de Compras - ${new Date().toLocaleDateString('es-AR')}`,
+      subject: `Planificacion Semanal - Recetario PAE`,
       message_html: htmlContent
     };
 

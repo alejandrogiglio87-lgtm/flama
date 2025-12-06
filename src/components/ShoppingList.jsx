@@ -70,6 +70,8 @@ export default function ShoppingList({ recetas }) {
     setEmailLoading(true);
     setEmailMessage('');
 
+    console.log('Enviando email a:', emailInput, 'Agrupado por:', groupBy);
+
     const result = await sendShoppingListEmail(emailInput, groupedIngredients, groupBy);
 
     if (result.success) {

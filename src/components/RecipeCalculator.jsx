@@ -147,7 +147,7 @@ export default function RecipeCalculator({ recetas, onAddToPlanner = null }) {
         {/* Imagen de la receta */}
         <div className="relative h-64 bg-gray-200">
           <img
-            src={getRecipeImage(selectedReceta.id)}
+            src={getRecipeImage(selectedReceta.id, selectedReceta.nombre)}
             alt={selectedReceta.nombre}
             className="w-full h-full object-cover"
             onError={(e) => {

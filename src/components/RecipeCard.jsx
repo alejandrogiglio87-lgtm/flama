@@ -8,7 +8,7 @@ export default function RecipeCard({ receta, onSelect, isSelected = false, actio
     }
   };
 
-  const imageUrl = getRecipeImage(receta.id);
+  const imageUrl = getRecipeImage(receta.id, receta.nombre);
   const categoryColor = getCategoryColor(receta.categoria);
 
   return (

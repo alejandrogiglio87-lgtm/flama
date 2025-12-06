@@ -4,7 +4,7 @@ import emailjs from '@emailjs/browser';
 // Para desarrollo, puedes usar una clave pública de prueba
 const EMAILJS_SERVICE_ID = 'recetas_flama';
 const EMAILJS_TEMPLATE_ID = 'template_x23dhwq';
-const EMAILJS_PUBLIC_KEY = 'yjQPVGxxzArERJjj-'; // Reemplazar con tu clave pública
+const EMAILJS_PUBLIC_KEY = 'yjQPVGxxzArERJjj-';
 
 // Inicializar EmailJS
 try {

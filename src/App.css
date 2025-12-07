@@ -41,6 +41,17 @@
   color: #888;
 }
 
+/* CSS para manejar días colapsados en pantalla pero visibles en impresión */
+.day-content-collapsed {
+  display: none !important;
+}
+
+@media print {
+  .day-content-collapsed {
+    display: block !important;
+  }
+}
+
 /* Estilos para impresión */
 @media print {
   /* Ocultar elementos específicos */
@@ -50,9 +61,14 @@
     display: none !important;
   }
 
-  /* Ocultar todos los botones */
+  /* Ocultar todos los botones EXCEPTO los headers de días */
   button {
     display: none !important;
+  }
+
+  /* Mostrar los botones de header de días (son buttons con bg-gradient) */
+  .bg-gradient-to-r.from-blue-600.to-blue-500 {
+    display: block !important;
   }
 
   /* Ocultar "Planes Guardados" específicamente */
@@ -235,40 +251,4 @@
     flex: 1 !important;
   }
 
-  /* IMPORTANTE: Expandir todos los días en impresión */
-  /* Los días tienen estructura: div > button (header) + div (contenido expandible) */
-  /* Expandir todos los divs que contienen el contenido de los días */
-  .bg-white.rounded-lg.shadow-md > div[class*="p-6"] {
-    display: block !important;
-  }
-
-  /* Mostrar contenido expandible de días */
-  div.space-y-4.bg-gray-50 {
-    display: block !important;
-  }
-
-  /* Asegurar que los headers de los días sean visibles */
-  .bg-gradient-to-r.from-blue-600.to-blue-500 {
-    display: block !important;
-  }
-
-  /* Expandir todos los botones chevron - no ocultarlos */
-  button[class*="bg-gradient"] {
-    display: block !important;
-  }
-
-  /* Mostrar todos los divs con espacio y recetas */
-  div.space-y-2 {
-    display: block !important;
-  }
-
-  /* Prevenir que se oculten divs de recetas */
-  div[class*="space-y-3"] > div {
-    display: block !important;
-  }
-
-  /* Asegurar que el contenedor de días se muestre */
-  div.space-y-3 {
-    display: block !important;
-  }
 }

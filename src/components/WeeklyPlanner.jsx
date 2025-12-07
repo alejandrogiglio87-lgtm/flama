@@ -303,9 +303,8 @@ export default function WeeklyPlanner({ recetas }) {
                     {isExpanded ? <ChevronUp size={24} /> : <ChevronDown size={24} />}
                   </button>
 
-                  {/* Contenido expandible */}
-                  {isExpanded && (
-                    <div className="p-6 space-y-4 bg-gray-50">
+                  {/* Contenido expandible - siempre en DOM para que print CSS pueda mostrarlo */}
+                  <div className={`p-6 space-y-4 bg-gray-50 day-content ${isExpanded ? '' : 'day-content-collapsed'}`}>
                       {/* Recetas del día */}
                       <div>
                         <h4 className="font-semibold text-gray-800 mb-3">Recetas</h4>
@@ -433,7 +432,6 @@ export default function WeeklyPlanner({ recetas }) {
                         </button>
                       )}
                     </div>
-                  )}
                 </div>
               );
             })}

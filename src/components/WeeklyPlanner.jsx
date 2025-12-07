@@ -304,7 +304,10 @@ export default function WeeklyPlanner({ recetas }) {
                   </button>
 
                   {/* Contenido expandible - siempre en DOM para que print CSS pueda mostrarlo */}
-                  <div className={`p-6 space-y-4 bg-gray-50 day-content ${isExpanded ? '' : 'day-content-collapsed'}`}>
+                  <div
+                    className="p-6 space-y-4 bg-gray-50 day-content"
+                    style={!isExpanded ? { visibility: 'hidden', height: '0', padding: '0', margin: '0' } : {}}
+                  >
                       {/* Recetas del día */}
                       <div>
                         <h4 className="font-semibold text-gray-800 mb-3">Recetas</h4>

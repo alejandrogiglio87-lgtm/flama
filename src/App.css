@@ -42,12 +42,12 @@
 }
 
 /* CSS para manejar días colapsados en pantalla pero visibles en impresión */
-.day-content-collapsed {
-  display: none !important;
-}
-
 @media print {
-  .day-content-collapsed {
+  .day-content {
+    visibility: visible !important;
+    height: auto !important;
+    padding: 1.5rem !important;
+    margin: 0 !important;
     display: block !important;
   }
 }

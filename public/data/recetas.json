@@ -1771,6 +1771,83 @@
       "postre_sugerido": "Postre de leche"
     },
     {
+      "id": "pastel-de-carne-y-papa",
+      "nombre": "PASTEL DE CARNE Y PAPA",
+      "categoria": "Plato Principal",
+      "imagen": "/images/pastel-de-carne-y-papa.jpg",
+      "ingredientes": [
+        {
+          "nombre": "Carne picada",
+          "cantidad": 50,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Papa",
+          "cantidad": 160,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Espinaca",
+          "cantidad": 50,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cebolla",
+          "cantidad": 10,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Morrón",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Pimentón",
+          "cantidad": 0.05,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Nuez moscada",
+          "cantidad": 0.05,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": 0.75,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Aceite",
+          "cantidad": 7.5,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Queso rallado",
+          "cantidad": 5,
+          "unidad": "g"
+        }
+      ],
+      "peso_porcion_g": 380,
+      "filtros": [],
+      "preparacion": "RELLENO:\n1. Pelar y lavar la cebolla, picar o procesar.\n2. Lavar y picar o procesar el morrón.\n3. Separar la espinaca hoja por hoja, lavarla y cortarla en tiras.\n4. Rehogar la cebolla y el morrón.\n5. Condimentar.\n6. Agregar la carne y continuar la cocción.\n7. Incorporar la espinaca y mezclar bien.\n8. Apagar el fuego, agregar el aceite y mezclar.\n\nPURÉ:\n1. Pelar, lavar y cocinar las papas.\n2. Hacer el puré (preparar como se indica en ACOMPAÑAMIENTO).\n3. El puré debe quedar firme para facilitar el levante al servir.\n\nARMADO DEL PASTEL:\n1. Acondicionar el relleno de carne en la asadera.\n2. Por encima colocar el puré.\n3. Espolvorear con el queso rallado.\n4. Gratinar.",
+      "acompañamientos": [
+        "Ensalada de vegetales"
+      ],
+      "variantes": [
+        "Papa por boniato",
+        "Carne por pollo",
+        "Carne por cerdo",
+        "Espinaca por acelga en una proporción de 100g por porción o zapallitos 50g por porción",
+        "Si se utiliza espinaca congelada usar 25 gramos por porción",
+        "Para servicios numerosos usar papa en escamas: 25 gramos por porción"
+      ],
+      "tips": [
+        "El puré debe quedar firme para facilitar el levante al servir"
+      ],
+      "temperatura_servicio": "Caliente",
+      "postre_sugerido": "Postre de leche"
+    },
+    {
       "id": "masa-basica-para-tortas-tartas",
       "nombre": "MASA BÁSICA PARA TORTAS/TARTAS",
       "categoria": "Postre",

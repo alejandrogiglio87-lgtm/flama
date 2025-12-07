@@ -302,9 +302,10 @@ export default function WeeklyPlanner({ recetas }) {
                         ) : (
                           <div className="space-y-2">
                             {recetasDelDia.map((recipe, idx) => {
-                              // Obtener los filtros de la receta original
+                              // Obtener los filtros y categoría de la receta original
                               const recetaOriginal = recetas.find(r => r.id === recipe.recetaId);
                               const filtros = recetaOriginal?.filtros || [];
+                              const categoria = recetaOriginal?.categoria || '';
 
                               return (
                                 <div
@@ -312,10 +313,15 @@ export default function WeeklyPlanner({ recetas }) {
                                   className="bg-white border border-gray-200 rounded-lg p-3 hover:border-blue-300 transition-colors"
                                 >
                                   <div className="flex items-center justify-between mb-2">
-                                    <p className="font-medium text-gray-800">{recipe.nombre}</p>
+                                    <div className="flex-1">
+                                      <p className="font-medium text-gray-800">{recipe.nombre}</p>
+                                      {categoria && (
+                                        <p className="text-xs text-gray-500 mt-1">📂 {categoria}</p>
+                                      )}
+                                    </div>
                                     <button
                                       onClick={() => handleRemoveRecipe(dia, idx)}
-                                      className="text-red-600 hover:text-red-700 p-1 transition-colors"
+                                      className="text-red-600 hover:text-red-700 p-1 transition-colors flex-shrink-0 ml-2"
                                     >
                                       <Trash2 size={18} />
                                     </button>

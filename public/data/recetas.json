@@ -388,7 +388,20 @@
       "filtros": [
         "Sin Gluten",
         "Sin Sal"
-      ]
+      ],
+      "preparacion": "CON PESCADO FRESCO:\n1. Desmenuzar y desespinar el pescado.\n2. Mezclar con zanahoria, cebolla, ajo picados.\n3. Adicionar huevo, queso, pan rallado, almidón.\n4. Rectificar sal.\n5. Colocar en molde aceitado.\n6. Cocinar a baño de María 40 minutos a 170°C.\n7. Desmoldar y servir.\n\nCON PESCADO ENLATADO:\n1. Escurrir bien.\n2. Desmenuzar.\n3. Mezclar con zanahoria, cebolla, ajo picados.\n4. Adicionar huevo, queso, pan rallado, almidón.\n5. Rectificar sal (principalmente cuando es atún).\n6. Colocar en molde aceitado.\n7. Cocinar a baño de María 40 minutos a 170°C.\n8. Desmoldar y servir.",
+      "acompañamientos": [
+        "Hortalizas asadas",
+        "Ensalada jardinera / Ensalada primavera",
+        "Papas con perejil más ensalada de vegetales",
+        "Puré de papas más ensalada de vegetales"
+      ],
+      "variantes": [],
+      "tips": [
+        "Si se elabora con atún, no agregar sal."
+      ],
+      "temperatura_servicio": "Caliente",
+      "postre_sugerido": "Postre de leche"
     },
     {
       "id": "budin-de-zapallo-y-coco",

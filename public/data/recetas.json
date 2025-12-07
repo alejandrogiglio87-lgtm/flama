@@ -1621,6 +1621,70 @@
       "postre_sugerido": "Fruta de estación / Postre de leche. Si se utiliza lentejas elegir fruta cítrica"
     },
     {
+      "id": "pasta-sorpresa",
+      "nombre": "PASTA SORPRESA",
+      "categoria": "Plato Principal",
+      "imagen": "/images/pasta-sorpresa.jpg",
+      "ingredientes": [
+        {
+          "nombre": "Suprema de pollo",
+          "cantidad": 50,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Queso Danbo, Cuartirolo, Gouda o Port Salut",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Tomate",
+          "cantidad": 40,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Brócoli fresco",
+          "cantidad": 80,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Albahaca",
+          "cantidad": 1,
+          "unidad": "atado para 25 comensales"
+        },
+        {
+          "nombre": "Aceite",
+          "cantidad": 10,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": 0.5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Ajo",
+          "cantidad": 1,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Perejil",
+          "cantidad": 1,
+          "unidad": "g"
+        }
+      ],
+      "peso_porcion_g": 280,
+      "filtros": [],
+      "preparacion": "1. Lavar y desinfectar el tomate, la albahaca y el perejil.\n2. Pelar, lavar y picar el ajo.\n3. Cortar el pollo en cubitos y condimentarlo con sal, ajo y perejil.\n4. Cocinarlo al horno.\n5. Lavar el brócoli, hervir hasta que esté tierno cuidando que no se sobrecocine y cortarlo. Reservar.\n6. Cortar el tomate en cubitos.\n7. Procesar la albahaca con el aceite.\n8. Elaborar los fideos de acuerdo a las proporciones y al procedimiento anexo en RECETAS BASE.\n9. Mezclar la preparación del pollo con las verduras, los fideos, el queso y el pesto de albahaca.",
+      "acompañamientos": [],
+      "variantes": [],
+      "tips": [
+        "Utilizar fideos como tirabuzón, moñita o mostachol corto",
+        "Si se utiliza brócoli congelado poner la mitad de lo indicado en la receta"
+      ],
+      "temperatura_servicio": "Caliente / Frío",
+      "postre_sugerido": "Fruta de estación / Postre de leche"
+    },
+    {
       "id": "masa-basica-para-tortas-tartas",
       "nombre": "MASA BÁSICA PARA TORTAS/TARTAS",
       "categoria": "Postre",

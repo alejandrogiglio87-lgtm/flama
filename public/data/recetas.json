@@ -2086,6 +2086,21 @@
       "postre_sugerido": ""
     },
     {
+      "id": "papas-al-natural",
+      "nombre": "PAPAS AL NATURAL",
+      "categoria": "Acompañamiento",
+      "imagen": "/images/papas-al-natural.jpg",
+      "ingredientes": [],
+      "peso_porcion_g": 160,
+      "filtros": [],
+      "preparacion": "1. Pelar, lavar y cortar en cubos la papa.\n2. Hervir agua y cuando rompa el hervor agregar la papa.\n3. Agregar la sal.\n4. Continuar la cocción hasta que la papa esté tierna.\n5. Colar y acondicionar en asadera.\n6. Aderezar con aceite.\n7. Agregar perejil o ciboulette picado si corresponde, previamente lavado y desinfectado.",
+      "acompañamientos": [],
+      "variantes": [],
+      "tips": ["Cuidar la cocción de la papa para evitar sobrecocción; retirar del agua unos minutos antes de la cocción total", "Para los servicios numerosos puede usarse papa congelada en cubos; 130 gramos por porción", "Para preparar Papas con perejil o ciboulette; usar 1 gramo por porción"],
+      "temperatura_servicio": "Caliente / Fría",
+      "postre_sugerido": ""
+    },
+    {
       "id": "masa-basica-para-tortas-tartas",
       "nombre": "MASA BÁSICA PARA TORTAS/TARTAS",
       "categoria": "Postre",

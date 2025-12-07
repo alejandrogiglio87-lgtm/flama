@@ -615,7 +615,20 @@
       "filtros": [
         "Sin Gluten",
         "Sin Azúcar"
-      ]
+      ],
+      "preparacion": "Pelar y picar o procesar la cebolla, el ajo.\nPelar, lavar y cortar en rodajas la zanahoria.\nLavar y picar o procesar el morrón.\nCortar en cubos la carne.\nRehogar la cebolla, el morrón y el ajo.\nCondimentar.\nIncorporar la carne.\nAgregar la zanahoria y la pulpa de tomate.\nAgregar agua hasta cubrir todos los ingredientes.\nContinuar la cocción hasta que los vegetales estén tiernos.\nAgregar las arvejas.\nUna vez finalizada la cocción apagar el fuego, agregar la mitad del aceite y perejil picado y mezclar bien.",
+      "acompañamientos": [
+        "Papas al natural"
+      ],
+      "variantes": [
+        "Carne vacuna por pollo o cerdo"
+      ],
+      "tips": [
+        "En servicios pequeños cocinar la papa junto con la preparación, aumentando la cantidad de agua usada.",
+        "En servicios numerosos servir la portuguesa por encima de las papas."
+      ],
+      "temperatura_servicio": "Caliente",
+      "postre_sugerido": "Fruta de estación"
     },
     {
       "id": "cazuela-de-lentejas",

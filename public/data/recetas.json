@@ -1935,6 +1935,31 @@
       "postre_sugerido": "Fruta de estación"
     },
     {
+      "id": "tortilla-de-papa-vegetales-y-pollo",
+      "nombre": "TORTILLA DE PAPA, VEGETALES Y POLLO",
+      "categoria": "Plato Principal",
+      "imagen": "/images/tortilla-de-papa-vegetales-y-pollo.jpg",
+      "ingredientes": [],
+      "peso_porcion_g": 310,
+      "filtros": [],
+      "preparacion": "1. Pelar, lavar y picar o procesar la cebolla y ajo.\n2. Pelar, lavar y cortar en cubos la papa.\n3. Lavar y cortar en cubos el zapallito.\n4. Cortar en cubos el pollo. Hervir el pollo.\n5. Batir el huevo.\n6. Rehogar la cebolla y ajo.\n7. Agregar el pollo.\n8. Condimentar.\n9. Agregar el zapallito.\n10. Cocinar las papas con la mitad de la sal, hasta que se logre el punto de cocción.\n11. Colar y reservar.\n12. En un bol mezclar las papas con las verduras y el pollo.\n13. Disolver el almidón de maíz con la leche.\n14. Agregar el huevo batido, el orégano y el almidón de maíz previamente hidratado.\n15. Disponer en una asadera previamente aceitada.\n16. Llevar a horno moderado hasta completar la cocción verificando que la cocción del huevo sea completa.",
+      "acompañamientos": [
+        "Ensalada de vegetales",
+        "Ensalada de leguminosas y vegetales (solo si se elabora la tortilla sin pollo)"
+      ],
+      "variantes": [
+        "Sin pollo; pero se debe acompañar con la ensalada de leguminosas y vegetales",
+        "Zapallito por brócoli, zucchini o espinaca. Si se usa brócoli congelado usar igual proporción. Si se usa brócoli fresco poner el doble de lo que dice la receta",
+        "Para servicios numerosos se sugiere usar papa en cubos congelada y cocinarla aparte; utilizando 120g por porción"
+      ],
+      "tips": [
+        "Precalentar el horno",
+        "Mezclar bien y armar asaderas inmediatamente antes de hornear"
+      ],
+      "temperatura_servicio": "Caliente",
+      "postre_sugerido": "Postre de leche"
+    },
+    {
       "id": "masa-basica-para-tortas-tartas",
       "nombre": "MASA BÁSICA PARA TORTAS/TARTAS",
       "categoria": "Postre",

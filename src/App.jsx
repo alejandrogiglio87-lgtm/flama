@@ -86,7 +86,8 @@ function App() {
 
         {/* Contenido del Header */}
         <div className="relative max-w-7xl mx-auto px-4 py-12 w-full">
-          <div className="flex items-center gap-6 mb-6">
+          {/* Sección superior: Logo y Títulos */}
+          <div className="flex items-center justify-center gap-8 mb-8">
             {/* Logo con efecto */}
             <div
               className="flex-shrink-0 relative"
@@ -107,7 +108,7 @@ function App() {
             </div>
 
             {/* Sección de Títulos */}
-            <div className="flex-1">
+            <div className="text-center">
               <h1
                 className="text-6xl font-black tracking-tight mb-2"
                 style={{
@@ -138,30 +139,34 @@ function App() {
             </div>
           </div>
 
-          {/* Descripción con estilo refinado */}
-          <p
-            className="text-base leading-relaxed"
-            style={{
-              color: '#ffffff',
-              textShadow: '0 3px 12px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.4)',
-              fontWeight: '300',
-              letterSpacing: '0.3px',
-              marginTop: '16px',
-              maxWidth: '600px'
-            }}
-          >
-            Calcula ingredientes, planifica tu semana y genera listas de compras automáticas con nuestra herramienta profesional
-          </p>
+          {/* Descripción con estilo refinado - CENTRADA */}
+          <div className="flex justify-center">
+            <p
+              className="text-base leading-relaxed text-center"
+              style={{
+                color: '#ffffff',
+                textShadow: '0 3px 12px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.4)',
+                fontWeight: '300',
+                letterSpacing: '0.3px',
+                marginTop: '0px',
+                maxWidth: '700px'
+              }}
+            >
+              Calcula ingredientes, planifica tu semana y genera listas de compras automáticas con nuestra herramienta profesional
+            </p>
+          </div>
 
           {/* Línea decorativa */}
-          <div
-            className="mt-6 w-20 h-1"
-            style={{
-              background: 'linear-gradient(90deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 100%)',
-              borderRadius: '10px',
-              boxShadow: '0 4px 15px rgba(255, 255, 255, 0.3)'
-            }}
-          ></div>
+          <div className="flex justify-center mt-6">
+            <div
+              className="w-20 h-1"
+              style={{
+                background: 'linear-gradient(90deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 100%)',
+                borderRadius: '10px',
+                boxShadow: '0 4px 15px rgba(255, 255, 255, 0.3)'
+              }}
+            ></div>
+          </div>
         </div>
 
         {/* Efecto de brillo sutil en la esquina */}

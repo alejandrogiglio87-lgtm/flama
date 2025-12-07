@@ -50,7 +50,6 @@ export default function RecipeCalculator({ recetas, onAddToPlanner = null }) {
     : [];
 
   const handleSelectReceta = (receta) => {
-    console.log('DEBUG: handleSelectReceta called with:', receta);
     setSelectedReceta(receta);
     setPorciones(1);
   };
@@ -80,7 +79,6 @@ export default function RecipeCalculator({ recetas, onAddToPlanner = null }) {
   };
 
   // VISTA: Búsqueda y selección de receta
-  console.log('RecipeCalculator render - selectedReceta:', selectedReceta);
   if (!selectedReceta) {
     return (
       <div className="space-y-6">

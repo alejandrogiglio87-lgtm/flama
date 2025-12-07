@@ -1960,6 +1960,27 @@
       "postre_sugerido": "Postre de leche"
     },
     {
+      "id": "torta-de-atun",
+      "nombre": "TORTA DE ATÚN",
+      "categoria": "Plato Principal",
+      "imagen": "/images/torta-de-atun.jpg",
+      "ingredientes": [],
+      "peso_porcion_g": 250,
+      "filtros": [],
+      "preparacion": "MASA:\nElaborar la masa de acuerdo a las proporciones y al procedimiento anexo en RECETAS BASE.\n\nRELLENO:\n1. Pelar, lavar y picar o procesar la cebolla.\n2. Lavar y picar o procesar el morrón.\n3. Rehogar la cebolla y el morrón.\n4. Agregar la pulpa de tomate y atún; terminar la cocción.\n5. Apagar el fuego; agregar el aceite, el orégano y mezclar bien.\n6. Entibiar.\n\nARMADO:\n1. Forrar la asadera con una tapa de masa. Rellenar.\n2. Colocar la otra tapa por encima; pintar con huevo y pinchar.\n3. Llevar a horno moderado hasta la cocción completa de la torta.",
+      "acompañamientos": [
+        "Ensalada primavera",
+        "Ensalada jardinera"
+      ],
+      "variantes": [
+        "Atún por pescado fresco en igual proporción",
+        "Si se hace con pescado fresco agregar 0,5g de sal"
+      ],
+      "tips": [],
+      "temperatura_servicio": "Caliente",
+      "postre_sugerido": "Fruta de estación"
+    },
+    {
       "id": "masa-basica-para-tortas-tartas",
       "nombre": "MASA BÁSICA PARA TORTAS/TARTAS",
       "categoria": "Postre",

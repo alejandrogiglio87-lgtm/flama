@@ -2056,6 +2056,21 @@
       "postre_sugerido": ""
     },
     {
+      "id": "ensalada-primavera",
+      "nombre": "ENSALADA PRIMAVERA",
+      "categoria": "Ensalada/Verdura",
+      "imagen": "/images/ensalada-primavera.jpg",
+      "ingredientes": [],
+      "peso_porcion_g": 140,
+      "filtros": [],
+      "preparacion": "1. Elaborar el arroz de acuerdo al procedimiento anexo en recetas base. Reservar.\n2. Pelar, lavar y cortar en cubos la zanahoria.\n3. Hervir agua y cuando rompa el hervor agregar la zanahoria. Cocinar hasta que esté tierna.\n4. Utilizar el mismo procedimiento para cocinar chaucha.\n5. Disponer el arroz en una asadera y agregar los vegetales y el aceite. Mezclar bien.",
+      "acompañamientos": [],
+      "variantes": ["Choclo o zanahoria o chaucha por iguales cantidades arvejas o zucchini o coliflor y brócoli congelado. Si se utiliza brócoli fresco poner el doble de lo que dice la receta."],
+      "tips": ["Puede saborizarse con hierbas naturales (perejil, ciboulette, etc) o mayonesas vegetales"],
+      "temperatura_servicio": "Fría",
+      "postre_sugerido": ""
+    },
+    {
       "id": "masa-basica-para-tortas-tartas",
       "nombre": "MASA BÁSICA PARA TORTAS/TARTAS",
       "categoria": "Postre",

@@ -1870,6 +1870,26 @@
       "postre_sugerido": "Postre de leche (si se incluye arroz como acompañamiento no elegir arroz con leche)"
     },
     {
+      "id": "pastel-de-carne-y-berenjenas",
+      "nombre": "PASTEL DE CARNE Y BERENJENAS (TIPO MOUSSAKA)",
+      "categoria": "Plato Principal",
+      "imagen": "/images/pastel-de-carne-y-berenjenas.jpg",
+      "ingredientes": [],
+      "peso_porcion_g": 320,
+      "filtros": [],
+      "preparacion": "RELLENO:\n1. Pelar, lavar y picar o procesar la cebolla y ajo.\n2. Lavar y picar o procesar el morrón.\n3. Lavar y cortar en cubos el tomate.\n4. Cortar las berenjenas en láminas finas con cáscara y dejar reposar con una pizca de sal para que se escurran.\n5. Enjuagar las berenjenas y hornear por 15 minutos. Reservar.\n6. Rehogar la cebolla y el morrón.\n7. Agregar la carne y la pulpa de tomate.\n8. Condimentar.\n9. Continuar la cocción revolviendo bien para evitar que la carne se apelotone; logrando así una cocción uniforme.\n10. Agregar por último el tomate en cubos; mezclando bien.\n11. Por otro lado lavar, desinfectar y picar la albahaca. Mezclarla con la ricota desmenuzada y reservar.\n\nSALSA:\nElaborar la salsa blanca liviana de acuerdo a las proporciones y al procedimiento anexo en las RECETAS BASE.\n\nARMADO:\n1. Intercalar capas de berenjenas, relleno de carne, berenjenas nuevamente y relleno de ricota en asadera previamente aceitada.\n2. Terminar con salsa blanca y queso rallado.\n3. Gratinar en horno fuerte (250°C) durante aproximadamente 15 minutos hasta que el exterior quede crujiente.",
+      "acompañamientos": [
+        "Arroz amarillo"
+      ],
+      "variantes": [
+        "Carne por pollo",
+        "Carne por cerdo"
+      ],
+      "tips": [],
+      "temperatura_servicio": "Caliente",
+      "postre_sugerido": "Fruta de estación"
+    },
+    {
       "id": "masa-basica-para-tortas-tartas",
       "nombre": "MASA BÁSICA PARA TORTAS/TARTAS",
       "categoria": "Postre",

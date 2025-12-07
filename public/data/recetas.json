@@ -805,7 +805,20 @@
         "Sin Gluten",
         "Vegano",
         "Sin Azúcar"
-      ]
+      ],
+      "preparacion": "CON CARNE:\nPelar, lavar y picar o procesar la cebolla y la zanahoria.\nLavar y picar o procesar el morrón.\nLavar y cortar en cubos el zapallito y la berenjena.\nLavar y cortar en juliana el repollo.\nCortar en cubos la carne de cerdo.\nRehogar la cebolla, morrón, zanahoria.\nAgregar la carne y luego la berenjena, el zapallito y por último el repollo.\nCondimentar.\nContinuar la cocción hasta que todas las verduras estén tiernas y la carne bien cocida evitando la sobre cocción para que las verduras no se reduzcan demasiado.\nUna vez finalizada la cocción apagar el fuego, agregar la mitad del aceite y mezclar bien.\n\nCON LEGUMINOSAS:\nHidratar las leguminosas (relación de leguminosa/agua - 1/2) en heladera.\nHervir las leguminosas por aproximadamente 1 hora, verificando el punto de cocción.\nRealizar el procedimiento antes mencionado para los vegetales agregando las leguminosas cocidas.",
+      "acompañamientos": [
+        "Arroz/Fideos (Elaborar de acuerdo a las proporciones y procedimiento especificado en RECETAS BASE)"
+      ],
+      "variantes": [
+        "Cerdo por pollo",
+        "Sin cerdo, incluyendo lentejas o porotos o garbanzos en una proporción de 40g por porción"
+      ],
+      "tips": [
+        "Servir el arroz/fideos en el mismo plato y a un lado el Chop suey"
+      ],
+      "temperatura_servicio": "Caliente",
+      "postre_sugerido": "Si se elabora con leguminosas y arroz - Fruta cítrica. Si se elabora con carne - Postre de leche (si el acompañamiento incluye arroz no elegir arroz con leche)."
     },
     {
       "id": "chupin-de-pescado-y-verduras",

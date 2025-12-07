@@ -2041,6 +2041,21 @@
       "postre_sugerido": ""
     },
     {
+      "id": "ensalada-jardinera",
+      "nombre": "ENSALADA JARDINERA",
+      "categoria": "Ensalada/Verdura",
+      "imagen": "/images/ensalada-jardinera.jpg",
+      "ingredientes": [],
+      "peso_porcion_g": 110,
+      "filtros": [],
+      "preparacion": "1. Pelar, lavar y cortar en cubos la papa y la zanahoria.\n2. Hervir agua y cuando rompa el hervor agregar la zanahoria. Cocinar hasta que esté tierna.\n3. Agregar la papa y continuar la cocción.\n4. Agregar la sal.\n5. Continuar la cocción hasta que la zanahoria y la papa estén tiernas.\n6. Colar y acondicionar en asadera.\n7. Agregar la arveja o el choclo.\n8. Agregar el aceite y mezclar.",
+      "acompañamientos": [],
+      "variantes": [],
+      "tips": ["Cuidar la cocción de la papa para evitar sobrecocción; retirar del agua unos minutos antes de la cocción total", "Para las escuelas con más de cien porciones puede usarse papa congelada en cubos, 110g por porción"],
+      "temperatura_servicio": "Fría",
+      "postre_sugerido": ""
+    },
+    {
       "id": "masa-basica-para-tortas-tartas",
       "nombre": "MASA BÁSICA PARA TORTAS/TARTAS",
       "categoria": "Postre",

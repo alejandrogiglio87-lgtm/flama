@@ -1,16 +1,23 @@
 import emailjs from '@emailjs/browser';
 
-// Inicializar EmailJS (necesitas obtener una PUBLIC KEY gratuita en emailjs.com)
-// Para desarrollo, puedes usar una clave pública de prueba
-const EMAILJS_SERVICE_ID = 'recetas_flama';
-const EMAILJS_TEMPLATE_ID = 'template_x23dhwq';
-const EMAILJS_PUBLIC_KEY = 'yjQPVGxxzArERJjj-';
+// Cargar credenciales desde environment variables (seguro - no expuesto en código)
+// Estas variables deben estar configuradas en:
+// - .env.local para desarrollo local
+// - Vercel Project Settings → Environment Variables para producción
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || '';
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || '';
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || '';
 
 // Inicializar EmailJS
 try {
-  emailjs.init(EMAILJS_PUBLIC_KEY);
+  if (!EMAILJS_PUBLIC_KEY) {
+    console.warn('⚠️ EmailJS no está configurado. Las variables de entorno VITE_EMAILJS_* no están definidas.');
+    console.warn('Configure en .env.local o en Vercel Project Settings → Environment Variables');
+  } else {
+    emailjs.init(EMAILJS_PUBLIC_KEY);
+  }
 } catch (error) {
-  console.warn('EmailJS no está configurado. Configure EMAILJS_PUBLIC_KEY en emailService.js');
+  console.warn('EmailJS initialization error:', error);
 }
 
 /**

@@ -40,3 +40,58 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Estilos para impresión */
+@media print {
+  /* Ocultar elementos que no debemos imprimir */
+  nav,
+  footer,
+  .fixed,
+  button,
+  .pointer-events-none {
+    display: none !important;
+  }
+
+  /* Estilos para el contenido impreso */
+  body {
+    margin: 0;
+    padding: 20px;
+    background: white;
+  }
+
+  header {
+    display: none !important;
+  }
+
+  main {
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Asegurar que el contenido ocupe todo el ancho */
+  .bg-white {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Mantener los colores de fondo en la impresión */
+  * {
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Configuración de página */
+  @page {
+    margin: 15mm;
+    size: A4;
+  }
+
+  /* Prevenir ruptura de cajas importantes */
+  .shadow-md,
+  .rounded-lg {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}

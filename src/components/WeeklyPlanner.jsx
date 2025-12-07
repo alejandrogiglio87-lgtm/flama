@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Plus, Trash2, Save, Download, Upload, ChevronDown, ChevronUp, Mail, X } from 'lucide-react';
+import { Plus, Trash2, Save, Download, Upload, ChevronDown, ChevronUp, Mail, X, Printer } from 'lucide-react';
 import RecipeCalculator from './RecipeCalculator';
 import { savePlanification, loadPlanification, clearPlanification, createEmptyPlanification, savePlan, getSavedPlans, loadPlan, deletePlan } from '../utils/storageManager';
 import { consolidateWeeklyIngredients, consolidateIngredients, formatNumber } from '../utils/recipeCalculations';
@@ -119,6 +119,10 @@ export default function WeeklyPlanner({ recetas }) {
     downloadWeeklyPlanExcel(planificacion, recetas);
   };
 
+  const handlePrint = () => {
+    window.print();
+  };
+
 
   const handleSendEmail = async () => {
     if (!emailInput.trim()) {
@@ -216,6 +220,14 @@ export default function WeeklyPlanner({ recetas }) {
             >
               <Download size={20} />
               Excel
+            </button>
+            <button
+              onClick={handlePrint}
+              className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg font-medium flex items-center gap-2 transition-colors"
+              disabled={getTotalRecipes() === 0}
+            >
+              <Printer size={20} />
+              Imprimir
             </button>
             <button
               onClick={handleClearAll}

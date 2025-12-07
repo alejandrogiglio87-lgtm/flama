@@ -1848,6 +1848,28 @@
       "postre_sugerido": "Postre de leche"
     },
     {
+      "id": "pollo-colorido",
+      "nombre": "POLLO COLORIDO",
+      "categoria": "Plato Principal",
+      "imagen": "/images/pollo-colorido.jpg",
+      "ingredientes": [],
+      "peso_porcion_g": 280,
+      "filtros": [],
+      "preparacion": "1. Pelar, lavar y picar o procesar la cebolla.\n2. Pelar, lavar y cortar en cubos la zanahoria.\n3. Lavar y picar o procesar el morrón.\n4. Lavar y picar el apio.\n5. Pelar, lavar y cortar en cubos el zapallo.\n6. Cortar en cubos el pollo.\n7. Rehogar el pollo con la cebolla, el morrón, apio y puerro.\n8. Condimentar (con los condimentos y la mitad de la sal).\n9. Agregar la zanahoria, la pulpa de tomate y el agua. Agregar el zapallo.\n10. Continuar la cocción hasta que los vegetales estén tiernos.\n11. Agregar el choclo y las arvejas.\n12. Una vez finalizada la cocción apagar el fuego; agregar el aceite y el perejil picado y mezclar bien.\n13. Elaborar el arroz/fideos de acuerdo a las proporciones y al procedimiento especificado en ACOMPAÑAMIENTOS.\n14. Servir el arroz o fideos en un mismo plato pero al costado del Pollo Colorido.",
+      "acompañamientos": [
+        "Arroz",
+        "Fideos"
+      ],
+      "variantes": [
+        "Zapallo por zapallito"
+      ],
+      "tips": [
+        "Servir el arroz o fideos en un mismo plato pero al costado del Pollo Colorido"
+      ],
+      "temperatura_servicio": "Caliente",
+      "postre_sugerido": "Postre de leche (si se incluye arroz como acompañamiento no elegir arroz con leche)"
+    },
+    {
       "id": "masa-basica-para-tortas-tartas",
       "nombre": "MASA BÁSICA PARA TORTAS/TARTAS",
       "categoria": "Postre",

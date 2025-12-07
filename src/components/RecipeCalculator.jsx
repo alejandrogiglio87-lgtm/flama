@@ -1,8 +1,10 @@
 import { useState } from 'react';
-import { Search, X, Plus, ArrowLeft } from 'lucide-react';
+import { Search, X, Plus, ArrowLeft, Download, FileText } from 'lucide-react';
 import RecipeCard from './RecipeCard';
 import { calculateIngredients, formatNumber, isValidQuantity } from '../utils/recipeCalculations';
 import { getRecipeImage } from '../utils/recipeImages';
+import { downloadRecipeExcel } from '../utils/excelGenerator';
+import { downloadRecipePDF } from '../utils/pdfGenerator';
 
 export default function RecipeCalculator({ recetas, onAddToPlanner = null }) {
   const [selectedReceta, setSelectedReceta] = useState(null);
@@ -223,7 +225,7 @@ export default function RecipeCalculator({ recetas, onAddToPlanner = null }) {
             <label className="block text-sm font-semibold text-gray-700 mb-3">
               Número de Porciones
             </label>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 mb-4">
               <input
                 type="number"
                 min="1"
@@ -241,6 +243,24 @@ export default function RecipeCalculator({ recetas, onAddToPlanner = null }) {
                   Agregar al Plan
                 </button>
               )}
+            </div>
+
+            {/* Botones de exportación */}
+            <div className="flex gap-3 flex-wrap">
+              <button
+                onClick={() => downloadRecipeExcel(selectedReceta, porciones)}
+                className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg font-medium flex items-center gap-2 transition-colors"
+              >
+                <Download size={18} />
+                Exportar a Excel
+              </button>
+              <button
+                onClick={() => downloadRecipePDF(selectedReceta, porciones, calculatedIngredients)}
+                className="bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded-lg font-medium flex items-center gap-2 transition-colors"
+              >
+                <FileText size={18} />
+                Exportar a PDF
+              </button>
             </div>
           </div>
 

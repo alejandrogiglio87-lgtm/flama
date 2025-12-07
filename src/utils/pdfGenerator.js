@@ -368,3 +368,104 @@ export function generateTableHTML(ingredientes) {
   html += '</tbody></table>';
   return html;
 }
+
+/**
+ * Genera un PDF con los detalles de una receta calculada
+ * @param {Object} receta - Objeto de la receta
+ * @param {number} porciones - Número de porciones
+ * @param {Array} calculatedIngredients - Array de ingredientes calculados
+ * @returns {jsPDF} El PDF generado
+ */
+export function generateRecipePDF(receta, porciones, calculatedIngredients) {
+  const doc = new jsPDF();
+  const pageWidth = doc.internal.pageSize.getWidth();
+  const margin = 15;
+  const pageHeight = doc.internal.pageSize.getHeight();
+  const bottomMargin = 15;
+  const maxY = pageHeight - bottomMargin;
+
+  // Título
+  doc.setFontSize(20);
+  doc.setFont(undefined, 'bold');
+  doc.text(receta.nombre.toUpperCase(), margin, 20);
+
+  // Información general
+  let currentY = 30;
+  doc.setFontSize(11);
+  doc.setFont(undefined, 'normal');
+  doc.text(`Categoría: ${receta.categoria}`, margin, currentY);
+  currentY += 6;
+  doc.text(`Porciones: ${formatNumber(porciones)}`, margin, currentY);
+  currentY += 6;
+  doc.text(`Fecha: ${new Date().toLocaleDateString('es-AR')}`, margin, currentY);
+  currentY += 10;
+
+  // Línea divisoria
+  doc.setDrawColor(100);
+  doc.line(margin, currentY, pageWidth - margin, currentY);
+  currentY += 6;
+
+  // Tabla de ingredientes
+  doc.setFontSize(12);
+  doc.setFont(undefined, 'bold');
+  doc.text('INGREDIENTES', margin, currentY);
+  currentY += 8;
+
+  // Encabezados de tabla
+  doc.setFontSize(10);
+  doc.setFont(undefined, 'bold');
+  doc.text('Ingrediente', margin + 2, currentY);
+  doc.text('Cantidad por Porción', 100, currentY);
+  doc.text('Total', 150, currentY);
+  doc.text('Unidad', 175, currentY);
+
+  doc.setDrawColor(150);
+  doc.line(margin, currentY + 2, pageWidth - margin, currentY + 2);
+  currentY += 7;
+
+  // Filas de ingredientes
+  doc.setFont(undefined, 'normal');
+  calculatedIngredients.forEach((ing, idx) => {
+    if (currentY > maxY - 10) {
+      doc.addPage();
+      currentY = margin;
+
+      // Repetir encabezados
+      doc.setFont(undefined, 'bold');
+      doc.text('Ingrediente', margin + 2, currentY);
+      doc.text('Cantidad por Porción', 100, currentY);
+      doc.text('Total', 150, currentY);
+      doc.text('Unidad', 175, currentY);
+
+      doc.setDrawColor(150);
+      doc.line(margin, currentY + 2, pageWidth - margin, currentY + 2);
+      currentY += 7;
+      doc.setFont(undefined, 'normal');
+    }
+
+    // Fila de ingrediente
+    const bgColor = idx % 2 === 0 ? [240, 240, 240] : [255, 255, 255];
+    doc.setFillColor(...bgColor);
+    doc.rect(margin, currentY - 5, pageWidth - 2 * margin, 6, 'F');
+
+    doc.text(ing.nombre.substring(0, 25), margin + 2, currentY);
+    doc.text(formatNumber(ing.cantidad).substring(0, 8), 115, currentY);
+    doc.text(formatNumber(ing.cantidad_total).substring(0, 10), 160, currentY);
+    doc.text(ing.unidad || '', 180, currentY);
+    currentY += 6;
+  });
+
+  return doc;
+}
+
+/**
+ * Descarga el PDF de una receta calculada
+ * @param {Object} receta - Objeto de la receta
+ * @param {number} porciones - Número de porciones
+ * @param {Array} calculatedIngredients - Array de ingredientes calculados
+ */
+export function downloadRecipePDF(receta, porciones, calculatedIngredients) {
+  const doc = generateRecipePDF(receta, porciones, calculatedIngredients);
+  const safeFileName = receta.nombre.replace(/\s+/g, '-').toLowerCase();
+  doc.save(`${safeFileName}-${new Date().toISOString().split('T')[0]}.pdf`);
+}

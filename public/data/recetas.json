@@ -1034,7 +1034,21 @@
         "Vegetariano",
         "Sin Azúcar",
         "Sin Sal"
-      ]
+      ],
+      "preparacion": "CON ATÚN Y PURÉ:\nPelar, lavar y cocinar las papas. Hacer un puré y reservarlo.\nPelar, lavar, picar o procesar la cebolla y el ajo.\nLavar y picar el mix de verdes.\nRehogar la cebolla y el ajo.\nEscurrir el atún.\nBatir ligeramente los huevos con el mix de verdes.\nMezclar el puré de papas con la cebolla, el ajo, el atún y los huevos formando una pasta.\nFormar bolitas y rebozar con polenta.\nLlevar a la heladera unos 15 min.\nPrecalentar el horno.\nUntar una asadera con aceite, disponer las bolitas y cocinarlas de ambos lados en horno moderado.\n\nCON PESCADO FRESCO Y ARROZ:\nCocinar el arroz según procedimiento anexo en recetas básicas. Reservar.\nHervir el pescado.\nEscurrir y reservar.\nRealizar el procedimiento antes mencionado para el resto de los ingredientes agregando en lugar del atún puré el pescado fresco desmenuzado, el arroz y la sal. Realizar el armado según procedimiento ya detallado.",
+      "acompañamientos": [
+        "Ensalada de vegetales"
+      ],
+      "variantes": [
+        "Atún por pescado fresco",
+        "Papa por arroz (usando una proporción de 30 g de arroz por porción)"
+      ],
+      "tips": [
+        "Se pueden rebozar con pan rallado y semillas, con avena",
+        "En caso de elaborar con pescado fresco usar 0,25 g de sal"
+      ],
+      "temperatura_servicio": "Caliente",
+      "postre_sugerido": "Banana"
     },
     {
       "id": "ensalada-completa",

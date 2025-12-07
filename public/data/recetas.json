@@ -1890,6 +1890,29 @@
       "postre_sugerido": "Fruta de estación"
     },
     {
+      "id": "pollo-con-salsa-blanca-y-verduras",
+      "nombre": "POLLO CON SALSA BLANCA Y VERDURAS",
+      "categoria": "Plato Principal",
+      "imagen": "/images/pollo-con-salsa-blanca-y-verduras.jpg",
+      "ingredientes": [],
+      "peso_porcion_g": 280,
+      "filtros": [],
+      "preparacion": "1. Pelar, lavar y picar o procesar la cebolla y la zanahoria.\n2. Lavar y picar o procesar el morrón.\n3. Lavar y picar el puerro.\n4. Lavar el brócoli, hervir hasta que esté tierno, cuidando que no se sobrecocine y trozarlo pequeño. Reservar.\n5. Cortar en cubos el pollo.\n6. Rehogar la cebolla, el morrón y el puerro.\n7. Incorporar la zanahoria y el pollo.\n8. Condimentar.\n9. Incorporar el brócoli y luego la salsa blanca; mezclar bien.\n10. Una vez finalizada la cocción apagar el fuego; incorporar el aceite y mezclar bien.\n11. Elaborar la Salsa Blanca liviana de acuerdo a las proporciones y al procedimiento anexo en RECETAS BASE.\n12. Elaborar los fideos/arroz de acuerdo a las proporciones y al procedimiento especificado en RECETAS BASE, agregar el queso rallado.",
+      "acompañamientos": [
+        "Fideos",
+        "Arroz"
+      ],
+      "variantes": [
+        "Brócoli por espinaca o zapallitos",
+        "Brócoli o espinaca congelado usar 30 gramos"
+      ],
+      "tips": [
+        "Servir el pollo por encima de la pasta o arroz"
+      ],
+      "temperatura_servicio": "Caliente",
+      "postre_sugerido": "Fruta de estación"
+    },
+    {
       "id": "masa-basica-para-tortas-tartas",
       "nombre": "MASA BÁSICA PARA TORTAS/TARTAS",
       "categoria": "Postre",

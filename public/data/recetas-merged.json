@@ -1,0 +1,2710 @@
+{
+  "recetas": [
+    {
+      "id": "arroz-amarillo",
+      "nombre": "ARROZ AMARILLO",
+      "categoria": "Arroz/Fideos",
+      "imagen": "/images/arroz-amarillo.jpg",
+      "ingredientes": [
+        {
+          "nombre": "Arroz",
+          "cantidad": 40,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cebolla",
+          "cantidad": 10,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Ajo",
+          "cantidad": 0.5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cúrcuma",
+          "cantidad": 0.5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": 0.5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Aceite",
+          "cantidad": 5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Agua",
+          "cantidad": 80,
+          "unidad": "ml"
+        }
+      ],
+      "peso_porcion_g": 120,
+      "filtros": [
+        "Sin Gluten",
+        "Vegano",
+        "Sin Azúcar"
+      ]
+    },
+    {
+      "id": "arroz-con-leche",
+      "nombre": "ARROZ CON LECHE",
+      "categoria": "Postre",
+      "imagen": "/images/arroz-con-leche.jpg",
+      "ingredientes": [
+        {
+          "nombre": "Leche",
+          "cantidad": 150,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Arroz",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Azúcar",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Yemas",
+          "cantidad": 7.5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Vainilla",
+          "cantidad": 0.5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Canela",
+          "cantidad": 0.25,
+          "unidad": "g"
+        }
+      ],
+      "peso_porcion_g": 140,
+      "filtros": [
+        "Sin Gluten",
+        "Vegetariano",
+        "Sin Sal"
+      ]
+    },
+    {
+      "id": "arroz-con-vegetales-salteados",
+      "nombre": "ARROZ CON VEGETALES SALTEADOS",
+      "categoria": "Arroz/Fideos",
+      "imagen": "/images/arroz-con-vegetales-salteados.jpg",
+      "ingredientes": [
+        {
+          "nombre": "Arroz",
+          "cantidad": 40,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Espinaca",
+          "cantidad": 60,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cebolla",
+          "cantidad": 10,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Queso rallado",
+          "cantidad": 5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": 0.5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Ajo",
+          "cantidad": 0.5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Aceite",
+          "cantidad": 5,
+          "unidad": "g"
+        }
+      ],
+      "peso_porcion_g": 140,
+      "filtros": [
+        "Sin Gluten",
+        "Vegano",
+        "Sin Azúcar"
+      ]
+    },
+    {
+      "id": "arroz-fideos",
+      "nombre": "ARROZ/FIDEOS",
+      "categoria": "Arroz/Fideos",
+      "imagen": "/images/arroz-fideos.jpg",
+      "ingredientes": [
+        {
+          "nombre": "Arroz/Fideos",
+          "cantidad": 40,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Agua",
+          "cantidad": 80,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": 0.5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Aceite",
+          "cantidad": 5,
+          "unidad": "g"
+        }
+      ],
+      "peso_porcion_g": 100,
+      "filtros": [
+        "Vegano",
+        "Sin Azúcar"
+      ]
+    },
+    {
+      "id": "arroz-fideos-plato-principal",
+      "nombre": "ARROZ/FIDEOS PLATO PRINCIPAL",
+      "categoria": "Arroz/Fideos",
+      "imagen": "/images/arroz-fideos-plato-principal.jpg",
+      "ingredientes": [
+        {
+          "nombre": "Arroz/Fideos",
+          "cantidad": 60,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Agua",
+          "cantidad": 120,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": 0.5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Aceite",
+          "cantidad": 5,
+          "unidad": "g"
+        }
+      ],
+      "peso_porcion_g": 140,
+      "filtros": [
+        "Vegano",
+        "Sin Azúcar"
+      ]
+    },
+    {
+      "id": "bocaditos-de-pollo",
+      "nombre": "BOCADITOS DE POLLO",
+      "categoria": "Plato Principal",
+      "imagen": "/images/bocaditos-de-pollo.jpg",
+      "ingredientes": [
+        {
+          "nombre": "Suprema",
+          "cantidad": 80,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Avena",
+          "cantidad": 20,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Huevo",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": 0.5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Hierbas (orégano, albahaca, tomillo, perejil)",
+          "cantidad": 1,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Aceite (asadera)",
+          "cantidad": 5,
+          "unidad": "g"
+        }
+      ],
+      "peso_porcion_g": 100,
+      "filtros": [
+        "Sin Gluten",
+        "Sin Azúcar"
+      ]
+    },
+    {
+      "id": "budin-de-harina-de-maiz",
+      "nombre": "BUDÍN DE HARINA DE MAÍZ",
+      "categoria": "Postre",
+      "imagen": "/images/budin-de-harina-de-maiz.jpg",
+      "ingredientes": [
+        {
+          "nombre": "Leche",
+          "cantidad": 125,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Harina de maíz",
+          "cantidad": 10,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Azúcar",
+          "cantidad": 10,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Huevo",
+          "cantidad": 11,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Vainilla",
+          "cantidad": 0.5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cáscara de naranja",
+          "cantidad": 0.2,
+          "unidad": "g"
+        }
+      ],
+      "peso_porcion_g": 150,
+      "filtros": [
+        "Sin Gluten",
+        "Vegetariano",
+        "Sin Sal"
+      ]
+    },
+    {
+      "id": "budin-de-pescado",
+      "nombre": "BUDÍN DE PESCADO",
+      "categoria": "Postre",
+      "imagen": "/images/budin-de-pescado.jpg",
+      "ingredientes": [
+        {
+          "nombre": "Pescado",
+          "cantidad": 50,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Zanahoria",
+          "cantidad": 30,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cebolla",
+          "cantidad": 10,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Ajo",
+          "cantidad": 1,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Pulpa de tomate",
+          "cantidad": 20,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Huevo",
+          "cantidad": 23,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Pan rallado",
+          "cantidad": 5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Queso rallado",
+          "cantidad": 5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Almidón de maíz",
+          "cantidad": 2,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": 0.5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Aceite",
+          "cantidad": 5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Laurel",
+          "cantidad": 0.5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Aceite (asadera)",
+          "cantidad": 5,
+          "unidad": "g"
+        }
+      ],
+      "peso_porcion_g": 120,
+      "filtros": [
+        "Sin Gluten",
+        "Sin Sal"
+      ]
+    },
+    {
+      "id": "budin-de-zapallo-y-coco",
+      "nombre": "BUDÍN DE ZAPALLO Y COCO",
+      "categoria": "Postre",
+      "imagen": "/images/budin-de-zapallo-y-coco.jpg",
+      "ingredientes": [
+        {
+          "nombre": "Zapallo Kabutiá",
+          "cantidad": 85,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Leche",
+          "cantidad": 40,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Almidón de maíz",
+          "cantidad": 3,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Azúcar",
+          "cantidad": 12,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Coco rallado",
+          "cantidad": 6,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Vainilla",
+          "cantidad": 0.4,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Canela en rama",
+          "cantidad": 0.2,
+          "unidad": "g"
+        }
+      ],
+      "peso_porcion_g": 150,
+      "filtros": [
+        "Sin Gluten",
+        "Vegetariano",
+        "Sin Sal"
+      ]
+    },
+    {
+      "id": "carbonada-criolla",
+      "nombre": "CARBONADA CRIOLLA",
+      "categoria": "Plato Principal",
+      "imagen": "/images/carbonada-criolla.jpg",
+      "ingredientes": [
+        {
+          "nombre": "Carne en cubos",
+          "cantidad": 50,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Fideos",
+          "cantidad": 40,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Papa/boniato",
+          "cantidad": 30,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Zanahoria",
+          "cantidad": 40,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Zapallo/calabaza",
+          "cantidad": 40,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Choclo",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Arvejas",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cebolla",
+          "cantidad": 10,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Morrón",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Pulpa de tomate",
+          "cantidad": 30,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Ajo",
+          "cantidad": 1,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": 1,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Aceite",
+          "cantidad": 10,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Perejil",
+          "cantidad": 2,
+          "unidad": "g"
+        }
+      ],
+      "peso_porcion_g": 300,
+      "filtros": [
+        "Sin Gluten",
+        "Vegano",
+        "Sin Azúcar"
+      ]
+    },
+    {
+      "id": "carne-a-la-portuguesa",
+      "nombre": "CARNE A LA PORTUGUESA",
+      "categoria": "Plato Principal",
+      "imagen": "/images/carne-a-la-portuguesa.jpg",
+      "ingredientes": [
+        {
+          "nombre": "Carne entera",
+          "cantidad": 50,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cebolla",
+          "cantidad": 10,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Morrón",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Zanahoria",
+          "cantidad": 40,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Arvejas",
+          "cantidad": 25,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Pulpa de tomate",
+          "cantidad": 40,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Ajo",
+          "cantidad": 1,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": 0.5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Aceite",
+          "cantidad": 5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Perejil",
+          "cantidad": 1,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Agua",
+          "cantidad": 10,
+          "unidad": "ml"
+        }
+      ],
+      "peso_porcion_g": 160,
+      "filtros": [
+        "Sin Gluten",
+        "Sin Azúcar"
+      ]
+    },
+    {
+      "id": "cazuela-de-lentejas",
+      "nombre": "CAZUELA DE LENTEJAS",
+      "categoria": "Plato Principal",
+      "imagen": "/images/cazuela-de-lentejas.jpg",
+      "ingredientes": [
+        {
+          "nombre": "Carne picada o en cubos",
+          "cantidad": 50,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Lentejas",
+          "cantidad": 20,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Arroz",
+          "cantidad": 30,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Pulpa de tomate",
+          "cantidad": 30,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Zapallo/calabaza",
+          "cantidad": 60,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Boniato",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Papa",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Zanahoria",
+          "cantidad": 40,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cebolla",
+          "cantidad": 10,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Morrón",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Ajo",
+          "cantidad": 1,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Apio",
+          "cantidad": 1,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Laurel",
+          "cantidad": 0.5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": 1,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Aceite",
+          "cantidad": 10,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Agua",
+          "cantidad": 250,
+          "unidad": "ml"
+        }
+      ],
+      "peso_porcion_g": 300,
+      "filtros": [
+        "Sin Gluten",
+        "Vegano",
+        "Sin Azúcar"
+      ]
+    },
+    {
+      "id": "chop-suey-de-cerdo",
+      "nombre": "CHOP SUEY DE CERDO",
+      "categoria": "Plato Principal",
+      "imagen": "/images/chop-suey-de-cerdo.jpg",
+      "ingredientes": [
+        {
+          "nombre": "Carne de cerdo",
+          "cantidad": 50,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cebolla",
+          "cantidad": 10,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Morrón",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Zanahoria",
+          "cantidad": 40,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Zapallito",
+          "cantidad": 20,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Berenjena",
+          "cantidad": 25,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Repollo",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Ajo",
+          "cantidad": 2,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Tomillo",
+          "cantidad": 0.5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": 0.5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Aceite",
+          "cantidad": 5,
+          "unidad": "g"
+        }
+      ],
+      "peso_porcion_g": 120,
+      "filtros": [
+        "Sin Gluten",
+        "Vegano",
+        "Sin Azúcar"
+      ]
+    },
+    {
+      "id": "chupin-de-pescado-y-verduras",
+      "nombre": "CHUPÍN DE PESCADO Y VERDURAS",
+      "categoria": "Plato Principal",
+      "imagen": "/images/chupin-de-pescado-y-verduras.jpg",
+      "ingredientes": [
+        {
+          "nombre": "Pescado",
+          "cantidad": 60,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Papa",
+          "cantidad": 26,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cebolla",
+          "cantidad": 10,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Zanahoria",
+          "cantidad": 50,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Morrón",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Pulpa de tomate",
+          "cantidad": 20,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Arvejas",
+          "cantidad": 30,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Ajo",
+          "cantidad": 1,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": 0.5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Aceite",
+          "cantidad": 5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Perejil",
+          "cantidad": 1.5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Agua",
+          "cantidad": 25,
+          "unidad": "ml"
+        }
+      ],
+      "peso_porcion_g": 300,
+      "filtros": [
+        "Sin Gluten",
+        "Sin Azúcar"
+      ]
+    },
+    {
+      "id": "crema-de-naranja",
+      "nombre": "CREMA DE NARANJA",
+      "categoria": "Postre",
+      "imagen": "/images/crema-de-naranja.jpg",
+      "ingredientes": [
+        {
+          "nombre": "Leche",
+          "cantidad": 100,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Almidón de maíz",
+          "cantidad": 9,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Azúcar",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Huevo",
+          "cantidad": 11,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Naranja",
+          "cantidad": 50,
+          "unidad": "g"
+        }
+      ],
+      "peso_porcion_g": 140,
+      "filtros": [
+        "Sin Gluten",
+        "Vegetariano",
+        "Sin Sal"
+      ]
+    },
+    {
+      "id": "crema-de-vainilla",
+      "nombre": "CREMA DE VAINILLA",
+      "categoria": "Postre",
+      "imagen": "/images/crema-de-vainilla.jpg",
+      "ingredientes": [
+        {
+          "nombre": "Leche",
+          "cantidad": 150,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Almidón de maíz",
+          "cantidad": 9,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Azúcar",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Vainilla",
+          "cantidad": 0.5,
+          "unidad": "g"
+        }
+      ],
+      "peso_porcion_g": 140,
+      "filtros": [
+        "Sin Gluten",
+        "Vegetariano",
+        "Sin Sal"
+      ]
+    },
+    {
+      "id": "croquetas-de-atun-y-papas",
+      "nombre": "CROQUETAS DE ATÚN Y PAPAS",
+      "categoria": "Acompañamiento",
+      "imagen": "/images/croquetas-de-atun-y-papas.jpg",
+      "ingredientes": [
+        {
+          "nombre": "Papa",
+          "cantidad": 160,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Atún",
+          "cantidad": 60,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cebolla",
+          "cantidad": 20,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Queso rallado",
+          "cantidad": 5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Huevo",
+          "cantidad": 22,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Mix de verdes (perejil, ciboulette)",
+          "cantidad": 1,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Ajo",
+          "cantidad": 1,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Polenta",
+          "cantidad": 20,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Aceite (asadera)",
+          "cantidad": 7.5,
+          "unidad": "g"
+        }
+      ],
+      "peso_porcion_g": 150,
+      "filtros": [
+        "Vegetariano",
+        "Sin Azúcar",
+        "Sin Sal"
+      ]
+    },
+    {
+      "id": "ensalada-completa",
+      "nombre": "ENSALADA COMPLETA",
+      "categoria": "Ensalada/Verdura",
+      "imagen": "/images/ensalada-completa.jpg",
+      "ingredientes": [
+        {
+          "nombre": "Arroz",
+          "cantidad": 40,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Lentejas",
+          "cantidad": 20,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Suprema de pollo",
+          "cantidad": 50,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Zanahoria",
+          "cantidad": 40,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Tomate",
+          "cantidad": 40,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Choclo",
+          "cantidad": 20,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": 0.75,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Aceite",
+          "cantidad": 5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Mayonesa vegetal",
+          "cantidad": 15,
+          "unidad": "g"
+        }
+      ],
+      "peso_porcion_g": 260,
+      "filtros": [
+        "Sin Gluten",
+        "Vegano",
+        "Sin Azúcar"
+      ]
+    },
+    {
+      "id": "ensalada-de-leguminosas-y-vegetales",
+      "nombre": "ENSALADA DE LEGUMINOSAS Y VEGETALES",
+      "categoria": "Ensalada/Verdura",
+      "imagen": "/images/ensalada-de-leguminosas-y-vegetales.jpg",
+      "ingredientes": [
+        {
+          "nombre": "Porotos manteca",
+          "cantidad": 20,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Zanahoria",
+          "cantidad": 30,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Tomate",
+          "cantidad": 25,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Repollo",
+          "cantidad": 10,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Perejil",
+          "cantidad": 0.5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Aceite",
+          "cantidad": 5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Vinagre",
+          "cantidad": 1,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": 0.25,
+          "unidad": "g"
+        }
+      ],
+      "peso_porcion_g": 120,
+      "filtros": [
+        "Sin Gluten",
+        "Vegano",
+        "Sin Azúcar"
+      ]
+    },
+    {
+      "id": "ensalada-de-vegetales",
+      "nombre": "ENSALADA DE VEGETALES",
+      "categoria": "Ensalada/Verdura",
+      "imagen": "/images/ensalada-de-vegetales.jpg",
+      "ingredientes": [
+        {
+          "nombre": "Vegetales",
+          "cantidad": 50,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Aceite",
+          "cantidad": 5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Vinagre/jugo de limón",
+          "cantidad": 1,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": 0.25,
+          "unidad": "g"
+        }
+      ],
+      "peso_porcion_g": 35,
+      "filtros": [
+        "Sin Gluten",
+        "Vegano",
+        "Sin Azúcar"
+      ]
+    },
+    {
+      "id": "ensalada-jardinera",
+      "nombre": "ENSALADA JARDINERA",
+      "categoria": "Ensalada/Verdura",
+      "imagen": "/images/ensalada-jardinera.jpg",
+      "ingredientes": [
+        {
+          "nombre": "Papa",
+          "cantidad": 140,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Zanahoria",
+          "cantidad": 40,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Arvejas o Choclo",
+          "cantidad": 20,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Aceite",
+          "cantidad": 5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": 0.25,
+          "unidad": "g"
+        }
+      ],
+      "peso_porcion_g": 160,
+      "filtros": [
+        "Sin Gluten",
+        "Vegano",
+        "Sin Azúcar"
+      ]
+    },
+    {
+      "id": "ensalada-primavera",
+      "nombre": "ENSALADA PRIMAVERA",
+      "categoria": "Ensalada/Verdura",
+      "imagen": "/images/ensalada-primavera.jpg",
+      "ingredientes": [
+        {
+          "nombre": "Arroz",
+          "cantidad": 30,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Choclo",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Zanahoria",
+          "cantidad": 40,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Chaucha",
+          "cantidad": 20,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Aceite",
+          "cantidad": 5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": 0.25,
+          "unidad": "g"
+        }
+      ],
+      "peso_porcion_g": 150,
+      "filtros": [
+        "Sin Gluten",
+        "Vegano",
+        "Sin Azúcar"
+      ]
+    },
+    {
+      "id": "filloas",
+      "nombre": "FILLOAS",
+      "categoria": "Acompañamiento",
+      "imagen": "/images/filloas.jpg",
+      "ingredientes": [
+        {
+          "nombre": "Leche",
+          "cantidad": 100,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Harina de trigo",
+          "cantidad": 50,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Huevo",
+          "cantidad": 22.5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Aceite",
+          "cantidad": 5,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": 0.25,
+          "unidad": "g"
+        }
+      ],
+      "peso_porcion_g": 0,
+      "filtros": [
+        "Sin Gluten",
+        "Vegetariano",
+        "Sin Azúcar"
+      ]
+    },
+    {
+      "id": "hamburguesa-de-pescado",
+      "nombre": "HAMBURGUESA DE PESCADO",
+      "categoria": "Plato Principal",
+      "imagen": "/images/hamburguesa-de-pescado.jpg",
+      "ingredientes": [
+        {
+          "nombre": "Pescado",
+          "cantidad": 60,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Avena",
+          "cantidad": 10,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Zanahoria",
+          "cantidad": 25,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Morrón",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cebolla",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Huevo",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Perejil",
+          "cantidad": 1.5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Ajo",
+          "cantidad": 1,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": 0.4,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Aceite (asadera)",
+          "cantidad": 2.25,
+          "unidad": "g"
+        }
+      ],
+      "peso_porcion_g": 100,
+      "filtros": [
+        "Sin Gluten",
+        "Sin Azúcar"
+      ]
+    },
+    {
+      "id": "hortalizas-asadas",
+      "nombre": "HORTALIZAS ASADAS",
+      "categoria": "Ensalada/Verdura",
+      "imagen": "/images/hortalizas-asadas.jpg",
+      "ingredientes": [
+        {
+          "nombre": "Papa",
+          "cantidad": 80,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Boniato",
+          "cantidad": 80,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Zapallo",
+          "cantidad": 70,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Aceite",
+          "cantidad": 5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": 0.25,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Hierbas frescas",
+          "cantidad": 0.5,
+          "unidad": "g"
+        }
+      ],
+      "peso_porcion_g": 120,
+      "filtros": [
+        "Sin Gluten",
+        "Vegano",
+        "Sin Azúcar"
+      ]
+    },
+    {
+      "id": "lasaña",
+      "nombre": "LASAÑA",
+      "categoria": "Plato Principal",
+      "imagen": "/images/lasaña.jpg",
+      "ingredientes": [
+        {
+          "nombre": "Acelga",
+          "cantidad": 100,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Carne picada",
+          "cantidad": 50,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Zanahoria",
+          "cantidad": 40,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cebolla",
+          "cantidad": 10,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Morrón",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Ajo",
+          "cantidad": 1,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Avena",
+          "cantidad": 10,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Pimentón",
+          "cantidad": 0.05,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": 0.5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Aceite (asadera)",
+          "cantidad": 5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Pulpa de tomate (opcional)",
+          "cantidad": 10,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Queso rallado",
+          "cantidad": 5,
+          "unidad": "g"
+        }
+      ],
+      "peso_porcion_g": 300,
+      "filtros": [
+        "Sin Gluten",
+        "Vegano",
+        "Sin Azúcar"
+      ]
+    },
+    {
+      "id": "masa-basica-para-tortas-tartas",
+      "nombre": "MASA BÁSICA PARA TORTAS/TARTAS",
+      "categoria": "Postre",
+      "imagen": "/images/masa-basica-para-tortas-tartas.jpg",
+      "ingredientes": [
+        {
+          "nombre": "Harina",
+          "cantidad": 50,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Aceite",
+          "cantidad": 5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Agua",
+          "cantidad": 20,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Polvo de hornear",
+          "cantidad": 0.3,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": 0.25,
+          "unidad": "g"
+        }
+      ],
+      "peso_porcion_g": 0,
+      "filtros": [
+        "Vegano",
+        "Sin Sal"
+      ]
+    },
+    {
+      "id": "mayonesa-vegetal-de-papa",
+      "nombre": "MAYONESA VEGETAL DE PAPA",
+      "categoria": "Acompañamiento",
+      "imagen": "/images/mayonesa-vegetal-de-papa.jpg",
+      "ingredientes": [
+        {
+          "nombre": "Papa",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Huevo cocido (1 huevo para 20 porciones)",
+          "cantidad": 2,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Aceite",
+          "cantidad": 3.5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": 0.1,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Vinagre",
+          "cantidad": 0.3,
+          "unidad": "ml"
+        }
+      ],
+      "peso_porcion_g": 0,
+      "filtros": [
+        "Sin Gluten",
+        "Vegano",
+        "Sin Azúcar"
+      ]
+    },
+    {
+      "id": "mayonesa-vegetal-de-zanahoria",
+      "nombre": "MAYONESA VEGETAL DE ZANAHORIA",
+      "categoria": "Acompañamiento",
+      "imagen": "/images/mayonesa-vegetal-de-zanahoria.jpg",
+      "ingredientes": [
+        {
+          "nombre": "Zanahoria",
+          "cantidad": 25,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Ajo",
+          "cantidad": 0.25,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Aceite",
+          "cantidad": 5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Vinagre o jugo de limón",
+          "cantidad": 0.2,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": 0.1,
+          "unidad": "g"
+        }
+      ],
+      "peso_porcion_g": 0,
+      "filtros": [
+        "Sin Gluten",
+        "Vegano",
+        "Sin Azúcar"
+      ]
+    },
+    {
+      "id": "pan-de-carne-hamburguesa",
+      "nombre": "PAN DE CARNE/HAMBURGUESA",
+      "categoria": "Acompañamiento",
+      "imagen": "/images/pan-de-carne-hamburguesa.jpg",
+      "ingredientes": [
+        {
+          "nombre": "Carne picada",
+          "cantidad": 60,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Avena",
+          "cantidad": 10,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Huevo",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Zanahoria",
+          "cantidad": 20,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cebolla",
+          "cantidad": 20,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Morrón",
+          "cantidad": 10,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": 0.5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Perejil fresco",
+          "cantidad": 1,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Ajo",
+          "cantidad": 1,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Aceite (asadera)",
+          "cantidad": 5,
+          "unidad": "g"
+        }
+      ],
+      "peso_porcion_g": 100,
+      "filtros": [
+        "Sin Gluten",
+        "Sin Azúcar"
+      ]
+    },
+    {
+      "id": "papas-al-natural",
+      "nombre": "PAPAS AL NATURAL",
+      "categoria": "Acompañamiento",
+      "imagen": "/images/papas-al-natural.jpg",
+      "ingredientes": [
+        {
+          "nombre": "Papa",
+          "cantidad": 160,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Aceite",
+          "cantidad": 5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": 0.25,
+          "unidad": "g"
+        }
+      ],
+      "peso_porcion_g": 130,
+      "filtros": [
+        "Sin Gluten",
+        "Vegano",
+        "Sin Azúcar"
+      ]
+    },
+    {
+      "id": "pasta-con-verdusalsa",
+      "nombre": "PASTA CON VERDUSALSA",
+      "categoria": "Arroz/Fideos",
+      "imagen": "/images/pasta-con-verdusalsa.jpg",
+      "ingredientes": [
+        {
+          "nombre": "Carne picada o en cubos",
+          "cantidad": 50,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Pulpa de tomate",
+          "cantidad": 40,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cebolla",
+          "cantidad": 10,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Zanahoria",
+          "cantidad": 30,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Morrón",
+          "cantidad": 10,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Zapallito",
+          "cantidad": 50,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Queso rallado",
+          "cantidad": 5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": 0.5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Orégano",
+          "cantidad": 0.15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Pimentón",
+          "cantidad": 0.05,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Laurel",
+          "cantidad": 0.5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Aceite",
+          "cantidad": 5,
+          "unidad": "g"
+        }
+      ],
+      "peso_porcion_g": 150,
+      "filtros": [
+        "Vegano",
+        "Sin Azúcar"
+      ]
+    },
+    {
+      "id": "pasta-sorpresa",
+      "nombre": "PASTA SORPRESA",
+      "categoria": "Arroz/Fideos",
+      "imagen": "/images/pasta-sorpresa.jpg",
+      "ingredientes": [
+        {
+          "nombre": "Suprema de pollo",
+          "cantidad": 50,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Queso Danbo/Cuartirolo/Gouda/Port Salut",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Tomate",
+          "cantidad": 40,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Brócoli fresco",
+          "cantidad": 80,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Aceite",
+          "cantidad": 10,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Albahaca",
+          "cantidad": 0.5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": 0.5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Ajo",
+          "cantidad": 1,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Perejil",
+          "cantidad": 1,
+          "unidad": "g"
+        }
+      ],
+      "peso_porcion_g": 250,
+      "filtros": [
+        "Vegano",
+        "Sin Azúcar"
+      ]
+    },
+    {
+      "id": "pastel-de-carne-con-papa",
+      "nombre": "PASTEL DE CARNE CON PAPA",
+      "categoria": "Postre",
+      "imagen": "/images/pastel-de-carne-con-papa.jpg",
+      "ingredientes": [
+        {
+          "nombre": "Carne picada",
+          "cantidad": 50,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Papa",
+          "cantidad": 160,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Espinaca",
+          "cantidad": 50,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cebolla",
+          "cantidad": 10,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Morrón",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Condimentos (pimentón, nuez moscada)",
+          "cantidad": 0.05,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": 0.75,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Aceite",
+          "cantidad": 7.5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Queso rallado",
+          "cantidad": 5,
+          "unidad": "g"
+        }
+      ],
+      "peso_porcion_g": 270,
+      "filtros": [
+        "Sin Gluten",
+        "Sin Azúcar"
+      ]
+    },
+    {
+      "id": "pastel-de-carne-y-berenjenas",
+      "nombre": "PASTEL DE CARNE Y BERENJENAS",
+      "categoria": "Postre",
+      "imagen": "/images/pastel-de-carne-y-berenjenas.jpg",
+      "ingredientes": [
+        {
+          "nombre": "Carne picada",
+          "cantidad": 50,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Ricota",
+          "cantidad": 50,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cebolla",
+          "cantidad": 10,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Tomate",
+          "cantidad": 30,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Morrón",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Ajo",
+          "cantidad": 1,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Pulpa de tomate",
+          "cantidad": 30,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Berenjenas",
+          "cantidad": 70,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Aceite",
+          "cantidad": 5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": 0.75,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Albahaca",
+          "cantidad": 1.5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Queso rallado",
+          "cantidad": 5,
+          "unidad": "g"
+        }
+      ],
+      "peso_porcion_g": 230,
+      "filtros": [
+        "Sin Gluten",
+        "Sin Azúcar"
+      ]
+    },
+    {
+      "id": "polenta-plato-principal",
+      "nombre": "POLENTA PLATO PRINCIPAL",
+      "categoria": "Arroz/Fideos",
+      "imagen": "/images/polenta-plato-principal.jpg",
+      "ingredientes": [
+        {
+          "nombre": "Harina de maíz",
+          "cantidad": 50,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Leche fluida",
+          "cantidad": 120,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Agua",
+          "cantidad": 150,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": 0.5,
+          "unidad": "g"
+        }
+      ],
+      "peso_porcion_g": 200,
+      "filtros": [
+        "Sin Gluten",
+        "Vegano",
+        "Sin Azúcar"
+      ]
+    },
+    {
+      "id": "pollo-colorido",
+      "nombre": "POLLO COLORIDO",
+      "categoria": "Plato Principal",
+      "imagen": "/images/pollo-colorido.jpg",
+      "ingredientes": [
+        {
+          "nombre": "Suprema de pollo",
+          "cantidad": 50,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cebolla",
+          "cantidad": 10,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Morrón",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Puerro",
+          "cantidad": 5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Zanahoria",
+          "cantidad": 25,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Arvejas",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Choclo",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Zapallo",
+          "cantidad": 35,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Pulpa de tomate",
+          "cantidad": 20,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Apio",
+          "cantidad": 0.5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": 0.5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Aceite",
+          "cantidad": 5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Perejil",
+          "cantidad": 1,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Agua",
+          "cantidad": 10,
+          "unidad": "ml"
+        }
+      ],
+      "peso_porcion_g": 160,
+      "filtros": [
+        "Sin Gluten",
+        "Sin Azúcar"
+      ]
+    },
+    {
+      "id": "pollo-con-salsa-blanca-y-verduras",
+      "nombre": "POLLO CON SALSA BLANCA Y VERDURAS",
+      "categoria": "Ensalada/Verdura",
+      "imagen": "/images/pollo-con-salsa-blanca-y-verduras.jpg",
+      "ingredientes": [
+        {
+          "nombre": "Suprema de pollo",
+          "cantidad": 50,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Brócoli fresco",
+          "cantidad": 60,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Zanahoria",
+          "cantidad": 40,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cebolla",
+          "cantidad": 10,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Puerro",
+          "cantidad": 20,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Morrón rojo",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Aceite",
+          "cantidad": 5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": 0.5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Queso rallado",
+          "cantidad": 5,
+          "unidad": "g"
+        }
+      ],
+      "peso_porcion_g": 150,
+      "filtros": [
+        "Sin Gluten",
+        "Sin Azúcar"
+      ]
+    },
+    {
+      "id": "pure-de-papas",
+      "nombre": "PURÉ DE PAPAS",
+      "categoria": "Acompañamiento",
+      "imagen": "/images/pure-de-papas.jpg",
+      "ingredientes": [
+        {
+          "nombre": "Papa",
+          "cantidad": 160,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Leche fluida",
+          "cantidad": 50,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Aceite",
+          "cantidad": 5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": 0.25,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Nuez moscada",
+          "cantidad": 0.1,
+          "unidad": "g"
+        }
+      ],
+      "peso_porcion_g": 160,
+      "filtros": [
+        "Sin Gluten",
+        "Vegano",
+        "Sin Azúcar"
+      ]
+    },
+    {
+      "id": "pure-de-papas-instantaneo",
+      "nombre": "PURÉ DE PAPAS INSTANTÁNEO",
+      "categoria": "Acompañamiento",
+      "imagen": "/images/pure-de-papas-instantaneo.jpg",
+      "ingredientes": [
+        {
+          "nombre": "Papa en escama",
+          "cantidad": 25,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Agua",
+          "cantidad": 120,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Leche fluida",
+          "cantidad": 50,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Aceite",
+          "cantidad": 2.5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": 0.5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Nuez moscada",
+          "cantidad": 0.1,
+          "unidad": "g"
+        }
+      ],
+      "peso_porcion_g": 160,
+      "filtros": [
+        "Sin Gluten",
+        "Vegano",
+        "Sin Azúcar"
+      ]
+    },
+    {
+      "id": "pure-triple",
+      "nombre": "PURÉ TRIPLE",
+      "categoria": "Acompañamiento",
+      "imagen": "/images/pure-triple.jpg",
+      "ingredientes": [
+        {
+          "nombre": "Papa",
+          "cantidad": 100,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Zapallo",
+          "cantidad": 60,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Zanahoria",
+          "cantidad": 60,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Leche",
+          "cantidad": 50,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Aceite",
+          "cantidad": 5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": 0.25,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Nuez moscada",
+          "cantidad": 0.1,
+          "unidad": "g"
+        }
+      ],
+      "peso_porcion_g": 180,
+      "filtros": [
+        "Sin Gluten",
+        "Vegetariano",
+        "Sin Azúcar"
+      ]
+    },
+    {
+      "id": "salsa-blanca-liviana",
+      "nombre": "SALSA BLANCA LIVIANA",
+      "categoria": "Ensalada/Verdura",
+      "imagen": "/images/salsa-blanca-liviana.jpg",
+      "ingredientes": [
+        {
+          "nombre": "Leche fluida",
+          "cantidad": 75,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Almidón de maíz",
+          "cantidad": 2.2,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Nuez moscada",
+          "cantidad": 0.075,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": 0.2,
+          "unidad": "g"
+        }
+      ],
+      "peso_porcion_g": 0,
+      "filtros": [
+        "Sin Gluten",
+        "Vegano",
+        "Sin Azúcar"
+      ]
+    },
+    {
+      "id": "torta-de-atun",
+      "nombre": "TORTA DE ATÚN",
+      "categoria": "Postre",
+      "imagen": "/images/torta-de-atun.jpg",
+      "ingredientes": [
+        {
+          "nombre": "Atún",
+          "cantidad": 60,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cebolla",
+          "cantidad": 20,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Morrón",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Pulpa de tomate",
+          "cantidad": 20,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Aceite",
+          "cantidad": 2.5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Orégano",
+          "cantidad": 0.15,
+          "unidad": "g"
+        }
+      ],
+      "peso_porcion_g": 160,
+      "filtros": [
+        "Sin Gluten",
+        "Vegano",
+        "Sin Azúcar",
+        "Sin Sal"
+      ]
+    },
+    {
+      "id": "torta-de-carne-y-vegetales",
+      "nombre": "TORTA DE CARNE Y VEGETALES",
+      "categoria": "Postre",
+      "imagen": "/images/torta-de-carne-y-vegetales.jpg",
+      "ingredientes": [
+        {
+          "nombre": "Carne picada",
+          "cantidad": 60,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cebolla",
+          "cantidad": 10,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Morrón",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Verdura de estación",
+          "cantidad": 35,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Aceite",
+          "cantidad": 3,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Huevo",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Almidón de maíz",
+          "cantidad": 2,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": 0.5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Hierbas o condimentos",
+          "cantidad": 0.5,
+          "unidad": "g"
+        }
+      ],
+      "peso_porcion_g": 160,
+      "filtros": [
+        "Sin Gluten",
+        "Sin Azúcar"
+      ]
+    },
+    {
+      "id": "tortilla-de-papa,-vegetales-y-pollo",
+      "nombre": "TORTILLA DE PAPA, VEGETALES Y POLLO",
+      "categoria": "Ensalada/Verdura",
+      "imagen": "/images/tortilla-de-papa,-vegetales-y-pollo.jpg",
+      "ingredientes": [
+        {
+          "nombre": "Papa",
+          "cantidad": 160,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Zapallito",
+          "cantidad": 50,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Suprema de pollo",
+          "cantidad": 50,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Huevo",
+          "cantidad": 22.5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Leche",
+          "cantidad": 40,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cebolla",
+          "cantidad": 10,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Almidón de maíz",
+          "cantidad": 20,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Orégano",
+          "cantidad": 0.15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Ajo",
+          "cantidad": 1,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": 0.5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Aceite",
+          "cantidad": 5,
+          "unidad": "g"
+        }
+      ],
+      "peso_porcion_g": 200,
+      "filtros": [
+        "Sin Gluten",
+        "Sin Azúcar"
+      ]
+    },
+    {
+      "id": "budin-de-pescado",
+      "nombre": "BUDIN DE PESCADO",
+      "categoria": "Por Clasificar",
+      "imagen": "/images/budin-de-pescado.jpg",
+      "ingredientes": [],
+      "peso_porcion_g": 0,
+      "filtros": [],
+      "preparacion": "AÑo \" ; Peso por porción (g/ml) 50 30 10 Procedimiento (CON PESCADO FRESCO) Pelar, lavar y rallar 0 procesar la cebolla; el ajoyla zanahoria. Hervir el pescado fresco junto con el laurel Una vez cocido escurrir el agua y desmenuzar el pescado. Reservar. Rehogar la zanahoria; Ia cebolla y el ajo: Mezclar en un recipiente los huevos batidos; el queso; el almi- dón de maíz; pan rallado; el aceite y la sal. Agregar a esta mezcla el pescado y las verduras rehogadas y la pulpa de tomate. Disponer esta mezcla en una asadera aceitada. Cocinar en horno moderado aproximadamente 30 minutos 20 23 5 5 0 5 ++ 5 (CON PESCADO ENLATADO) UNA UNIDAD DE HUEVO PESA 45 50g. \"*1 hoja de laurel cada 10 porciones Pelar; lavar y rallar 0 procesar la cebolla; el ajoyla zanahoria. Rehogar las verduras junto con el ajo: Escurrirelatún. Mezclar en un recipiente los huevos batidos; el queso; el almi- dón de maíz; cl pan rallado y el aceite. Agregar a esta mezcla el pescado; los verduras rehogadas; la pulpa de tomate y los condimentos. Disponer esta mezcla en una asadera aceitada. Cocinar en horno moderado aproximadamente 30 minutos.",
+      "acompañamientos": [],
+      "variantes": [],
+      "tips": [],
+      "temperatura": null,
+      "postre": null
+    },
+    {
+      "id": "carne-ala-portuguesa",
+      "nombre": "CARNE ALA PORTUGUESA",
+      "categoria": "Por Clasificar",
+      "imagen": "/images/carne-ala-portuguesa.jpg",
+      "ingredientes": [],
+      "peso_porcion_g": 0,
+      "filtros": [],
+      "preparacion": "Peso por porción (g/ml) 50 10 15 40 25 40 1 0,5 5 Procedimiento 10",
+      "acompañamientos": [
+        "EL AÑo ;"
+      ],
+      "variantes": [],
+      "tips": [],
+      "temperatura": null,
+      "postre": null
+    },
+    {
+      "id": "cazuela-de-entejas",
+      "nombre": "CAZUELA DE ENTEJAS",
+      "categoria": "Por Clasificar",
+      "imagen": "/images/cazuela-de-entejas.jpg",
+      "ingredientes": [],
+      "peso_porcion_g": 0,
+      "filtros": [],
+      "preparacion": "Procedimiento",
+      "acompañamientos": [],
+      "variantes": [],
+      "tips": [],
+      "temperatura": "Temperatura de servicio Postre sugerido 24",
+      "postre": null
+    },
+    {
+      "id": "chupin-de-pescado-9-y-verduras-;",
+      "nombre": "CHUPIN DE PESCADO 9 Y VERDURAS ;",
+      "categoria": "Por Clasificar",
+      "imagen": "/images/chupin-de-pescado-9-y-verduras-;.jpg",
+      "ingredientes": [],
+      "peso_porcion_g": 0,
+      "filtros": [],
+      "preparacion": "Peso por porción (g/ml)",
+      "acompañamientos": [
+        "26 10 50 15 20 30 015 5 1,5 25"
+      ],
+      "variantes": [],
+      "tips": [],
+      "temperatura": null,
+      "postre": null
+    },
+    {
+      "id": "croquetas-de-atun-y-papas",
+      "nombre": "CROQUETAS DE ATUN Y PAPAS",
+      "categoria": "Por Clasificar",
+      "imagen": "/images/croquetas-de-atun-y-papas.jpg",
+      "ingredientes": [],
+      "peso_porcion_g": 0,
+      "filtros": [],
+      "preparacion": "Procedimiento (CON ATÚN Y PURÉ) Pelar; lavar y cocinar las papas Hacer un puré y reservarlo: Pelar; lavar; picar 0 procesar la cebolla_ yel ajo. Lavary picar el mix de verdes Rehogar la cebolla yel_ ajo. Escurrir el atún. Batir ligeramente los huevos con el mix de verdes. Mezclar el puré de papas con la cebolla; el ajo; el atún y los huevos formando una pasta. Formar bolitas y rebozar con polenta. Llevar a la heladera unos 15 min. Precalentar el horno. Untar una asadera con aceite; disponer las bolitas y cocinar - las deambos lados en horno moderado. UNA UNIDAD DE HUEVO PESA 45 - 50g",
+      "acompañamientos": [
+        "(CON PESCADO FRESCO Y ARROZ) Cocinar el arroz según procedimiento anexo en recetas bási - cas. Reservar Hervir el pescado. Escurriry reservar. Realizar el procedimiento antes mencionadc para elresto de los ingredicntcs agregando cn lugar dcl atún y cl puré cl pescado fresco desmenuzado; el arroz y la sal. Realizar el armado según procedimiento ya detallado."
+      ],
+      "variantes": [],
+      "tips": [],
+      "temperatura": null,
+      "postre": null
+    },
+    {
+      "id": "ensalada-ompleta",
+      "nombre": "ENSALADA OMPLETA",
+      "categoria": "Por Clasificar",
+      "imagen": "/images/ensalada-ompleta.jpg",
+      "ingredientes": [],
+      "peso_porcion_g": 0,
+      "filtros": [],
+      "preparacion": "Peso por porción (g/ml) 40 20 50 40 40 20 0,75 5 15 Procedimiento Dejar las lentejas en remojo de 1-4 hs refrigeradas. Cocinarlas en agua (tres partes de agua por una de lentejas) Reservarlas: Cortar en cubos el polloy hervirlo: Reservarlo: Cocinar el arroz según procedimiento anexo en recetas base Reservarlo. Lavar y desinfectar la zanahoria y el tomate Rallar 0 procesar la zanahoria. Cortar el tomate en cubitos Mezclar el pollo con el arroz; las lentejas y las verduras inclui- do elchoclo. Aderezar con aceite, mayonesa vegetal y mezclar bien: En caso de agregar huevos por sustitución: cocinarlos duran - te 13 minutos luego de que hierva el agua, pelarlos; rallarlos y reservarlos. Agregarlos al final",
+      "acompañamientos": [],
+      "variantes": [
+        "Pollo por atún incluyendo 60 9 por porción: Sin pollo aumentando las lentejas a 30 g y agregando 1 huevo por porción Zanahoria por zapallito 0 chauchas o coliflor \"congelado brócoli congelado. Si se usa brócoli y colifior natural poner el doble de lo que dice la receta.",
+        "'Elaborar la mayonesa vegetal de acuerdo a las proporcio- nesyal procedimiento especificado en ADEREZOS:"
+      ],
+      "tips": [],
+      "temperatura": "Temperatura de servicio Postre sugerido",
+      "postre": null
+    },
+    {
+      "id": "pan-de-carne-/-hamburguesa",
+      "nombre": "PAN DE CARNE / HAMBURGUESA",
+      "categoria": "Por Clasificar",
+      "imagen": "/images/pan-de-carne-/-hamburguesa.jpg",
+      "ingredientes": [],
+      "peso_porcion_g": 0,
+      "filtros": [],
+      "preparacion": "Peso por porción (g/ml) Procedimiento 10 15 20 20 10 { Pelar; lavar y picar 0 procesar la zanahoria y la cebolla. Lavary picar 0 procesar el morrón. Batir ligeramente los huevos: Mezclar la carne; los vegetales; Ia avena; los huevos batidos y los condimentos. Armar cilindros sobre una placa aceitada. Hornear hasta que el color de cocción sea marrón grisáceo en el centro;   aproximadamente 30 minutos. 'UNAUNIDAD DE HUEVO PESA 45 508",
+      "acompañamientos": [
+        "Puré triple / Puré de papas más ensalada de vegetales/Ensalada primavera Ensalada jardinera/ Arroz con vegetales/Arroz amarillo más ensolada de vegetales[Fideos más ensalaaa de vegetales Carne vacuna por cerdo carne vacuna por pollo Se puede sustituir parte de la carne por lentejas; en una proporción de 50 g de carney 15 g de lentejas para porción escolary para la porción inicial 35 g de carney 1Og de lentejas. Las lentejas se incorporan cocidas a la mezcla de carne:"
+      ],
+      "variantes": [],
+      "tips": [],
+      "temperatura": null,
+      "postre": null
+    },
+    {
+      "id": "elaño-pastel-de-carne-papa",
+      "nombre": "ELAÑO PASTEL DE CARNE PAPA",
+      "categoria": "Por Clasificar",
+      "imagen": "/images/elaño-pastel-de-carne-papa.jpg",
+      "ingredientes": [],
+      "peso_porcion_g": 0,
+      "filtros": [],
+      "preparacion": "Procedimiento",
+      "acompañamientos": [
+        "hoja cada 10 porciones",
+        "Armado del Pastel Acondicionar el relleno de carne en la asadera y por encima el puré Espolvorear con el queso rallado. Gratinar.",
+        "Ensalada de vegetales"
+      ],
+      "variantes": [],
+      "tips": [],
+      "temperatura": null,
+      "postre": null
+    },
+    {
+      "id": "pastel-de-carne-año-&-berenjenas-tipo-moussaka)i",
+      "nombre": "PASTEL DE CARNE AÑO & BERENJENAS TIPO MOUSSAKA)I",
+      "categoria": "Por Clasificar",
+      "imagen": "/images/pastel-de-carne-año-&-berenjenas-tipo-moussaka)i.jpg",
+      "ingredientes": [],
+      "peso_porcion_g": 0,
+      "filtros": [],
+      "preparacion": "Procedimiento Peso por porción (g/ml) 50 50 Relleno: Pelar, lavar y picar 0 procesar la cebolla y el ajo. Lavary picar0 procesar el morrón: Lavary cortar en cubos el tomate Cortar las berenjenas en láminas finas con cáscara y dejar reposar con una pizca de sal para que se escurran: Enjuagar las berenjenas y hornear por 15 minutos. Reservar. Rehogar la cebolla y el morrón. Agregar la carne y la pulpa de tomate Condimentar Continuar la cocción revolviendo bien para evitar que la carne se apelotone; logrando así una cocción uniforme Agregar por último el tomate en cubos; mezclando bien. Por otro lado lavar; desinfectar y picar la olbahaca. Mezclarla con Ia ricota desgranada y reservar Elaborar Ia salsa blanca liviana de acuerdo a las proporciones y al procedimiento anexo en las RECETAS BASE 10 30 15 30 To 0,75 1,5 porción Para el armado: Intercalar capas de berenjenas, relleno de carne, berenjenas nuevamente y relleno de ricota en asadera previamente aceita - da. Terminar con salsa blanca y queso rallado. Gratinar en horno fuerte (2509C) durante aproximadamente 15 minutos hasta que el exterior quede crujiente.",
+      "acompañamientos": [
+        "Arrcz amarillo",
+        "Carne por pollo Carne por cerdo"
+      ],
+      "variantes": [],
+      "tips": [],
+      "temperatura": "Temperatura de servicio Caliente Postre sugerido Fruta de estación",
+      "postre": null
+    },
+    {
+      "id": "pollo-con-salsa-blanca-verduras",
+      "nombre": "POLLO CON SALSA BLANCA VERDURAS",
+      "categoria": "Por Clasificar",
+      "imagen": "/images/pollo-con-salsa-blanca-verduras.jpg",
+      "ingredientes": [],
+      "peso_porcion_g": 0,
+      "filtros": [],
+      "preparacion": "Peso por porción (g/ml) 50 Procedimiento Pelar;, lavar y picar 0 procesar la cebolla yla zanahoria. Lavar y picar 0 procesar el morrón. Lavar y picar el puerro. Lavarel brócoli; hervir hasta que esté tierno; cuidando que no se sobrecocine y trozarlo pequeño. Reservar. Cortar en cubos el pollo. Rehogar la cebolla; el morrón y el puerro. Incorporar Ia zanahoria y el pollo. Condimentar. Incorporar el brócoli y luego la salsa blanca; mezclar bien. Una vez finalizada la cocción apagar el fuego; incorporar el aceite y mezclar bien. 40 10 20 15 1 porción 0,5 Elaborar Ia Salsa Blanca liviana de acuerdo a las proporciones y al procedimiento anexo en RECETAS BASE",
+      "acompañamientos": [
+        "Fideos / Arroz"
+      ],
+      "variantes": [
+        "Brócoli por espinaca 0 zapallitos. Brócoli 0 espinaca congelado usar 30 gramos.",
+        "Elaborar los fideos  arroz de acuerdo a las proporciones yal procedimiento especificado en RECETAS BASE agregar el queso rallado."
+      ],
+      "tips": [
+        "Servir el pollo por encimo de la pasta 0 arroz"
+      ],
+      "temperatura": "Temperatura de servicio Postre sugerido",
+      "postre": null
+    },
+    {
+      "id": "torta-de-carne-vegetales-2",
+      "nombre": "TORTA DE CARNE VEGETALES 2",
+      "categoria": "Por Clasificar",
+      "imagen": "/images/torta-de-carne-vegetales-2.jpg",
+      "ingredientes": [],
+      "peso_porcion_g": 0,
+      "filtros": [],
+      "preparacion": "Procedimiento Masa: Elaborar la masa de acuerdo a las proporciones y al procedimiento anexo en RECETAS BASE Relleno: Pelar; lavar y picar 0 procesar la cebolla. Lavary picar 0 procesar el morrón: Lavar y cortar en cubos 0 tiras la verdura de estación seleccionada. Batir ligeramente el huevo. Rchogar la cebolla y cl morrón  Incorporar la verdura de estación. Condimentar. Agregar Ia carne; terminar la cocción. Apagar el fuego; agregar el aceite; el huevo batido y el almidón; mezclar bien: Entibiar. Forrar la asadera con una tapa de masa. Rellenar. Colocar la otra tapa encima, pintar con huevo y pinchar: Llevar @ horno moderado hasta la cocción completa de la torta. *UNA UNIDAD DE HUEVO PESA 45 - 50g",
+      "acompañamientos": [
+        "Ensalada primavera/ Ensalada jardinera",
+        "Carne por pollo"
+      ],
+      "variantes": [],
+      "tips": [
+        "Verduras de estación recomendadas: puerro; berenjeno; zapallito espinaca."
+      ],
+      "temperatura": "Temperatura de servicio Postre sugerido",
+      "postre": null
+    },
+    {
+      "id": "tortilla-de-papa-vegetales-y-pollo",
+      "nombre": "TORTILLA DE PAPA VEGETALES Y POLLO",
+      "categoria": "Por Clasificar",
+      "imagen": "/images/tortilla-de-papa-vegetales-y-pollo.jpg",
+      "ingredientes": [],
+      "peso_porcion_g": 0,
+      "filtros": [],
+      "preparacion": "Peso por porción (g/ml) 160 50 50 22,5* Procedimiento Pelar; lavary picar 0 procesar Ia cebolla y el ajo. Pelar; lavar y cortar en cubos la papa. Lavar y cortar en cubos el zapallito Cortar en cubos el pollo. Hervir el pollo. Batir el huevo. Rehogar la cebolla yel ajo. Agregar el pollo. Condimentar: Agregar el zapollito: Cocinar las papas con la mitad dc la sal, hasta quc se logre 5 clpunto de cocción. Colar y reservar. En un bols mezclar las papas con las verduras y el pollo. Disolver el almidón de maíz con la leche Agregar el huevo batido; el oréganoy elalmidón de maíz previa- mente hidratadc. Disponer en una asadera previamente aceitada. Llevar a horno moderado hasta completar Ia cocción verificando que la cocción del huevo sea completa. 40 10 20 0,15 0,5 5 UNA UNIDAD DE HUEVO PESA 45 - 50g",
+      "acompañamientos": [
+        "Ensalada de vegetales Ensalada de leguminosasy vegetales (solo si se elabora la tortilla sin pollo). Sin pollo; pero se debe acompañor con la ensalada de leguminosas y vegetales Zapallito por brócoli, zucchini 0 espinaca. Si se usa brócoli congelado usar igual prcporción. Si se usa brócoli fresco pônêr el doblê delo quê dicê l0 rêcêtà. Precalentar el horno Mezclar bien y armar asaderas inmediatamente antes de hornear. Para servicios numerosos sugiere usor la papa en cubos congelada y cocinarla aparte; utilizando 120 g DOr porción. Caliente"
+      ],
+      "variantes": [],
+      "tips": [],
+      "temperatura": "Temperatura de servicio 54 Postre sugerido",
+      "postre": "Postre de leche"
+    },
+    {
+      "id": "torta-de-atun",
+      "nombre": "TORTA DE ATUN",
+      "categoria": "Por Clasificar",
+      "imagen": "/images/torta-de-atun.jpg",
+      "ingredientes": [],
+      "peso_porcion_g": 0,
+      "filtros": [],
+      "preparacion": "AÑO & ; Peso por porción (g/ml) 20 15 20 2,5 0,15",
+      "acompañamientos": [
+        "Ensalada primavera/ Ensalada jardinera",
+        "Atún por pescado fresco en igual proporción. Sise hace con pescado fresco agregar 0.5g de sal"
+      ],
+      "variantes": [],
+      "tips": [],
+      "temperatura": "Temperatura de servicio Postre sugerido",
+      "postre": null
+    },
+    {
+      "id": "5)t;25",
+      "nombre": "5)T;25",
+      "categoria": "Por Clasificar",
+      "imagen": "/images/5)t;25.jpg",
+      "ingredientes": [],
+      "peso_porcion_g": 0,
+      "filtros": [],
+      "preparacion": "IVa 597,325 PAPAS AL NATURAL Procedimiento Pelar; lavar y cortar en cubos la papa. Hervir agua cuando rompa el hervor agregar la papa. Agregar la sal Continuar la cocción hasta que la papa Cuidar la cocción dela papa para esté tierna. evitar sobrecocción, retirar del agua Colar y acondicionar en asadera. unos minutos antes dela cocción Aderezar con aceite. total. Para los servicios numerosos puede Agregar perejil 0 ciboulette picado si usarse papa congelada en cubos; corresponde; previamente lavado y 130 gramos por porción Paro preparar Papas con pereiil 0 desinfectado: ciboulette; usar gramo por porción.",
+      "acompañamientos": [],
+      "variantes": [],
+      "tips": [],
+      "temperatura": "Temperatura| Caliente /fría de servicio",
+      "postre": null
+    },
+    {
+      "id": "boniato-en-sustitución-de-la-papa",
+      "nombre": "Boniato en sustitución de la papa",
+      "categoria": "Por Clasificar",
+      "imagen": "/images/boniato-en-sustitución-de-la-papa.jpg",
+      "ingredientes": [],
+      "peso_porcion_g": 0,
+      "filtros": [],
+      "preparacion": "PURÉ DE PAPAS INSTANTÁNEO",
+      "acompañamientos": [],
+      "variantes": [],
+      "tips": [
+        "En escuelas con más de 50 comensales se puede utilizar papa en escamas (ver siguien - te receta)"
+      ],
+      "temperatura": "Zapallo por zanahoria; berenjenc, cebollo; morrón. Los cortes de las verduras pueden variar entre gajos; cubos, etc. Los vegetales deben quedar dorados a modo que queden crocantes por fucra y tiernos por dentro. Tener en cuenta los diferentes puntos de cccción; Pueden usarse hierbas aromáticas para condimentar; ciboulette; tomillo; romero; etc. Temperatura Caliente de servicio 63",
+      "postre": null
+    },
+    {
+      "id": "budén-de-harina-de-maiz",
+      "nombre": "BUDÉN DE HARINA DE MAIZ",
+      "categoria": "Por Clasificar",
+      "imagen": "/images/budén-de-harina-de-maiz.jpg",
+      "ingredientes": [],
+      "peso_porcion_g": 0,
+      "filtros": [],
+      "preparacion": "Procedimiento Mezclar la harina de maíz con la mitad de azúcar y% de leche fluida. Calentar el resto de la leche con la cáscara de naranja previamente higienizada. Agregar revolviendo continuamente; la mezcla de harina de maízy azúcar a la leche caliente: Llevar a ebullición; cocinar durante 4 minutos; sobrc fuego moderado; revolviendo continuamente: Retirar de la fuente de calor. Batir ligeramente el huevo con la otra mitad de azúcar: Agregor a la harina de maíz el batido de huevo; mezclando conti - nuamente. Volver al fuegc moderado revolviendo continuamente hasta alcan- zarla ebullición; cocinar durante 4 minutos Retirar de la fuente de calor Agregar la vainilla y mezclar. Verter en budinera 0 asadera. Enfriar Peso por porción (g/ml) 125 10 10 11 * 0,5 c/n 12",
+      "acompañamientos": [],
+      "variantes": [
+        "Sémola",
+        "Aparte realizar el caramelo colocando el azúcar a calentar con la cuarta parte del agua, cuando cambia de color apagar el fuego y agregar el resto del agua caliente Dejar enfriar. Luego verterlo sobre las porciones fraccionadas"
+      ],
+      "tips": [],
+      "temperatura": "Temperatura de servicio",
+      "postre": null
+    },
+    {
+      "id": "lentejas",
+      "nombre": "LENTEJAS",
+      "categoria": "Por Clasificar",
+      "imagen": "/images/lentejas.jpg",
+      "ingredientes": [],
+      "peso_porcion_g": 0,
+      "filtros": [],
+      "preparacion": "Secos, sin insectos; en Lugar limpio; seco, envase de origen, cerrado fresco, sin luz solar POROTOS y con fecha de vencimien- directa. Envases cerra GARBANZOS to dos 0 recipientes herméticos identifica- dos. ARVEJAS Y Granos enteros de aspec- Si existe sobrante MAIZ EN to uniforme; cubiertos de refrigerar en recipiente LATA líquido claro. apto ( no dejar en lata) y Con aroma y sabor carac - sin líquido; utilizar terístico del vegetal típico, rápidamente 0 descar- suave tar; Debe considerarse el peso escurrido para su utiliza- ción ARVEJAS Y Granos enteros de aspecto Conservación: En conge- MAIZ uniforme Olor; aroma lación hasta su uso. CONGELA - sabor de   vegetal típico, Congelado -18 C' DO suave Envase primario: bolsa de plástico íntegra con rotu - lación, detallando fecha de vencimiento. SAL De granulación fina Lugar limpio; seco, Enriquecida con minera - fresco; sin luz solar les (yodada; fluorada; directa. Envases cerra- yodofluorada). dos 0 recipientes Con envase original. herméticos identifica- dos. PULPA DE Puré de tomates 0 Pulpa Una vez abierta refrige- de tomate concentrada 0 rar y consumir dentro TOMATE tamizada del plazo especificado Consistencia espesa. en elenvase Envase original, cerrado; limpio; no hinchado; con fecha de envasado/venci - miento. 84 85",
+      "acompañamientos": [],
+      "variantes": [],
+      "tips": [],
+      "temperatura": null,
+      "postre": null
+    },
+    {
+      "id": "carne-picada",
+      "nombre": "CARNE PICADA",
+      "categoria": "Por Clasificar",
+      "imagen": "/images/carne-picada.jpg",
+      "ingredientes": [],
+      "peso_porcion_g": 0,
+      "filtros": [],
+      "preparacion": "Carne vacuna picada de Refrigerado Congela- primera calidad, especial do magra, sin agregado de Debe preguntarse al aditivos, exenta de vísce - proveedor si es carne ras y tendones. Color rojo fresca 0 descongelada cereza uniforme; sin para decidir su uso y colorantes adicionados , conservación sin olores extraños Congelado: -18 C' Envase primario: bolsa de plástico íntegra. Si es envasada: fecha de envasado y fecha de vencimiento CARNE Cuadrada; nalga, bola de Refrigerado 0 congelado VACUNA lomo ENTERA Sin tendones; sin grasa Debe preguntarse al visible, sin huesos, textura proveedor si es carne firme. Color rojo cereza fresca 0 descongelada sin colorantes adiciona- para decidir su uso y dos, sin olores extraños. conservación. Cortada: en cubos de Congelado: -18 C aproximadamente 1 cm Envase primario: bolsa de plástico íntegra. Si es envasada: fecha de envasado y fecha de vencimiento. PESCADO Palometa, anchoa y atún Refrigerado 0 Congela- FRESCO 0 Pescado 100% natural, do CONGELA Bifes frescos 0 congela- DO dos, sin espinas; carne de Debe preguntarse al textura firme con olor a proveedor si es carne mar característico. fresca 0 descongelada Envase primario: bolsa de para decidir su uso y plástico íntegro: conservación- Si es envasada: fecha de Congelado: -18 C' envasado y fecha de vencimiento CARNE DE Lomo; solomillo; carré_ Refrigerada 0 congela - CERDO Su color deberá ser da rosado; sin tendones; sin Debe preguntarse al huesos, sin grasa visible; proveedor si es carne sin manchas ni colores fresca descongelada oscuros, sin colorantes para decidir su uso y adicionados con olor conservación. característico al alimento y ausencia de olores extraños. En cortes ente- ros la textura debe ser húmeda; no gomosa (firme a la presión). Envase primario: bolsa de plástico íntegra Si es envasada: fecha de envasado y fecha de vencimiento . POLLO Suprema (Sin hueso; sin Refrigerada 0 congela piel, sin aditivos). Color da característico; sin partes Debe preguntarse al rojizas de daños de mús- proveedor si es carne culo. Sin olores extraños y fresca 0 descongelada textura firme y suave para decidir su uso y (No suprema grillada) conservación. Envase: bolsa de plástico Congelado -18 C' íntegra. Si es envasada: fecha de envasado y fecha de vencimiento 86 87",
+      "acompañamientos": [],
+      "variantes": [],
+      "tips": [],
+      "temperatura": null,
+      "postre": null
+    },
+    {
+      "id": "huevos",
+      "nombre": "HUEVOS",
+      "categoria": "Por Clasificar",
+      "imagen": "/images/huevos.jpg",
+      "ingredientes": [],
+      "peso_porcion_g": 0,
+      "filtros": [],
+      "preparacion": "Cáscara íntegra, limpia; Refrigerado (no en la forma y textura normal. Al puerta), en bolsa 0 abrirlo exento de olor; recipientes limpios (no sabor y color extraño. maples)  Francés, fresco. Elaborado En envase cerrado; en únicamente con harina; lugar limpio y seco agua y levadura. Sin agregado de grasas Congelado:-18 %C Envasado en bolsas limpias, preferentemente de nylon; de un solo uso Congelado; solo en situa - ciones justificadas. PAN 6224) Directora del PAE: Mtra. Rosa Lezué Departamento de Seguridad Alimentaria y Nutricional Asesora en Nutrición: Mag. Caren Zelmcnovich Equipo de redacción: Licenciadas en Nutrición: Silvana Machado Brenda Courdin Daniela Batyi Marcela Easton Eloisa Pérez Sabrina Pasantes Inés Arruti Tatiana Bravo Adriana Capel PAN Elaborado con harina En envase cerrado; en INTEGRAL integral, sin colorantes, lugar limpio y seco. sin agregado de grasa Envasado en bolsas Congelado: -18  C limpias, preferentemente de nylon; de un solo uso. Congelado; solo en situa - ciones justificadas VAINILLA Está autorizada para su Conservación: a tempe- LIQUIDA uso como saborizante ratura ambiente, debi- solamente la solución damente cerrado aromatizante a base de chaucha de vainilla (extracto) Envase primario: el de origen. COCOA / - Cacao, cocoa 0 chocolate Lugar limpio; seco, CACAO en polvo con 0 sin agrega- fresco; sin luz solar do de azúcar. directa. Envases cerra- En envase de origen. dos 0 recipientes No fraccionado. herméticos identifica- dos. Equipo de revisión: Licenciadas en Nutrición: Noelia Caviglia Mariana Seiler 88",
+      "acompañamientos": [],
+      "variantes": [],
+      "tips": [],
+      "temperatura": null,
+      "postre": null
+    }
+  ],
+  "categorias": [
+    "Acompañamiento",
+    "Arroz/Fideos",
+    "Ensalada/Verdura",
+    "Plato Principal",
+    "Postre"
+  ]
+}

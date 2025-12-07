@@ -27,9 +27,15 @@ function generateCompleteWeeklyHTML(planificacion, recetas, includePDFLink = fal
   const diasDisplay = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
 
   // Usar estilos inline para mejor compatibilidad con clientes de email
-  html += '<div style="font-family: Arial, sans-serif; max-width: 700px; color: #333;">';
-  html += '<h2 style="color: #007bff; border-bottom: 3px solid #007bff; padding-bottom: 10px; margin-bottom: 5px;">Planificación Semanal - Recetario PAE</h2>';
-  html += '<p style="color: #666; font-size: 12px; margin: 0 0 15px 0;">Generado: ' + new Date().toLocaleDateString('es-AR') + '</p>';
+  html += '<div style="font-family: \'Segoe UI\', \'Helvetica Neue\', sans-serif; max-width: 700px; color: #2c3e50;">';
+
+  // Header estético con degradado visual
+  html += '<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 30px 20px; text-align: center; border-radius: 10px 10px 0 0; margin-bottom: 30px;">';
+  html += '<h1 style="font-family: \'Georgia\', serif; color: white; font-size: 32px; margin: 0; font-weight: normal; letter-spacing: 1px;">Planificación Semanal</h1>';
+  html += '<p style="color: rgba(255,255,255,0.9); font-size: 14px; margin: 8px 0 0 0; font-style: italic;">Recetario PAE</p>';
+  html += '</div>';
+
+  html += '<p style="color: #7f8c8d; font-size: 12px; margin: 15px 20px 20px 20px; text-align: center; border-bottom: 1px solid #ecf0f1; padding-bottom: 15px;">📅 ' + new Date().toLocaleDateString('es-AR') + '</p>';
 
   // Sección de información de descargas
   if (includePDFLink || includeExcelLink) {
@@ -47,25 +53,28 @@ function generateCompleteWeeklyHTML(planificacion, recetas, includePDFLink = fal
   }
 
   // SECCIÓN 1: RECETAS POR DÍA
-  html += '<h3 style="color: #0056b3; border-bottom: 2px solid #0056b3; padding-bottom: 8px; margin-top: 20px;">1. RECETAS POR DÍA</h3>';
+  html += '<div style="margin: 30px 20px 0 20px;">';
+  html += '<h2 style="font-family: \'Georgia\', serif; color: #667eea; font-size: 22px; margin: 0 0 20px 0; font-weight: normal; position: relative; padding-bottom: 12px; border-bottom: 2px solid #667eea;">🍳 Recetas por Día</h2>';
 
   dias.forEach((dia, idx) => {
     const recetasDelDia = planificacion[dia] || [];
-    html += '<div style="margin: 12px 0; padding: 10px; background-color: #f9f9f9; border-left: 4px solid #007bff;">';
-    html += '<p style="margin: 0 0 8px 0; font-weight: bold; color: #0056b3;">' + diasDisplay[idx] + '</p>';
+    html += '<div style="margin: 18px 0; padding: 15px; background: linear-gradient(to right, #f8f9fa, white); border-left: 4px solid #667eea; border-radius: 0 5px 5px 0;">';
+    html += '<p style="margin: 0 0 10px 0; font-weight: 600; color: #667eea; font-size: 15px; letter-spacing: 0.5px;">' + diasDisplay[idx] + '</p>';
 
     if (recetasDelDia.length === 0) {
       html += '<p style="margin: 0; color: #999; font-size: 13px;">Sin recetas programadas</p>';
     } else {
       recetasDelDia.forEach(r => {
-        html += '<p style="margin: 4px 0; font-size: 13px;">• <strong>' + r.nombre + '</strong> (' + r.porciones + ' porciones)</p>';
+        html += '<p style="margin: 4px 0; font-size: 13px;">🥘 <strong>' + r.nombre + '</strong> <span style="color: #7f8c8d; font-size: 12px;">(' + r.porciones + ' porciones)</span></p>';
       });
     }
     html += '</div>';
   });
+  html += '</div>';
 
   // SECCIÓN 2: INGREDIENTES POR DÍA
-  html += '<h3 style="color: #0056b3; border-bottom: 2px solid #0056b3; padding-bottom: 8px; margin-top: 20px;">2. INGREDIENTES POR DÍA</h3>';
+  html += '<div style="margin: 30px 20px 0 20px;">';
+  html += '<h2 style="font-family: \'Georgia\', serif; color: #667eea; font-size: 22px; margin: 0 0 20px 0; font-weight: normal; position: relative; padding-bottom: 12px; border-bottom: 2px solid #667eea;">🛒 Ingredientes por Día</h2>';
 
   dias.forEach((dia, idx) => {
     const recetasDelDia = planificacion[dia] || [];
@@ -88,25 +97,25 @@ function generateCompleteWeeklyHTML(planificacion, recetas, includePDFLink = fal
       }
     });
 
-    html += '<div style="margin: 12px 0;">';
-    html += '<p style="margin: 0 0 8px 0; font-weight: bold; color: #0056b3;">' + diasDisplay[idx] + '</p>';
+    html += '<div style="margin: 16px 0; padding: 12px; background: #f8f9fa; border-left: 4px solid #667eea; border-radius: 0 5px 5px 0;">';
+    html += '<p style="margin: 0 0 10px 0; font-weight: 600; color: #667eea; font-size: 14px;">📌 ' + diasDisplay[idx] + '</p>';
 
     if (Object.keys(ingredientesDelDia).length === 0) {
       html += '<p style="margin: 0; color: #999; font-size: 12px;">Sin ingredientes</p>';
     } else {
-      html += '<table style="width: 100%; border-collapse: collapse; font-size: 12px;">';
-      html += '<tr style="background-color: #e7f3ff;">';
-      html += '<td style="border: 1px solid #ddd; padding: 6px;">Ingrediente</td>';
-      html += '<td style="border: 1px solid #ddd; padding: 6px; text-align: center;">Cantidad</td>';
-      html += '<td style="border: 1px solid #ddd; padding: 6px;">Unidad</td>';
+      html += '<table style="width: 100%; border-collapse: collapse; font-size: 11px;">';
+      html += '<tr style="background-color: #667eea; color: white;">';
+      html += '<td style="border: none; padding: 8px; font-weight: 600;">Ingrediente</td>';
+      html += '<td style="border: none; padding: 8px; text-align: center; font-weight: 600;">Cantidad</td>';
+      html += '<td style="border: none; padding: 8px; font-weight: 600;">Unidad</td>';
       html += '</tr>';
 
       Object.entries(ingredientesDelDia).forEach(([key, ing], idx2) => {
-        const bgColor = idx2 % 2 === 0 ? '#f9f9f9' : '#ffffff';
-        html += '<tr style="background-color: ' + bgColor + ';">';
-        html += '<td style="border: 1px solid #ddd; padding: 6px;">' + ing.nombre + '</td>';
-        html += '<td style="border: 1px solid #ddd; padding: 6px; text-align: center;">' + formatNumberEmail(ing.cantidad) + '</td>';
-        html += '<td style="border: 1px solid #ddd; padding: 6px;">' + (ing.unidad || '') + '</td>';
+        const bgColor = idx2 % 2 === 0 ? '#f5f6fa' : '#ffffff';
+        html += '<tr style="background-color: ' + bgColor + '; border-bottom: 1px solid #e8eaed;">';
+        html += '<td style="padding: 8px; color: #2c3e50;">' + ing.nombre + '</td>';
+        html += '<td style="padding: 8px; text-align: center; color: #667eea; font-weight: 500;">' + formatNumberEmail(ing.cantidad) + '</td>';
+        html += '<td style="padding: 8px; color: #7f8c8d;">' + (ing.unidad || '') + '</td>';
         html += '</tr>';
       });
 
@@ -114,9 +123,11 @@ function generateCompleteWeeklyHTML(planificacion, recetas, includePDFLink = fal
     }
     html += '</div>';
   });
+  html += '</div>';
 
   // SECCIÓN 3: RESUMEN DE INGREDIENTES PARA LA SEMANA
-  html += '<h3 style="color: #0056b3; border-bottom: 2px solid #0056b3; padding-bottom: 8px; margin-top: 20px;">3. LISTA DE COMPRAS - SEMANA COMPLETA</h3>';
+  html += '<div style="margin: 30px 20px 0 20px;">';
+  html += '<h2 style="font-family: \'Georgia\', serif; color: #667eea; font-size: 22px; margin: 0 0 20px 0; font-weight: normal; position: relative; padding-bottom: 12px; border-bottom: 2px solid #667eea;">🛍️ Lista de Compras - Semana Completa</h2>';
 
   const ingredientesSemanales = {};
 
@@ -147,28 +158,30 @@ function generateCompleteWeeklyHTML(planificacion, recetas, includePDFLink = fal
   if (ingredientesOrdenados.length === 0) {
     html += '<p style="color: #999;">Sin ingredientes</p>';
   } else {
-    html += '<table style="width: 100%; border-collapse: collapse; font-size: 12px;">';
-    html += '<tr style="background-color: #e7f3ff;">';
-    html += '<td style="border: 1px solid #ddd; padding: 6px;">Ingrediente</td>';
-    html += '<td style="border: 1px solid #ddd; padding: 6px; text-align: center;">Cantidad Total</td>';
-    html += '<td style="border: 1px solid #ddd; padding: 6px;">Unidad</td>';
+    html += '<table style="width: 100%; border-collapse: collapse; font-size: 11px;">';
+    html += '<tr style="background-color: #667eea; color: white;">';
+    html += '<td style="border: none; padding: 8px; font-weight: 600;">Ingrediente</td>';
+    html += '<td style="border: none; padding: 8px; text-align: center; font-weight: 600;">Cantidad Total</td>';
+    html += '<td style="border: none; padding: 8px; font-weight: 600;">Unidad</td>';
     html += '</tr>';
 
     ingredientesOrdenados.forEach((ing, idx) => {
-      const bgColor = idx % 2 === 0 ? '#f9f9f9' : '#ffffff';
-      html += '<tr style="background-color: ' + bgColor + ';">';
-      html += '<td style="border: 1px solid #ddd; padding: 6px;">' + ing.nombre + '</td>';
-      html += '<td style="border: 1px solid #ddd; padding: 6px; text-align: center;">' + formatNumberEmail(ing.cantidad) + '</td>';
-      html += '<td style="border: 1px solid #ddd; padding: 6px;">' + (ing.unidad || '') + '</td>';
+      const bgColor = idx % 2 === 0 ? '#f5f6fa' : '#ffffff';
+      html += '<tr style="background-color: ' + bgColor + '; border-bottom: 1px solid #e8eaed;">';
+      html += '<td style="padding: 8px; color: #2c3e50;">' + ing.nombre + '</td>';
+      html += '<td style="padding: 8px; text-align: center; color: #667eea; font-weight: 500;">' + formatNumberEmail(ing.cantidad) + '</td>';
+      html += '<td style="padding: 8px; color: #7f8c8d;">' + (ing.unidad || '') + '</td>';
       html += '</tr>';
     });
 
     html += '</table>';
   }
 
-  html += '<hr style="border: none; border-top: 1px solid #ddd; margin: 20px 0 10px 0;">';
-  html += '<p style="font-size: 11px; color: #999; margin: 0;">Generado con Recetario PAE • ' + new Date().toLocaleDateString('es-AR') + '</p>';
   html += '</div>';
+  html += '<div style="margin: 30px 20px 0 20px;">';
+  html += '<hr style="border: none; border-top: 1px solid #ecf0f1; margin: 20px 0 15px 0;">';
+  html += '<p style="font-size: 12px; color: #95a5a6; margin: 0; text-align: center;">✨ Generado con Recetario PAE • ' + new Date().toLocaleDateString('es-AR') + '</p>';
+  html += '</div></div>';
 
   return html;
 }

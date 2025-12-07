@@ -249,7 +249,24 @@
       "filtros": [
         "Sin Gluten",
         "Sin Azúcar"
-      ]
+      ],
+      "preparacion": "Procedimiento:\n1. Cortar la suprema en cubos o bastones.\n2. Batir los huevos con las hierbas picadas y la sal.\n3. Macerar la suprema en esta mezcla durante 30 minutos en heladera.\n4. Escurrir.\n5. Rebozar con avena hasta cubrir toda la superficie.\n6. Colocar sobre una placa aceitada.\n7. Hornear hasta que estén dorados y bien cocidos por adentro.",
+      "acompañamientos": [
+        "Puré triple",
+        "Ensalada jardinera",
+        "Ensalada primavera"
+      ],
+      "variantes": [
+        "Pollo por pescado o carne roja",
+        "Puede hacerse en formato milanesa",
+        "Agregar semillas al rebozado"
+      ],
+      "tips": [
+        "Sustituir la avena por polenta",
+        "Sustituir la avena por pan rallado en caso de elaborar milanesas"
+      ],
+      "temperatura_servicio": "Caliente",
+      "postre_sugerido": "Postre de leche"
     },
     {
       "id": "budin-de-harina-de-maiz",

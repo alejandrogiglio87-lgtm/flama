@@ -293,6 +293,70 @@ export default function RecipeCalculator({ recetas, onAddToPlanner = null }) {
               </table>
             </div>
           </div>
+
+          {/* Información adicional de la receta */}
+          {selectedReceta?.preparacion && (
+            <div className="mt-8 pt-6 border-t border-gray-200">
+              <h3 className="text-xl font-bold text-gray-800 mb-3">Preparación</h3>
+              <p className="text-gray-700 whitespace-pre-wrap text-sm">{selectedReceta.preparacion}</p>
+            </div>
+          )}
+
+          {selectedReceta?.acompañamientos && selectedReceta.acompañamientos.length > 0 && (
+            <div className="mt-8 pt-6 border-t border-gray-200">
+              <h3 className="text-xl font-bold text-gray-800 mb-3">Opciones de Acompañamiento</h3>
+              <ul className="space-y-2">
+                {selectedReceta.acompañamientos.map((acomp, idx) => (
+                  <li key={idx} className="flex items-start gap-3 text-gray-700">
+                    <span className="text-green-600 font-bold mt-1">•</span>
+                    <span>{acomp}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {selectedReceta?.variantes && selectedReceta.variantes.length > 0 && (
+            <div className="mt-8 pt-6 border-t border-gray-200">
+              <h3 className="text-xl font-bold text-gray-800 mb-3">Variantes</h3>
+              <ul className="space-y-2">
+                {selectedReceta.variantes.map((variante, idx) => (
+                  <li key={idx} className="flex items-start gap-3 text-gray-700">
+                    <span className="text-blue-600 font-bold mt-1">•</span>
+                    <span>{variante}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {selectedReceta?.tips && selectedReceta.tips.length > 0 && (
+            <div className="mt-8 pt-6 border-t border-gray-200">
+              <h3 className="text-xl font-bold text-gray-800 mb-3">💡 Tips</h3>
+              <ul className="space-y-2">
+                {selectedReceta.tips.map((tip, idx) => (
+                  <li key={idx} className="flex items-start gap-3 text-gray-700">
+                    <span className="text-yellow-600 font-bold mt-1">•</span>
+                    <span>{tip}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {selectedReceta?.temperatura_servicio && (
+            <div className="mt-8 pt-6 border-t border-gray-200">
+              <h3 className="text-xl font-bold text-gray-800 mb-3">🌡️ Temperatura de Servicio</h3>
+              <p className="text-gray-700 bg-blue-50 px-4 py-2 rounded-lg inline-block">{selectedReceta.temperatura_servicio}</p>
+            </div>
+          )}
+
+          {selectedReceta?.postre_sugerido && (
+            <div className="mt-8 pt-6 border-t border-gray-200">
+              <h3 className="text-xl font-bold text-gray-800 mb-3">🍰 Postre Sugerido</h3>
+              <p className="text-gray-700 bg-amber-50 px-4 py-2 rounded-lg inline-block">{selectedReceta.postre_sugerido}</p>
+            </div>
+          )}
         </div>
       </div>
     </div>

@@ -44,10 +44,12 @@
 /* CSS para manejar días colapsados en pantalla pero visibles en impresión */
 @media print {
   .day-content {
-    visibility: visible !important;
-    height: auto !important;
-    padding: 1.5rem !important;
-    margin: 0 !important;
+    max-height: 10000px !important;
+    opacity: 1 !important;
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
     display: block !important;
   }
 }

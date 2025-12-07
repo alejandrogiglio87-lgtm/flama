@@ -2071,6 +2071,21 @@
       "postre_sugerido": ""
     },
     {
+      "id": "ensalada-de-leguminosas-y-vegetales",
+      "nombre": "ENSALADA DE LEGUMINOSAS Y VEGETALES",
+      "categoria": "Ensalada/Verdura",
+      "imagen": "/images/ensalada-de-leguminosas-y-vegetales.jpg",
+      "ingredientes": [],
+      "peso_porcion_g": 130,
+      "filtros": [],
+      "preparacion": "1. Dejar en remojo de 12 a 24 horas los porotos en heladera.\n2. Hervir los porotos con sal hasta que estén tiernos.\n3. Reservar.\n4. Separar el repollo hoja por hoja.\n5. Lavar y desinfectar el tomate, el repollo, la zanahoria y el perejil.\n6. Cortar en cubos el tomate; en juliana el repollo; rallar la zanahoria y picar el perejil.\n7. Acondicionar los porotos en una asadera; agregar los vegetales; el aceite y vinagre; mezclar.",
+      "acompañamientos": [],
+      "variantes": ["Porotos frutilla / Garbanzos / Lentejas. Zanahoria; tomate y repollo por igual cantidad de otros vegetales frescos"],
+      "tips": [],
+      "temperatura_servicio": "Caliente",
+      "postre_sugerido": ""
+    },
+    {
       "id": "masa-basica-para-tortas-tartas",
       "nombre": "MASA BÁSICA PARA TORTAS/TARTAS",
       "categoria": "Postre",

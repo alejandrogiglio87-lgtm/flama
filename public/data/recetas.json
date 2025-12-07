@@ -891,7 +891,18 @@
       "filtros": [
         "Sin Gluten",
         "Sin Azúcar"
-      ]
+      ],
+      "preparacion": "Pelar, lavar la cebolla, el ajo, la zanahoria y la papa.\nPicar el ajo.\nCortar en cubos la cebolla, en rodajas la zanahoria y la papa.\nLavar y cortar en cubos el morrón.\nCortar en cubos el pescado sin espinas.\nRehogar la cebolla, el morrón y el ajo.\nIncorporar la zanahoria y el pescado.\nCondimentar.\nAgregar la pulpa de tomate y el agua.\nAgregar la papa y las arvejas.\nUna vez finalizada la cocción apagar el fuego, agregar la mitad del aceite y perejil picado y mezclar bien.",
+      "acompañamientos": [
+        "Arroz"
+      ],
+      "variantes": [],
+      "tips": [
+        "Se recomienda un pescado firme y sin espinas como la palometa",
+        "Servir el arroz en el mismo plato pero a un lado del Chupín"
+      ],
+      "temperatura_servicio": "Caliente",
+      "postre_sugerido": "Postre de leche (no seleccionar arroz con leche)"
     },
     {
       "id": "crema-de-naranja",

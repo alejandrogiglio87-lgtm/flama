@@ -722,7 +722,21 @@
         "Sin Gluten",
         "Vegano",
         "Sin Azúcar"
-      ]
+      ],
+      "preparacion": "Dejar las lentejas entre 1 y 4 hrs en remojo refrigeradas. En caso de porotos/garbanzos llevan de 12 a 24 hrs de remojo.\nPelar, lavar, picar o procesar la cebolla, el ajo.\nLavar y picar o procesar el apio y el morrón.\nPelar, lavar y cortar en cubos la papa, boniato, zanahoria y el zapallo.\nRehogar la cebolla, el apio, el morrón y el ajo.\nIncorporar la zanahoria, las lentejas, la carne, la pulpa de tomate y agua.\nCondimentar.\nAgregar agua hasta cubrir todos los ingredientes.\nContinuar la cocción durante 20 minutos a fuego suave.\nAgregar el arroz, el zapallo y el agua.\nContinuar cocinando.\nUna vez finalizada la cocción apagar el fuego, agregar el aceite y mezclar bien.",
+      "acompañamientos": [],
+      "variantes": [
+        "Carne vacuna por pollo o cerdo",
+        "Sin carne aumentar al doble la cantidad de lentejas",
+        "Arroz por fideos tipo coditos, dedalitos o caracolitos",
+        "Lentejas por porotos o garbanzos"
+      ],
+      "tips": [
+        "En servicios numerosos usar arroz parboiled",
+        "Para servicios numerosos con dos turnos de comedor elaborar la preparación en dos ollas, agregando el arroz próximo al servicio."
+      ],
+      "temperatura_servicio": "Caliente",
+      "postre_sugerido": "Fruta cítrica"
     },
     {
       "id": "chop-suey-de-cerdo",

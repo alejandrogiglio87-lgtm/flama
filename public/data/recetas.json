@@ -2011,6 +2011,21 @@
       "postre_sugerido": ""
     },
     {
+      "id": "arroz-amarillo",
+      "nombre": "ARROZ AMARILLO",
+      "categoria": "Arroz/Fideos",
+      "imagen": "/images/arroz-amarillo.jpg",
+      "ingredientes": [],
+      "peso_porcion_g": 110,
+      "filtros": [],
+      "preparacion": "1. Pelar, lavar y picar o procesar la cebolla y ajo.\n2. Rehogar la cebolla y el ajo.\n3. Agregar la cúrcuma y la sal.\n4. Agregar el arroz y el agua; mezclar.\n5. Cocinar a fuego lento hasta evaporar el agua.",
+      "acompañamientos": [],
+      "variantes": [],
+      "tips": ["Servir con perejil fresco picado"],
+      "temperatura_servicio": "Caliente",
+      "postre_sugerido": ""
+    },
+    {
       "id": "masa-basica-para-tortas-tartas",
       "nombre": "MASA BÁSICA PARA TORTAS/TARTAS",
       "categoria": "Postre",

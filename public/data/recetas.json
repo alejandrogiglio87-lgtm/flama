@@ -2131,6 +2131,21 @@
       "postre_sugerido": ""
     },
     {
+      "id": "pure-de-papas-instantaneo",
+      "nombre": "PURÉ DE PAPAS INSTANTÁNEO",
+      "categoria": "Acompañamiento",
+      "imagen": "/images/pure-de-papas-instantaneo.jpg",
+      "ingredientes": [],
+      "peso_porcion_g": 120,
+      "filtros": [],
+      "preparacion": "1. Hervir el agua.\n2. Retirar la cacerola del fuego.\n3. Agregar la leche, la sal y la papa deshidratada.\n4. Tapar la olla; dejar reposar unos minutos.\n5. Remover despacio; sin batir.",
+      "acompañamientos": [],
+      "variantes": [],
+      "tips": [],
+      "temperatura_servicio": "Caliente",
+      "postre_sugerido": ""
+    },
+    {
       "id": "masa-basica-para-tortas-tartas",
       "nombre": "MASA BÁSICA PARA TORTAS/TARTAS",
       "categoria": "Postre",

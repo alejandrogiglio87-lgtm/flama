@@ -1981,6 +1981,21 @@
       "postre_sugerido": "Fruta de estación"
     },
     {
+      "id": "arroz-fideos-plato-principal",
+      "nombre": "ARROZ/FIDEOS PLATO PRINCIPAL",
+      "categoria": "Arroz/Fideos",
+      "imagen": "/images/arroz-fideos-plato-principal.jpg",
+      "ingredientes": [],
+      "peso_porcion_g": 120,
+      "filtros": [],
+      "preparacion": "FIDEOS:\n1. Verter abundante agua en una cacerola.\n2. Llevar el agua a ebullición.\n3. Agregar la sal y los fideos.\n4. Revolver.\n5. Luego de haber alcanzado la ebullición cocinar según instrucciones del envase.\n6. Retirar del fuego y colar.\n7. Agregar aceite y reservarlo.\n\nARROZ:\n1. Hervir agua (dos partes de agua por una de arroz).\n2. Agregar el arroz y la sal. Revolver.\n3. Retomar ebullición y cocinar a fuego lento aproximadamente 8 minutos sin revolver.\n4. Retirar del fuego y mantener tapado durante 5 minutos.\n5. Agregar aceite y reservarlo.",
+      "acompañamientos": [],
+      "variantes": [],
+      "tips": [],
+      "temperatura_servicio": "",
+      "postre_sugerido": ""
+    },
+    {
       "id": "masa-basica-para-tortas-tartas",
       "nombre": "MASA BÁSICA PARA TORTAS/TARTAS",
       "categoria": "Postre",

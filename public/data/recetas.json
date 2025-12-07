@@ -1107,7 +1107,19 @@
         "Sin Gluten",
         "Vegano",
         "Sin Azúcar"
-      ]
+      ],
+      "preparacion": "Dejar las lentejas en remojo de 1-4 hs refrigeradas.\nCocinarlas en agua (tres partes de agua por una de lentejas). Reservarlas.\nCortar en cubos el pollo y hervirlo. Reservarlo.\nCocinar el arroz según procedimiento anexo en recetas base. Reservarlo.\nLavar y desinfectar la zanahoria y el tomate.\nRallar o procesar la zanahoria.\nCortar el tomate en cubitos.\nMezclar el pollo con el arroz, las lentejas y las verduras incluyendo el choclo.\nAderezar con aceite, mayonesa vegetal y mezclar bien.\nEn caso de agregar huevos por sustitución: cocinarlos durante 13 minutos luego de que hierva el agua, pelarlos, rallarlos y reservarlos. Agregarlos al final.",
+      "acompañamientos": [],
+      "variantes": [
+        "Pollo por atún incluyendo 60 g por porción",
+        "Sin pollo aumentando las lentejas a 30g y agregando 1 huevo por porción",
+        "Zanahoria por zapallito, chauchas o coliflor congelado, brócoli congelado (Si se usa brócoli y coliflor natural poner el doble)"
+      ],
+      "tips": [
+        "Elaborar la mayonesa vegetal de acuerdo a las proporciones y al procedimiento especificado en ADEREZOS"
+      ],
+      "temperatura_servicio": "Fría",
+      "postre_sugerido": "Fruta cítrica"
     },
     {
       "id": "ensalada-de-leguminosas-y-vegetales",

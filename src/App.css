@@ -46,17 +46,32 @@
   /* Ocultar elementos que no debemos imprimir */
   nav,
   footer,
-  .fixed,
-  button,
-  .pointer-events-none {
+  .fixed {
+    display: none !important;
+  }
+
+  /* Ocultar solo los botones específicos */
+  button {
+    display: none !important;
+  }
+
+  /* Mantener la navegación de tabs visible pero no imprimible */
+  nav {
     display: none !important;
   }
 
   /* Estilos para el contenido impreso */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
   body {
     margin: 0;
-    padding: 20px;
+    padding: 10px;
     background: white;
+    font-size: 12px;
   }
 
   header {
@@ -65,33 +80,89 @@
 
   main {
     max-width: 100%;
-    padding: 0;
+    padding: 10px;
     margin: 0;
-  }
-
-  /* Asegurar que el contenido ocupe todo el ancho */
-  .bg-white {
-    page-break-inside: avoid;
-    break-inside: avoid;
-  }
-
-  /* Mantener los colores de fondo en la impresión */
-  * {
-    -webkit-print-color-adjust: exact;
-    color-adjust: exact;
-    print-color-adjust: exact;
   }
 
   /* Configuración de página */
   @page {
-    margin: 15mm;
+    margin: 10mm;
     size: A4;
   }
 
-  /* Prevenir ruptura de cajas importantes */
-  .shadow-md,
+  /* Mantener diseño de grid */
+  .grid {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Estilos de caja */
   .rounded-lg {
     page-break-inside: avoid;
     break-inside: avoid;
+  }
+
+  .bg-white {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  .bg-gradient-to-r,
+  .bg-blue-600,
+  .bg-green-500,
+  .bg-yellow-600,
+  .bg-orange-500,
+  .bg-red-500 {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  /* Mantener texto visible */
+  .text-white {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  /* Reducir tamaño de fuente para mejor ajuste */
+  h2 {
+    font-size: 16px;
+    margin: 15px 0 10px 0;
+  }
+
+  h3 {
+    font-size: 14px;
+    margin: 10px 0 8px 0;
+  }
+
+  p {
+    margin: 4px 0;
+  }
+
+  /* Espaciado comprimido */
+  .space-y-6 > * + * {
+    margin-top: 12px !important;
+  }
+
+  .space-y-3 > * + * {
+    margin-top: 6px !important;
+  }
+
+  .space-y-2 > * + * {
+    margin-top: 4px !important;
+  }
+
+  /* Padding reducido */
+  .p-6 {
+    padding: 12px !important;
+  }
+
+  .p-4 {
+    padding: 8px !important;
+  }
+
+  .p-3 {
+    padding: 6px !important;
   }
 }

@@ -5,7 +5,7 @@ import { savePlanification, loadPlanification, clearPlanification, createEmptyPl
 import { consolidateWeeklyIngredients, consolidateIngredients, formatNumber } from '../utils/recipeCalculations';
 import { downloadShoppingListPDF, printShoppingList, getShoppingListPDFBlob, generateWeeklyPlanPDF } from '../utils/pdfGenerator';
 import { downloadWeeklyPlanExcel, generateWeeklyPlanExcelBlob } from '../utils/excelGenerator';
-import { sendShoppingListEmail } from '../utils/emailService';
+import { sendWeeklyPlanEmail } from '../utils/emailService';
 
 const DIAS = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo'];
 const DIAS_DISPLAY = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
@@ -136,9 +136,6 @@ export default function WeeklyPlanner({ recetas }) {
     setEmailMessage('');
 
     try {
-      const ingredientes = consolidateWeeklyIngredients(planificacion, recetas);
-      const groupedIngredients = { 'Semana Completa': ingredientes };
-
       let pdfBlob = null;
       let excelBlob = null;
 
@@ -153,7 +150,7 @@ export default function WeeklyPlanner({ recetas }) {
         excelBlob = new Blob([excelArrayBuffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
       }
 
-      const result = await sendShoppingListEmail(emailInput, groupedIngredients, 'Semana Completa', pdfBlob, excelBlob);
+      const result = await sendWeeklyPlanEmail(emailInput, planificacion, recetas, pdfBlob, excelBlob);
 
       if (result.success) {
         setEmailMessage('✓ Email enviado exitosamente');

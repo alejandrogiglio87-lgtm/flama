@@ -1685,6 +1685,92 @@
       "postre_sugerido": "Fruta de estación / Postre de leche"
     },
     {
+      "id": "pasta-con-verdusalsa",
+      "nombre": "PASTA CON VERDUSALSA",
+      "categoria": "Plato Principal",
+      "imagen": "/images/pasta-con-verdusalsa.jpg",
+      "ingredientes": [
+        {
+          "nombre": "Carne picada o en cubos",
+          "cantidad": 50,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Pulpa de tomate",
+          "cantidad": 40,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cebolla",
+          "cantidad": 10,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Zanahoria",
+          "cantidad": 30,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Morrón",
+          "cantidad": 10,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Zapallito",
+          "cantidad": 50,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Queso rallado",
+          "cantidad": 5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": 0.5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Orégano",
+          "cantidad": 0.15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Pimentón",
+          "cantidad": 0.05,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Laurel",
+          "cantidad": 1,
+          "unidad": "hoja cada 10 porciones"
+        },
+        {
+          "nombre": "Aceite",
+          "cantidad": 5,
+          "unidad": "ml"
+        }
+      ],
+      "peso_porcion_g": 250,
+      "filtros": [],
+      "preparacion": "SALSA:\n1. Pelar, lavar y picar o procesar la cebolla y la zanahoria.\n2. Lavar y picar o procesar el morrón.\n3. Lavar y cortar en cubos el zapallito.\n4. Rehogar la cebolla y el morrón.\n5. Agregar la zanahoria.\n6. Condimentar (sin el orégano).\n7. Incorporar la pulpa de tomate y la carne revolviendo bien para evitar que la carne se apelotone y asegurar una cocción uniforme.\n8. Cuando la carne cambie de color agregar el zapallito y cocinar tapado y revolviendo de vez en cuando hasta que esté tierno.\n9. Apagar el fuego; agregar el aceite y el orégano; mezclar bien.\n\nFIDEOS:\nElaborar los fideos de acuerdo a la proporción y al procedimiento anexo en RECETAS BASE. Servir los fideos, por encima la salsa y espolvorear con queso rallado.",
+      "acompañamientos": [],
+      "variantes": [
+        "Carne vacuna por pollo",
+        "Carne vacuna por cerdo",
+        "Pasta por polenta",
+        "Como una salsa boloñesa, sin el agregado del zapallito",
+        "Zapallito por espinaca en igual proporción",
+        "Zapallito por acelga en una proporción de 100g por porción",
+        "Si se utiliza acelga o espinaca congelada colocar 25 gramos"
+      ],
+      "tips": [
+        "Polenta relleno: armar colocando la verdusalsa como relleno y agregando salsa blanca liviana por encima y gratinar al horno"
+      ],
+      "temperatura_servicio": "Caliente",
+      "postre_sugerido": "Postre de leche"
+    },
+    {
       "id": "masa-basica-para-tortas-tartas",
       "nombre": "MASA BÁSICA PARA TORTAS/TARTAS",
       "categoria": "Postre",

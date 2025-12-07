@@ -2523,6 +2523,36 @@
       "tips": [],
       "temperatura_servicio": "Fría. No mantener a temperatura ambiente por más de dos horas entre la elaboración y el consumo (en caso de no tener capacidad de frío)",
       "postre_sugerido": ""
+    },
+    {
+      "id": "crema-de-vainilla",
+      "nombre": "CREMA DE VAINILLA",
+      "categoria": "Postre",
+      "imagen": "/images/crema-de-vainilla.jpg",
+      "ingredientes": [],
+      "peso_porcion_g": 150,
+      "filtros": [],
+      "preparacion": "1. Mezclar el azúcar con el almidón de maíz y disolver con 1/4 de la leche fría\n2. Calentar los 3/4 de leche restante, cuando esté a punto de hervor agregar la mezcla de almidón\n3. Revolver suavemente en forma de 8 hasta que rompa el hervor\n4. Apagar el fuego; agregar la vainilla y mezclar bien\n5. Distribuir en compoteras individuales y enfriar. Si no se cuenta con capacidad de frío suficiente prepararla nunca antes de dos horas previas al servicio\n6. De chocolate: disolver la cocoa junto con el almidón y el azúcar\n7. De coco: agregar el coco a los 3/4 de leche que se calientan\n8. Con cáscara de naranja: agregar la cáscara a los 3/4 de leche que se calientan y retirarla antes de agregar la mezcla de almidón\n9. Con caramelo: ver receta de Budín de harina de maíz",
+      "acompañamientos": [],
+      "variantes": [],
+      "tips": ["Esta preparación puede saborizarse con cáscara de naranja en vez de vainilla o se le puede agregar cacao para hacerla de chocolate o coco rallado para sabor coco", "Otra opción para el sabor vainilla es agregarle caramelo"],
+      "temperatura_servicio": "Fría. No mantener a temperatura ambiente por más de dos horas entre la elaboración y el consumo (en caso de no tener capacidad de frío)",
+      "postre_sugerido": ""
+    },
+    {
+      "id": "budin-de-zapallo-y-coco",
+      "nombre": "BUDÍN DE ZAPALLO Y COCO",
+      "categoria": "Postre",
+      "imagen": "/images/budin-de-zapallo-y-coco.jpg",
+      "ingredientes": [],
+      "peso_porcion_g": 85,
+      "filtros": [],
+      "preparacion": "1. Lavar; cortar y cocinar el zapallo junto con la canela en rama\n2. Luego que esté cocido; retirar la canela\n3. Retirar la pulpa, pisar. Disolver el almidón con la leche\n4. Colocar en una olla, mezclar con el resto de los ingredientes y llevar a fuego suave; revolver constantemente por aproximadamente 20 minutos hasta que espese\n5. Retirar del fuego; colocar en una budinera previamente aceitada y refrigerar por al menos 2 horas",
+      "acompañamientos": [],
+      "variantes": [],
+      "tips": ["El zapallo debe ser Cabutiá y debe elegirse bien maduro. Cuidar el tiempo de cocción; si este no es suficiente puede no llegar a ligar de manera adecuada"],
+      "temperatura_servicio": "Fría. No mantener a temperatura ambiente por más de dos horas entre la elaboración y el consumo (en caso de no tener capacidad de frío)",
+      "postre_sugerido": ""
     }
   ]
 }

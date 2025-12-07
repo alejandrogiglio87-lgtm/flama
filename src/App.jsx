@@ -127,9 +127,10 @@ function App() {
               <p
                 className="text-xl font-light tracking-wide"
                 style={{
-                  color: 'rgba(255, 255, 255, 0.95)',
-                  textShadow: '0 2px 8px rgba(0, 0, 0, 0.2)',
-                  letterSpacing: '0.03em'
+                  color: '#ffffff',
+                  textShadow: '0 3px 12px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.4)',
+                  letterSpacing: '0.03em',
+                  fontWeight: '400'
                 }}
               >
                 Planificación Inteligente de Menús Escolares
@@ -139,13 +140,14 @@ function App() {
 
           {/* Descripción con estilo refinado */}
           <p
-            className="text-lg leading-relaxed max-w-4xl"
+            className="text-base leading-relaxed"
             style={{
-              color: 'rgba(255, 255, 255, 0.95)',
-              textShadow: '0 2px 8px rgba(0, 0, 0, 0.3)',
+              color: '#ffffff',
+              textShadow: '0 3px 12px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.4)',
               fontWeight: '300',
-              letterSpacing: '0.5px',
-              marginTop: '12px'
+              letterSpacing: '0.3px',
+              marginTop: '16px',
+              maxWidth: '600px'
             }}
           >
             Calcula ingredientes, planifica tu semana y genera listas de compras automáticas con nuestra herramienta profesional

@@ -2101,6 +2101,21 @@
       "postre_sugerido": ""
     },
     {
+      "id": "pure-de-papas",
+      "nombre": "PURÉ DE PAPAS",
+      "categoria": "Acompañamiento",
+      "imagen": "/images/pure-de-papas.jpg",
+      "ingredientes": [],
+      "peso_porcion_g": 100,
+      "filtros": [],
+      "preparacion": "1. Pelar, lavar y cortar en cubos la papa.\n2. Hervir agua y cuando rompa hervor agregar la papa.\n3. Cocinar hasta que estén tiernas.\n4. Colar y puretear la papa.\n5. Reconstituir la leche y agregarla al puré junto con el aceite, sal y nuez moscada.\n6. Mezclar bien.",
+      "acompañamientos": [],
+      "variantes": ["Boniato en sustitución de la papa"],
+      "tips": ["En escuelas con más de 50 comensales se puede utilizar papa en escamas"],
+      "temperatura_servicio": "Caliente",
+      "postre_sugerido": ""
+    },
+    {
       "id": "masa-basica-para-tortas-tartas",
       "nombre": "MASA BÁSICA PARA TORTAS/TARTAS",
       "categoria": "Postre",

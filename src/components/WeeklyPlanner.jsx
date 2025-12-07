@@ -310,14 +310,18 @@ export default function WeeklyPlanner({ recetas }) {
                               return (
                                 <div
                                   key={idx}
-                                  className="bg-white border border-gray-200 rounded-lg p-3 hover:border-blue-300 transition-colors"
+                                  className="bg-white border border-gray-200 rounded-lg p-3 hover:border-blue-300 transition-colors relative"
                                 >
+                                  {/* Badge de categoría en esquina superior izquierda */}
+                                  {categoria && (
+                                    <div className="absolute top-2 left-2 bg-blue-600 text-white px-2 py-1 rounded text-xs font-semibold">
+                                      {categoria}
+                                    </div>
+                                  )}
+
                                   <div className="flex items-center justify-between mb-2">
                                     <div className="flex-1">
                                       <p className="font-medium text-gray-800">{recipe.nombre}</p>
-                                      {categoria && (
-                                        <p className="text-xs text-gray-500 mt-1">📂 {categoria}</p>
-                                      )}
                                     </div>
                                     <button
                                       onClick={() => handleRemoveRecipe(dia, idx)}

@@ -1996,6 +1996,21 @@
       "postre_sugerido": ""
     },
     {
+      "id": "arroz-con-vegetales-salteados",
+      "nombre": "ARROZ CON VEGETALES SALTEADOS",
+      "categoria": "Arroz/Fideos",
+      "imagen": "/images/arroz-con-vegetales-salteados.jpg",
+      "ingredientes": [],
+      "peso_porcion_g": 120,
+      "filtros": [],
+      "preparacion": "1. Rehogar en aceite: puerro, zapallito, apio, zanahoria, condimento y sal.\n2. Incorporar el choclo en dados.\n3. Dejar hervir 5 minutos.\n4. Agregar agua (2 partes por 1 de arroz).\n5. Agregar arroz cuando hierva el caldo.\n6. Cocinar a fuego lento aproximadamente 8 minutos.\n7. Retomar ebullición, retirar del fuego y mantener tapado 5 minutos.",
+      "acompañamientos": [],
+      "variantes": ["Arroz por fideos", "Espinaca por puerro; zapallito; zucchini, calabaza o acelga", "Espinaca congelada colocar 25g"],
+      "tips": [],
+      "temperatura_servicio": "Caliente",
+      "postre_sugerido": ""
+    },
+    {
       "id": "masa-basica-para-tortas-tartas",
       "nombre": "MASA BÁSICA PARA TORTAS/TARTAS",
       "categoria": "Postre",

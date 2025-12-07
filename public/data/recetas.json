@@ -1913,6 +1913,28 @@
       "postre_sugerido": "Fruta de estación"
     },
     {
+      "id": "torta-de-carne-y-vegetales",
+      "nombre": "TORTA DE CARNE Y VEGETALES",
+      "categoria": "Plato Principal",
+      "imagen": "/images/torta-de-carne-y-vegetales.jpg",
+      "ingredientes": [],
+      "peso_porcion_g": 300,
+      "filtros": [],
+      "preparacion": "MASA:\nElaborar la masa de acuerdo a las proporciones y al procedimiento anexo en RECETAS BASE.\n\nRELLENO:\n1. Pelar, lavar y picar o procesar la cebolla.\n2. Lavar y picar o procesar el morrón.\n3. Lavar y cortar en cubos o tiras la verdura de estación seleccionada.\n4. Batir ligeramente el huevo.\n5. Rehogar la cebolla y el morrón.\n6. Incorporar la verdura de estación.\n7. Condimentar.\n8. Agregar la carne; terminar la cocción.\n9. Apagar el fuego; agregar el aceite, el huevo batido y el almidón; mezclar bien.\n10. Entibiar.\n\nARMADO:\n1. Forrar la asadera con una tapa de masa. Rellenar.\n2. Colocar la otra tapa encima, pintar con huevo y pinchar.\n3. Llevar a horno moderado hasta la cocción completa de la torta.",
+      "acompañamientos": [
+        "Ensalada primavera",
+        "Ensalada jardinera"
+      ],
+      "variantes": [
+        "Carne por pollo"
+      ],
+      "tips": [
+        "Verduras de estación recomendadas: puerro, berenjena, zapallito, espinaca"
+      ],
+      "temperatura_servicio": "Caliente",
+      "postre_sugerido": "Fruta de estación"
+    },
+    {
       "id": "masa-basica-para-tortas-tartas",
       "nombre": "MASA BÁSICA PARA TORTAS/TARTAS",
       "categoria": "Postre",

@@ -1540,6 +1540,87 @@
       "postre_sugerido": "Fruta de estación"
     },
     {
+      "id": "pan-de-carne",
+      "nombre": "PAN DE CARNE / HAMBURGUESA",
+      "categoria": "Plato Principal",
+      "imagen": "/images/pan-de-carne.jpg",
+      "ingredientes": [
+        {
+          "nombre": "Carne picada",
+          "cantidad": 100,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Avena",
+          "cantidad": 10,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Huevo",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Zanahoria",
+          "cantidad": 20,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cebolla",
+          "cantidad": 20,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Morrón",
+          "cantidad": 10,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": 0.5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Perejil fresco",
+          "cantidad": 1,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Ajo",
+          "cantidad": 1,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Aceite",
+          "cantidad": 5,
+          "unidad": "ml"
+        }
+      ],
+      "peso_porcion_g": 200,
+      "filtros": [],
+      "preparacion": "PASOS PRINCIPALES:\n1. Pelar, lavar y picar o procesar la zanahoria y la cebolla.\n2. Lavar y picar o procesar el morrón.\n3. Batir ligeramente los huevos.\n4. Mezclar la carne, los vegetales, la avena, los huevos batidos y los condimentos.\n5. Armar cilindros sobre una placa aceitada.\n6. Hornear hasta que el color de cocción sea marrón grisáceo en el centro (aproximadamente 30 minutos).\n\nVARIANTE CON LENTEJAS:\n1. Dejar las lentejas unas horas en remojo refrigeradas.\n2. Hervir las lentejas, escurrirlas, pisarlas y procesarlas.\n3. Mezclarla con la carne y el resto de los ingredientes.\n4. Armar los cilindros.",
+      "acompañamientos": [
+        "Puré triple",
+        "Puré de papas más ensalada de vegetales",
+        "Ensalada primavera",
+        "Ensalada jardinera",
+        "Arroz con vegetales",
+        "Arroz amarillo más ensalada de vegetales",
+        "Fideos más ensalada de vegetales"
+      ],
+      "variantes": [
+        "Carne vacuna por cerdo",
+        "Carne vacuna por pollo",
+        "Se puede sustituir parte de la carne por lentejas: 50g de carne y 15g de lentejas para porción escolar; 35g de carne y 10g de lentejas para porción inicial"
+      ],
+      "tips": [
+        "Si se hace en forma cilíndrica puede usarse papel aluminio para evitar que se seque",
+        "O puede armarse en forma de hamburguesas estirado en la asadera, tipo budín"
+      ],
+      "temperatura_servicio": "Caliente",
+      "postre_sugerido": "Fruta de estación / Postre de leche. Si se utiliza lentejas elegir fruta cítrica"
+    },
+    {
       "id": "masa-basica-para-tortas-tartas",
       "nombre": "MASA BÁSICA PARA TORTAS/TARTAS",
       "categoria": "Postre",

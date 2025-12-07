@@ -141,19 +141,30 @@ function App() {
 
           {/* Descripción con estilo refinado - CENTRADA */}
           <div className="flex justify-center">
-            <p
-              className="text-base leading-relaxed text-center"
+            <div
+              className="text-center"
               style={{
-                color: '#ffffff',
-                textShadow: '0 3px 12px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.4)',
-                fontWeight: '300',
-                letterSpacing: '0.3px',
-                marginTop: '0px',
-                maxWidth: '700px'
+                backgroundColor: 'rgba(0, 0, 0, 0.4)',
+                padding: '20px 30px',
+                borderRadius: '12px',
+                backdropFilter: 'blur(4px)',
+                border: '1px solid rgba(255, 255, 255, 0.1)'
               }}
             >
-              Calcula ingredientes, planifica tu semana y genera listas de compras automáticas con nuestra herramienta profesional
-            </p>
+              <p
+                className="text-lg leading-relaxed"
+                style={{
+                  color: '#ffffff',
+                  textShadow: '0 2px 8px rgba(0, 0, 0, 0.6)',
+                  fontWeight: '400',
+                  letterSpacing: '0.3px',
+                  margin: '0px',
+                  maxWidth: '600px'
+                }}
+              >
+                Calcula ingredientes, planifica tu semana y genera listas de compras automáticas con nuestra herramienta profesional
+              </p>
+            </div>
           </div>
 
           {/* Línea decorativa */}

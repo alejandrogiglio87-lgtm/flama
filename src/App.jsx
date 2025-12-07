@@ -59,42 +59,115 @@ function App() {
       }}></div>
 
       <div className="relative flex flex-col z-10">
-      {/* Header Profesional con Imagen de Fondo */}
+      {/* Header Profesional Refinado */}
       <header
-        className="relative text-white shadow-2xl overflow-hidden"
+        className="relative text-white overflow-hidden"
         style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1495521821757-a1efb6729352?w=1200&h=400&fit=crop)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          minHeight: '280px',
+          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #667eea 100%)',
+          backgroundSize: '400% 400%',
+          minHeight: '320px',
           display: 'flex',
-          alignItems: 'center'
+          alignItems: 'center',
+          boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3)',
+          position: 'relative'
         }}
       >
-        {/* Overlay oscuro para legibilidad */}
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 via-blue-900/70 to-indigo-900/80"></div>
+        {/* Efecto de animación suave con patrón */}
+        <div
+          className="absolute inset-0 opacity-20"
+          style={{
+            backgroundImage: `radial-gradient(circle at 20% 50%, rgba(255,255,255,0.3) 0%, transparent 50%),
+                             radial-gradient(circle at 80% 80%, rgba(255,255,255,0.2) 0%, transparent 50%)`,
+            pointerEvents: 'none'
+          }}
+        ></div>
 
-        {/* Contenido */}
-        <div className="relative max-w-7xl mx-auto px-4 py-6 w-full">
-          <div className="flex items-center gap-4 mb-4">
-            {/* Logo */}
-            <div className="flex-shrink-0">
+        {/* Contenido del Header */}
+        <div className="relative max-w-7xl mx-auto px-4 py-12 w-full">
+          <div className="flex items-center gap-6 mb-6">
+            {/* Logo con efecto */}
+            <div
+              className="flex-shrink-0 relative"
+              style={{
+                filter: 'drop-shadow(0 10px 25px rgba(0, 0, 0, 0.3))',
+                transform: 'perspective(1000px) rotateX(5deg)',
+                transition: 'transform 0.3s ease-in-out'
+              }}
+            >
               <img
                 src="/logo2.jpg"
                 alt="Logo"
-                className="h-20 w-20 rounded-lg shadow-lg object-contain bg-white p-2 border-4 border-white"
+                className="h-24 w-24 rounded-xl object-contain bg-white p-3 border-4 border-white"
+                style={{
+                  boxShadow: '0 15px 40px rgba(102, 126, 234, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.6)'
+                }}
               />
             </div>
-            {/* Título */}
-            <div>
-              <h1 className="text-5xl font-bold tracking-tight drop-shadow-lg">Recetario PAE</h1>
-              <p className="text-blue-100 text-lg mt-1 drop-shadow-md">Planificación Inteligente de Menús Escolares</p>
+
+            {/* Sección de Títulos */}
+            <div className="flex-1">
+              <h1
+                className="text-6xl font-black tracking-tight mb-2"
+                style={{
+                  background: 'linear-gradient(135deg, #ffffff 0%, #f0f0f0 40%, #e8e8e8 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                  filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2))',
+                  letterSpacing: '0.08em',
+                  fontWeight: '900',
+                  textShadow: '0 8px 16px rgba(0, 0, 0, 0.15)',
+                  paintOrder: 'stroke fill'
+                }}
+              >
+                Recetario PAE
+              </h1>
+              <p
+                className="text-xl font-light tracking-wide"
+                style={{
+                  color: 'rgba(255, 255, 255, 0.95)',
+                  textShadow: '0 2px 8px rgba(0, 0, 0, 0.2)',
+                  letterSpacing: '0.03em'
+                }}
+              >
+                Planificación Inteligente de Menús Escolares
+              </p>
             </div>
           </div>
-          <p className="text-blue-100 text-base max-w-3xl drop-shadow-md">
+
+          {/* Descripción con estilo refinado */}
+          <p
+            className="text-base max-w-3xl leading-relaxed"
+            style={{
+              color: 'rgba(255, 255, 255, 0.92)',
+              textShadow: '0 2px 6px rgba(0, 0, 0, 0.2)',
+              fontWeight: '300',
+              letterSpacing: '0.5px'
+            }}
+          >
             Calcula ingredientes, planifica tu semana y genera listas de compras automáticas con nuestra herramienta profesional
           </p>
+
+          {/* Línea decorativa */}
+          <div
+            className="mt-6 w-20 h-1"
+            style={{
+              background: 'linear-gradient(90deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 100%)',
+              borderRadius: '10px',
+              boxShadow: '0 4px 15px rgba(255, 255, 255, 0.3)'
+            }}
+          ></div>
         </div>
+
+        {/* Efecto de brillo sutil en la esquina */}
+        <div
+          className="absolute top-0 right-0 w-96 h-96 pointer-events-none"
+          style={{
+            background: 'radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%)',
+            borderRadius: '50%',
+            transform: 'translate(100px, -100px)'
+          }}
+        ></div>
       </header>
 
       {/* Navigation Tabs - Mejorado */}

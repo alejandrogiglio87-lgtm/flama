@@ -17,11 +17,9 @@ try {
  * Genera contenido HTML completo para el email con toda la información
  * @param {Object} planificacion - Planificación semanal
  * @param {Array} recetas - Array de todas las recetas
- * @param {boolean} includePDFLink - Incluir información sobre PDF
- * @param {boolean} includeExcelLink - Incluir información sobre Excel
  * @returns {string} HTML para el email
  */
-function generateCompleteWeeklyHTML(planificacion, recetas, includePDFLink = false, includeExcelLink = false) {
+function generateCompleteWeeklyHTML(planificacion, recetas) {
   let html = '';
   const dias = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo'];
   const diasDisplay = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
@@ -36,21 +34,6 @@ function generateCompleteWeeklyHTML(planificacion, recetas, includePDFLink = fal
   html += '</div>';
 
   html += '<p style="color: #7f8c8d; font-size: 12px; margin: 15px 20px 20px 20px; text-align: center; border-bottom: 1px solid #ecf0f1; padding-bottom: 15px;">📅 ' + new Date().toLocaleDateString('es-AR') + '</p>';
-
-  // Sección de información de descargas
-  if (includePDFLink || includeExcelLink) {
-    html += '<div style="background-color: #fff3cd; border: 1px solid #ffc107; border-radius: 5px; padding: 12px; margin: 15px 0;">';
-    html += '<p style="margin: 0 0 8px 0; color: #856404; font-weight: bold;">📥 Más Información Disponible:</p>';
-    html += '<p style="margin: 0; color: #856404; font-size: 12px;">';
-
-    const archivos = [];
-    if (includePDFLink) archivos.push('PDF (planificación, ingredientes, listas)');
-    if (includeExcelLink) archivos.push('Excel (3 hojas con todos los detalles)');
-
-    html += archivos.map(a => '✓ ' + a).join('<br>');
-    html += '</p>';
-    html += '</div>';
-  }
 
   // SECCIÓN 1: RECETAS POR DÍA
   html += '<div style="margin: 30px 20px 0 20px;">';
@@ -214,7 +197,7 @@ function generateShoppingListHTML(groupedIngredients, groupBy, includePDFLink = 
 
     html += archivos.map(a => '✓ ' + a).join('<br>');
     html += '</p>';
-    html += '<p style="margin: 8px 0 0 0; color: #856404; font-size: 12px;"><strong>Nota:</strong> Descarga los archivos desde la aplicación (botones PDF y Excel en el Planificador)</p>';
+    html += '<p style="margin: 8px 0 0 0; color: #856404; font-size: 12px;"><strong>Nota:</strong> Descarga los archivos desde la aplicación en el Planificador</p>';
     html += '</div>';
   }
 
@@ -271,11 +254,9 @@ function formatNumberEmail(numero) {
  * @param {string} recipientEmail - Email del destinatario
  * @param {Object} planificacion - Planificación semanal
  * @param {Array} recetas - Array de todas las recetas
- * @param {Blob} pdfBlob - Archivo PDF (opcional)
- * @param {Blob} excelBlob - Archivo Excel (opcional)
  * @returns {Promise}
  */
-export async function sendWeeklyPlanEmail(recipientEmail, planificacion, recetas, pdfBlob = null, excelBlob = null) {
+export async function sendWeeklyPlanEmail(recipientEmail, planificacion, recetas) {
   try {
     // Validar email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -284,7 +265,7 @@ export async function sendWeeklyPlanEmail(recipientEmail, planificacion, recetas
     }
 
     // Generar HTML completo con toda la información
-    const htmlContent = generateCompleteWeeklyHTML(planificacion, recetas, !!pdfBlob, !!excelBlob);
+    const htmlContent = generateCompleteWeeklyHTML(planificacion, recetas);
 
     const templateParams = {
       to_email: recipientEmail,
@@ -301,13 +282,7 @@ export async function sendWeeklyPlanEmail(recipientEmail, planificacion, recetas
     );
 
     if (response.status === 200) {
-      const attachmentInfo = [];
-      if (pdfBlob) attachmentInfo.push('PDF');
-      if (excelBlob) attachmentInfo.push('Excel');
-      const message = attachmentInfo.length > 0
-        ? `Email enviado. Los archivos (${attachmentInfo.join(' y ')}) están disponibles en la aplicación`
-        : 'Email enviado exitosamente';
-      return { success: true, message };
+      return { success: true, message: 'Email enviado exitosamente' };
     } else {
       throw new Error('Error al enviar el email');
     }

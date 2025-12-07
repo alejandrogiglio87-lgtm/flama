@@ -9,16 +9,38 @@ export default function RecipeCalculator({ recetas, onAddToPlanner = null }) {
   const [porciones, setPorciones] = useState(1);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('Todas');
+  const [selectedFilters, setSelectedFilters] = useState([]);
 
   // Obtener categorías únicas
   const categorias = ['Todas', ...new Set(recetas.map(r => r.categoria))];
+
+  // Obtener filtros disponibles
+  const availableFilters = ['Vegano', 'Sin Gluten', 'Vegetariano'];
 
   // Filtrar recetas
   const filteredRecetas = recetas.filter(r => {
     const matchSearch = r.nombre.toLowerCase().includes(searchTerm.toLowerCase());
     const matchCategory = selectedCategory === 'Todas' || r.categoria === selectedCategory;
-    return matchSearch && matchCategory;
+
+    // Si no hay filtros seleccionados, mostrar todas las recetas
+    let matchFilters = true;
+    if (selectedFilters.length > 0) {
+      // Solo mostrar si la receta tiene AL MENOS UNO de los filtros seleccionados
+      matchFilters = selectedFilters.some(filter =>
+        (r.filtros || []).includes(filter)
+      );
+    }
+
+    return matchSearch && matchCategory && matchFilters;
   });
+
+  const toggleFilter = (filter) => {
+    setSelectedFilters(prev =>
+      prev.includes(filter)
+        ? prev.filter(f => f !== filter)
+        : [...prev, filter]
+    );
+  };
 
   // Calcular ingredientes si hay receta seleccionada
   const calculatedIngredients = selectedReceta
@@ -98,6 +120,31 @@ export default function RecipeCalculator({ recetas, onAddToPlanner = null }) {
                   }`}
                 >
                   {cat}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Filtro por características dietéticas */}
+          <div className="mb-6 bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-4 border border-green-200">
+            <label className="block text-sm font-semibold text-gray-700 mb-3">
+              🌿 Filtrar por Características Dietéticas
+            </label>
+            <div className="flex flex-wrap gap-2">
+              {availableFilters.map(filter => (
+                <button
+                  key={filter}
+                  onClick={() => toggleFilter(filter)}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all border-2 ${
+                    selectedFilters.includes(filter)
+                      ? 'bg-green-600 text-white border-green-600 shadow-md'
+                      : 'bg-white text-gray-700 border-green-300 hover:border-green-500'
+                  }`}
+                >
+                  {filter === 'Vegano' && '🌱 '}
+                  {filter === 'Sin Gluten' && '🌾 '}
+                  {filter === 'Vegetariano' && '🥬 '}
+                  {filter}
                 </button>
               ))}
             </div>

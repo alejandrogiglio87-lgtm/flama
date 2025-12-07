@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
-import { Plus, Trash2, Save, Download, Upload, ChevronDown, ChevronUp, Mail, X, Printer } from 'lucide-react';
+import { Plus, Trash2, Save, Download, Upload, ChevronDown, ChevronUp, Mail, X } from 'lucide-react';
 import RecipeCalculator from './RecipeCalculator';
 import { savePlanification, loadPlanification, clearPlanification, createEmptyPlanification, savePlan, getSavedPlans, loadPlan, deletePlan } from '../utils/storageManager';
 import { consolidateWeeklyIngredients, consolidateIngredients, formatNumber } from '../utils/recipeCalculations';
-import { downloadShoppingListPDF, printShoppingList, getShoppingListPDFBlob, generateWeeklyPlanPDF } from '../utils/pdfGenerator';
-import { downloadWeeklyPlanExcel, generateWeeklyPlanExcelBlob } from '../utils/excelGenerator';
+import { generateWeeklyPlanPDF } from '../utils/pdfGenerator';
+import { downloadWeeklyPlanExcel } from '../utils/excelGenerator';
 import { sendWeeklyPlanEmail } from '../utils/emailService';
 
 const DIAS = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo'];
@@ -22,8 +22,6 @@ export default function WeeklyPlanner({ recetas }) {
   const [emailInput, setEmailInput] = useState('');
   const [emailLoading, setEmailLoading] = useState(false);
   const [emailMessage, setEmailMessage] = useState('');
-  const [attachPDF, setAttachPDF] = useState(false);
-  const [attachExcel, setAttachExcel] = useState(false);
 
   // Cargar planificación al montar
   useEffect(() => {
@@ -121,10 +119,6 @@ export default function WeeklyPlanner({ recetas }) {
     downloadWeeklyPlanExcel(planificacion, recetas);
   };
 
-  const handlePrint = () => {
-    const ingredientes = consolidateWeeklyIngredients(planificacion, recetas);
-    printShoppingList(ingredientes);
-  };
 
   const handleSendEmail = async () => {
     if (!emailInput.trim()) {
@@ -136,27 +130,11 @@ export default function WeeklyPlanner({ recetas }) {
     setEmailMessage('');
 
     try {
-      let pdfBlob = null;
-      let excelBlob = null;
-
-      // Generar PDF si está seleccionado
-      if (attachPDF) {
-        pdfBlob = generateWeeklyPlanPDF(planificacion, recetas);
-      }
-
-      // Generar Excel si está seleccionado
-      if (attachExcel) {
-        const excelArrayBuffer = generateWeeklyPlanExcelBlob(planificacion, recetas);
-        excelBlob = new Blob([excelArrayBuffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
-      }
-
-      const result = await sendWeeklyPlanEmail(emailInput, planificacion, recetas, pdfBlob, excelBlob);
+      const result = await sendWeeklyPlanEmail(emailInput, planificacion, recetas);
 
       if (result.success) {
         setEmailMessage('✓ Email enviado exitosamente');
         setEmailInput('');
-        setAttachPDF(false);
-        setAttachExcel(false);
         setTimeout(() => {
           setShowEmailModal(false);
           setEmailMessage('');
@@ -238,14 +216,6 @@ export default function WeeklyPlanner({ recetas }) {
             >
               <Download size={20} />
               Excel
-            </button>
-            <button
-              onClick={handlePrint}
-              className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg font-medium flex items-center gap-2 transition-colors"
-              disabled={getTotalRecipes() === 0}
-            >
-              <Printer size={20} />
-              Imprimir
             </button>
             <button
               onClick={handleClearAll}
@@ -547,31 +517,6 @@ export default function WeeklyPlanner({ recetas }) {
                 />
               </div>
 
-              <div className="space-y-2 border-t border-gray-200 pt-3">
-                <label className="text-sm font-semibold text-gray-700">Adjuntos (opcional):</label>
-                <div className="flex items-center gap-3">
-                  <label className="flex items-center gap-2 cursor-pointer">
-                    <input
-                      type="checkbox"
-                      checked={attachPDF}
-                      onChange={(e) => setAttachPDF(e.target.checked)}
-                      disabled={emailLoading}
-                      className="w-4 h-4 rounded"
-                    />
-                    <span className="text-sm text-gray-700">Adjuntar PDF</span>
-                  </label>
-                  <label className="flex items-center gap-2 cursor-pointer">
-                    <input
-                      type="checkbox"
-                      checked={attachExcel}
-                      onChange={(e) => setAttachExcel(e.target.checked)}
-                      disabled={emailLoading}
-                      className="w-4 h-4 rounded"
-                    />
-                    <span className="text-sm text-gray-700">Adjuntar Excel</span>
-                  </label>
-                </div>
-              </div>
 
               {emailMessage && (
                 <div className={`p-3 rounded-lg text-sm font-medium ${

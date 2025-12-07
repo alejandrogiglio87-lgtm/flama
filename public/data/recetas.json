@@ -42,7 +42,11 @@
           "unidad": "ml"
         }
       ],
-      "peso_porcion_g": 120
+      "peso_porcion_g": 120,
+      "filtros": [
+        "Sin Gluten",
+        "Vegano"
+      ]
     },
     {
       "id": "arroz-con-leche",
@@ -81,7 +85,11 @@
           "unidad": "g"
         }
       ],
-      "peso_porcion_g": 140
+      "peso_porcion_g": 140,
+      "filtros": [
+        "Sin Gluten",
+        "Vegetariano"
+      ]
     },
     {
       "id": "arroz-con-vegetales-salteados",
@@ -125,7 +133,11 @@
           "unidad": "g"
         }
       ],
-      "peso_porcion_g": 140
+      "peso_porcion_g": 140,
+      "filtros": [
+        "Sin Gluten",
+        "Vegano"
+      ]
     },
     {
       "id": "arroz-fideos",
@@ -154,7 +166,10 @@
           "unidad": "g"
         }
       ],
-      "peso_porcion_g": 100
+      "peso_porcion_g": 100,
+      "filtros": [
+        "Vegano"
+      ]
     },
     {
       "id": "arroz-fideos-plato-principal",
@@ -183,7 +198,10 @@
           "unidad": "g"
         }
       ],
-      "peso_porcion_g": 140
+      "peso_porcion_g": 140,
+      "filtros": [
+        "Vegano"
+      ]
     },
     {
       "id": "bocaditos-de-pollo",
@@ -222,7 +240,10 @@
           "unidad": "g"
         }
       ],
-      "peso_porcion_g": 100
+      "peso_porcion_g": 100,
+      "filtros": [
+        "Sin Gluten"
+      ]
     },
     {
       "id": "budin-de-harina-de-maiz",
@@ -261,7 +282,11 @@
           "unidad": "g"
         }
       ],
-      "peso_porcion_g": 150
+      "peso_porcion_g": 150,
+      "filtros": [
+        "Sin Gluten",
+        "Vegetariano"
+      ]
     },
     {
       "id": "budin-de-pescado",
@@ -335,7 +360,10 @@
           "unidad": "g"
         }
       ],
-      "peso_porcion_g": 120
+      "peso_porcion_g": 120,
+      "filtros": [
+        "Sin Gluten"
+      ]
     },
     {
       "id": "budin-de-zapallo-y-coco",
@@ -379,7 +407,11 @@
           "unidad": "g"
         }
       ],
-      "peso_porcion_g": 150
+      "peso_porcion_g": 150,
+      "filtros": [
+        "Sin Gluten",
+        "Vegetariano"
+      ]
     },
     {
       "id": "carbonada-criolla",
@@ -458,7 +490,11 @@
           "unidad": "g"
         }
       ],
-      "peso_porcion_g": 300
+      "peso_porcion_g": 300,
+      "filtros": [
+        "Sin Gluten",
+        "Vegano"
+      ]
     },
     {
       "id": "carne-a-la-portuguesa",
@@ -522,7 +558,10 @@
           "unidad": "ml"
         }
       ],
-      "peso_porcion_g": 160
+      "peso_porcion_g": 160,
+      "filtros": [
+        "Sin Gluten"
+      ]
     },
     {
       "id": "cazuela-de-lentejas",
@@ -611,7 +650,11 @@
           "unidad": "ml"
         }
       ],
-      "peso_porcion_g": 300
+      "peso_porcion_g": 300,
+      "filtros": [
+        "Sin Gluten",
+        "Vegano"
+      ]
     },
     {
       "id": "chop-suey-de-cerdo",
@@ -675,7 +718,11 @@
           "unidad": "g"
         }
       ],
-      "peso_porcion_g": 120
+      "peso_porcion_g": 120,
+      "filtros": [
+        "Sin Gluten",
+        "Vegano"
+      ]
     },
     {
       "id": "chupin-de-pescado-y-verduras",
@@ -744,7 +791,10 @@
           "unidad": "ml"
         }
       ],
-      "peso_porcion_g": 300
+      "peso_porcion_g": 300,
+      "filtros": [
+        "Sin Gluten"
+      ]
     },
     {
       "id": "crema-de-naranja",
@@ -778,7 +828,11 @@
           "unidad": "g"
         }
       ],
-      "peso_porcion_g": 140
+      "peso_porcion_g": 140,
+      "filtros": [
+        "Sin Gluten",
+        "Vegetariano"
+      ]
     },
     {
       "id": "crema-de-vainilla",
@@ -807,7 +861,11 @@
           "unidad": "g"
         }
       ],
-      "peso_porcion_g": 140
+      "peso_porcion_g": 140,
+      "filtros": [
+        "Sin Gluten",
+        "Vegetariano"
+      ]
     },
     {
       "id": "croquetas-de-atun-y-papas",
@@ -861,7 +919,10 @@
           "unidad": "g"
         }
       ],
-      "peso_porcion_g": 150
+      "peso_porcion_g": 150,
+      "filtros": [
+        "Vegetariano"
+      ]
     },
     {
       "id": "ensalada-completa",
@@ -915,7 +976,11 @@
           "unidad": "g"
         }
       ],
-      "peso_porcion_g": 260
+      "peso_porcion_g": 260,
+      "filtros": [
+        "Sin Gluten",
+        "Vegano"
+      ]
     },
     {
       "id": "ensalada-de-leguminosas-y-vegetales",
@@ -964,7 +1029,11 @@
           "unidad": "g"
         }
       ],
-      "peso_porcion_g": 120
+      "peso_porcion_g": 120,
+      "filtros": [
+        "Sin Gluten",
+        "Vegano"
+      ]
     },
     {
       "id": "ensalada-de-vegetales",
@@ -993,7 +1062,11 @@
           "unidad": "g"
         }
       ],
-      "peso_porcion_g": 35
+      "peso_porcion_g": 35,
+      "filtros": [
+        "Sin Gluten",
+        "Vegano"
+      ]
     },
     {
       "id": "ensalada-jardinera",
@@ -1027,7 +1100,11 @@
           "unidad": "g"
         }
       ],
-      "peso_porcion_g": 160
+      "peso_porcion_g": 160,
+      "filtros": [
+        "Sin Gluten",
+        "Vegano"
+      ]
     },
     {
       "id": "ensalada-primavera",
@@ -1066,7 +1143,11 @@
           "unidad": "g"
         }
       ],
-      "peso_porcion_g": 150
+      "peso_porcion_g": 150,
+      "filtros": [
+        "Sin Gluten",
+        "Vegano"
+      ]
     },
     {
       "id": "filloas",
@@ -1100,7 +1181,11 @@
           "unidad": "g"
         }
       ],
-      "peso_porcion_g": 0
+      "peso_porcion_g": 0,
+      "filtros": [
+        "Sin Gluten",
+        "Vegetariano"
+      ]
     },
     {
       "id": "hamburguesa-de-pescado",
@@ -1159,7 +1244,10 @@
           "unidad": "g"
         }
       ],
-      "peso_porcion_g": 100
+      "peso_porcion_g": 100,
+      "filtros": [
+        "Sin Gluten"
+      ]
     },
     {
       "id": "hortalizas-asadas",
@@ -1198,7 +1286,11 @@
           "unidad": "g"
         }
       ],
-      "peso_porcion_g": 120
+      "peso_porcion_g": 120,
+      "filtros": [
+        "Sin Gluten",
+        "Vegano"
+      ]
     },
     {
       "id": "lasaña",
@@ -1267,7 +1359,11 @@
           "unidad": "g"
         }
       ],
-      "peso_porcion_g": 300
+      "peso_porcion_g": 300,
+      "filtros": [
+        "Sin Gluten",
+        "Vegano"
+      ]
     },
     {
       "id": "masa-basica-para-tortas-tartas",
@@ -1301,7 +1397,10 @@
           "unidad": "g"
         }
       ],
-      "peso_porcion_g": 0
+      "peso_porcion_g": 0,
+      "filtros": [
+        "Vegano"
+      ]
     },
     {
       "id": "mayonesa-vegetal-de-papa",
@@ -1335,7 +1434,11 @@
           "unidad": "ml"
         }
       ],
-      "peso_porcion_g": 0
+      "peso_porcion_g": 0,
+      "filtros": [
+        "Sin Gluten",
+        "Vegano"
+      ]
     },
     {
       "id": "mayonesa-vegetal-de-zanahoria",
@@ -1369,7 +1472,11 @@
           "unidad": "g"
         }
       ],
-      "peso_porcion_g": 0
+      "peso_porcion_g": 0,
+      "filtros": [
+        "Sin Gluten",
+        "Vegano"
+      ]
     },
     {
       "id": "pan-de-carne-hamburguesa",
@@ -1428,7 +1535,10 @@
           "unidad": "g"
         }
       ],
-      "peso_porcion_g": 100
+      "peso_porcion_g": 100,
+      "filtros": [
+        "Sin Gluten"
+      ]
     },
     {
       "id": "papas-al-natural",
@@ -1452,7 +1562,11 @@
           "unidad": "g"
         }
       ],
-      "peso_porcion_g": 130
+      "peso_porcion_g": 130,
+      "filtros": [
+        "Sin Gluten",
+        "Vegano"
+      ]
     },
     {
       "id": "pasta-con-verdusalsa",
@@ -1521,7 +1635,10 @@
           "unidad": "g"
         }
       ],
-      "peso_porcion_g": 150
+      "peso_porcion_g": 150,
+      "filtros": [
+        "Vegano"
+      ]
     },
     {
       "id": "pasta-sorpresa",
@@ -1575,7 +1692,10 @@
           "unidad": "g"
         }
       ],
-      "peso_porcion_g": 250
+      "peso_porcion_g": 250,
+      "filtros": [
+        "Vegano"
+      ]
     },
     {
       "id": "pastel-de-carne-con-papa",
@@ -1629,7 +1749,10 @@
           "unidad": "g"
         }
       ],
-      "peso_porcion_g": 270
+      "peso_porcion_g": 270,
+      "filtros": [
+        "Sin Gluten"
+      ]
     },
     {
       "id": "pastel-de-carne-y-berenjenas",
@@ -1698,7 +1821,10 @@
           "unidad": "g"
         }
       ],
-      "peso_porcion_g": 230
+      "peso_porcion_g": 230,
+      "filtros": [
+        "Sin Gluten"
+      ]
     },
     {
       "id": "polenta-plato-principal",
@@ -1727,7 +1853,11 @@
           "unidad": "g"
         }
       ],
-      "peso_porcion_g": 200
+      "peso_porcion_g": 200,
+      "filtros": [
+        "Sin Gluten",
+        "Vegano"
+      ]
     },
     {
       "id": "pollo-colorido",
@@ -1806,7 +1936,10 @@
           "unidad": "ml"
         }
       ],
-      "peso_porcion_g": 160
+      "peso_porcion_g": 160,
+      "filtros": [
+        "Sin Gluten"
+      ]
     },
     {
       "id": "pollo-con-salsa-blanca-y-verduras",
@@ -1860,7 +1993,10 @@
           "unidad": "g"
         }
       ],
-      "peso_porcion_g": 150
+      "peso_porcion_g": 150,
+      "filtros": [
+        "Sin Gluten"
+      ]
     },
     {
       "id": "pure-de-papas",
@@ -1894,7 +2030,11 @@
           "unidad": "g"
         }
       ],
-      "peso_porcion_g": 160
+      "peso_porcion_g": 160,
+      "filtros": [
+        "Sin Gluten",
+        "Vegano"
+      ]
     },
     {
       "id": "pure-de-papas-instantaneo",
@@ -1933,7 +2073,11 @@
           "unidad": "g"
         }
       ],
-      "peso_porcion_g": 160
+      "peso_porcion_g": 160,
+      "filtros": [
+        "Sin Gluten",
+        "Vegano"
+      ]
     },
     {
       "id": "pure-triple",
@@ -1977,7 +2121,11 @@
           "unidad": "g"
         }
       ],
-      "peso_porcion_g": 180
+      "peso_porcion_g": 180,
+      "filtros": [
+        "Sin Gluten",
+        "Vegetariano"
+      ]
     },
     {
       "id": "salsa-blanca-liviana",
@@ -2006,7 +2154,11 @@
           "unidad": "g"
         }
       ],
-      "peso_porcion_g": 0
+      "peso_porcion_g": 0,
+      "filtros": [
+        "Sin Gluten",
+        "Vegano"
+      ]
     },
     {
       "id": "torta-de-atun",
@@ -2045,7 +2197,11 @@
           "unidad": "g"
         }
       ],
-      "peso_porcion_g": 160
+      "peso_porcion_g": 160,
+      "filtros": [
+        "Sin Gluten",
+        "Vegano"
+      ]
     },
     {
       "id": "torta-de-carne-y-vegetales",
@@ -2099,7 +2255,10 @@
           "unidad": "g"
         }
       ],
-      "peso_porcion_g": 160
+      "peso_porcion_g": 160,
+      "filtros": [
+        "Sin Gluten"
+      ]
     },
     {
       "id": "tortilla-de-papa,-vegetales-y-pollo",
@@ -2163,7 +2322,10 @@
           "unidad": "g"
         }
       ],
-      "peso_porcion_g": 200
+      "peso_porcion_g": 200,
+      "filtros": [
+        "Sin Gluten"
+      ]
     }
   ],
   "categorias": [

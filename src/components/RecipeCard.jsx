@@ -57,6 +57,29 @@ export default function RecipeCard({ receta, onSelect, isSelected = false, actio
           )}
         </div>
 
+        {/* Filtros/Características */}
+        {receta.filtros && receta.filtros.length > 0 && (
+          <div className="mb-3 flex flex-wrap gap-1">
+            {receta.filtros.map(filtro => (
+              <span
+                key={filtro}
+                className={`inline-block px-2 py-1 rounded text-xs font-semibold text-white ${
+                  filtro === 'Vegano'
+                    ? 'bg-green-500'
+                    : filtro === 'Sin Gluten'
+                    ? 'bg-yellow-600'
+                    : 'bg-blue-500'
+                }`}
+              >
+                {filtro === 'Vegano' && '🌱 '}
+                {filtro === 'Sin Gluten' && '🌾 '}
+                {filtro === 'Vegetariano' && '🥬 '}
+                {filtro}
+              </span>
+            ))}
+          </div>
+        )}
+
         <button
           onClick={handleClick}
           className={`w-full py-2 rounded-md font-medium transition-all ${

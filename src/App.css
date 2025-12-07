@@ -56,8 +56,13 @@
   }
 
   /* Ocultar "Planes Guardados" específicamente */
-  /* Buscamos el div que contiene "Planes Guardados" */
-  main > div > div:last-child {
+  /* Usar un selector más específico que busca el texto "Planes Guardados" */
+  main div:has(> h3:contains("Planes Guardados")) {
+    display: none !important;
+  }
+
+  /* Alternativa: ocular por estructura - el último div de la columna derecha */
+  .lg\:col-span-3 ~ div {
     display: none !important;
   }
 

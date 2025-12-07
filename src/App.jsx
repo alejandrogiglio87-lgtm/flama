@@ -7,7 +7,7 @@ import './App.css';
 function App() {
   // Update document title
   if (typeof window !== 'undefined') {
-    document.title = 'Recetario PAE - Planificación de Menús Escolares';
+    document.title = 'Recetario PAE - Planificación de Menús Escolares (v2)';
   }
 
   const [activeTab, setActiveTab] = useState('calculator');

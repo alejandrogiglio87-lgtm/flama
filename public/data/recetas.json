@@ -534,7 +534,20 @@
         "Sin Gluten",
         "Vegano",
         "Sin Azúcar"
-      ]
+      ],
+      "preparacion": "Pelar, lavar y picar o procesar la cebolla, el ajo y la zanahoria.\nLavar y picar o procesar el morrón.\nPelar y cortar en cubos la papa/boniato y el zapallo/calabaza.\nRehogar la cebolla, el morrón y el ajo.\nCondimentar.\nIncorporar la carne.\nAgregar la zanahoria, la pulpa de tomate y el agua necesaria.\nIncorporar la papa/boniato.\nAgregar agua hasta cubrir todos los ingredientes.\nA los 10 minutos agregar el zapallo y los fideos.\nAgregar las arvejas y el choclo.\nUna vez finalizada la cocción apagar el fuego, agregar el aceite y el perejil picado y mezclar bien.",
+      "acompañamientos": [],
+      "variantes": [
+        "Carne vacuna por pollo o por cerdo",
+        "Fideos por arroz"
+      ],
+      "tips": [
+        "Usar fideos tipo coditos, dedalitos o caracolitos",
+        "En servicios numerosos si se usa arroz, que sea parboiled",
+        "Para servicios numerosos con dos turnos de comedor elaborar la preparación en dos ollas, agregando los fideos próximos al servicio"
+      ],
+      "temperatura_servicio": "Caliente",
+      "postre_sugerido": "Fruta de estación"
     },
     {
       "id": "carne-a-la-portuguesa",

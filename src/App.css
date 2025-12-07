@@ -41,13 +41,32 @@
   color: #888;
 }
 
-/* CSS para manejar días colapsados en pantalla pero visibles en impresión */
+/* CSS para manejar días colapsados en pantalla */
+.day-collapsed {
+  max-height: 0px !important;
+  opacity: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  visibility: hidden !important;
+}
+
+.day-expanded {
+  max-height: 10000px !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* CSS para manejar días colapsados en impresión - mostrar todos */
 @media print {
-  .day-content {
-    max-height: 10000px !important;
+  .day-collapsed,
+  .day-expanded {
+    max-height: none !important;
     opacity: 1 !important;
-    margin-top: auto !important;
-    margin-bottom: auto !important;
+    visibility: visible !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
     padding-top: 1.5rem !important;
     padding-bottom: 1.5rem !important;
     display: block !important;

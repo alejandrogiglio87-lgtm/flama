@@ -305,8 +305,7 @@ export default function WeeklyPlanner({ recetas }) {
 
                   {/* Contenido expandible - siempre en DOM para que print CSS pueda mostrarlo */}
                   <div
-                    className="p-6 space-y-4 bg-gray-50 day-content overflow-hidden transition-all"
-                    style={!isExpanded ? { maxHeight: '0px', opacity: '0', marginTop: '0', marginBottom: '0', paddingTop: '0', paddingBottom: '0' } : { maxHeight: '10000px', opacity: '1' }}
+                    className={`p-6 space-y-4 bg-gray-50 day-content overflow-hidden transition-all ${isExpanded ? 'day-expanded' : 'day-collapsed'}`}
                   >
                       {/* Recetas del día */}
                       <div>

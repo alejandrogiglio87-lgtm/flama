@@ -45,7 +45,8 @@
       "peso_porcion_g": 120,
       "filtros": [
         "Sin Gluten",
-        "Vegano"
+        "Vegano",
+        "Sin Azúcar"
       ]
     },
     {
@@ -88,7 +89,8 @@
       "peso_porcion_g": 140,
       "filtros": [
         "Sin Gluten",
-        "Vegetariano"
+        "Vegetariano",
+        "Sin Sal"
       ]
     },
     {
@@ -136,7 +138,8 @@
       "peso_porcion_g": 140,
       "filtros": [
         "Sin Gluten",
-        "Vegano"
+        "Vegano",
+        "Sin Azúcar"
       ]
     },
     {
@@ -168,7 +171,8 @@
       ],
       "peso_porcion_g": 100,
       "filtros": [
-        "Vegano"
+        "Vegano",
+        "Sin Azúcar"
       ]
     },
     {
@@ -200,7 +204,8 @@
       ],
       "peso_porcion_g": 140,
       "filtros": [
-        "Vegano"
+        "Vegano",
+        "Sin Azúcar"
       ]
     },
     {
@@ -242,7 +247,8 @@
       ],
       "peso_porcion_g": 100,
       "filtros": [
-        "Sin Gluten"
+        "Sin Gluten",
+        "Sin Azúcar"
       ]
     },
     {
@@ -285,7 +291,8 @@
       "peso_porcion_g": 150,
       "filtros": [
         "Sin Gluten",
-        "Vegetariano"
+        "Vegetariano",
+        "Sin Sal"
       ]
     },
     {
@@ -362,7 +369,8 @@
       ],
       "peso_porcion_g": 120,
       "filtros": [
-        "Sin Gluten"
+        "Sin Gluten",
+        "Sin Sal"
       ]
     },
     {
@@ -410,7 +418,8 @@
       "peso_porcion_g": 150,
       "filtros": [
         "Sin Gluten",
-        "Vegetariano"
+        "Vegetariano",
+        "Sin Sal"
       ]
     },
     {
@@ -493,7 +502,8 @@
       "peso_porcion_g": 300,
       "filtros": [
         "Sin Gluten",
-        "Vegano"
+        "Vegano",
+        "Sin Azúcar"
       ]
     },
     {
@@ -560,7 +570,8 @@
       ],
       "peso_porcion_g": 160,
       "filtros": [
-        "Sin Gluten"
+        "Sin Gluten",
+        "Sin Azúcar"
       ]
     },
     {
@@ -653,7 +664,8 @@
       "peso_porcion_g": 300,
       "filtros": [
         "Sin Gluten",
-        "Vegano"
+        "Vegano",
+        "Sin Azúcar"
       ]
     },
     {
@@ -721,7 +733,8 @@
       "peso_porcion_g": 120,
       "filtros": [
         "Sin Gluten",
-        "Vegano"
+        "Vegano",
+        "Sin Azúcar"
       ]
     },
     {
@@ -793,7 +806,8 @@
       ],
       "peso_porcion_g": 300,
       "filtros": [
-        "Sin Gluten"
+        "Sin Gluten",
+        "Sin Azúcar"
       ]
     },
     {
@@ -831,7 +845,8 @@
       "peso_porcion_g": 140,
       "filtros": [
         "Sin Gluten",
-        "Vegetariano"
+        "Vegetariano",
+        "Sin Sal"
       ]
     },
     {
@@ -864,7 +879,8 @@
       "peso_porcion_g": 140,
       "filtros": [
         "Sin Gluten",
-        "Vegetariano"
+        "Vegetariano",
+        "Sin Sal"
       ]
     },
     {
@@ -921,7 +937,9 @@
       ],
       "peso_porcion_g": 150,
       "filtros": [
-        "Vegetariano"
+        "Vegetariano",
+        "Sin Azúcar",
+        "Sin Sal"
       ]
     },
     {
@@ -979,7 +997,8 @@
       "peso_porcion_g": 260,
       "filtros": [
         "Sin Gluten",
-        "Vegano"
+        "Vegano",
+        "Sin Azúcar"
       ]
     },
     {
@@ -1032,7 +1051,8 @@
       "peso_porcion_g": 120,
       "filtros": [
         "Sin Gluten",
-        "Vegano"
+        "Vegano",
+        "Sin Azúcar"
       ]
     },
     {
@@ -1065,7 +1085,8 @@
       "peso_porcion_g": 35,
       "filtros": [
         "Sin Gluten",
-        "Vegano"
+        "Vegano",
+        "Sin Azúcar"
       ]
     },
     {
@@ -1103,7 +1124,8 @@
       "peso_porcion_g": 160,
       "filtros": [
         "Sin Gluten",
-        "Vegano"
+        "Vegano",
+        "Sin Azúcar"
       ]
     },
     {
@@ -1146,7 +1168,8 @@
       "peso_porcion_g": 150,
       "filtros": [
         "Sin Gluten",
-        "Vegano"
+        "Vegano",
+        "Sin Azúcar"
       ]
     },
     {
@@ -1184,7 +1207,8 @@
       "peso_porcion_g": 0,
       "filtros": [
         "Sin Gluten",
-        "Vegetariano"
+        "Vegetariano",
+        "Sin Azúcar"
       ]
     },
     {
@@ -1246,7 +1270,8 @@
       ],
       "peso_porcion_g": 100,
       "filtros": [
-        "Sin Gluten"
+        "Sin Gluten",
+        "Sin Azúcar"
       ]
     },
     {
@@ -1289,7 +1314,8 @@
       "peso_porcion_g": 120,
       "filtros": [
         "Sin Gluten",
-        "Vegano"
+        "Vegano",
+        "Sin Azúcar"
       ]
     },
     {
@@ -1362,7 +1388,8 @@
       "peso_porcion_g": 300,
       "filtros": [
         "Sin Gluten",
-        "Vegano"
+        "Vegano",
+        "Sin Azúcar"
       ]
     },
     {
@@ -1399,7 +1426,8 @@
       ],
       "peso_porcion_g": 0,
       "filtros": [
-        "Vegano"
+        "Vegano",
+        "Sin Sal"
       ]
     },
     {
@@ -1437,7 +1465,8 @@
       "peso_porcion_g": 0,
       "filtros": [
         "Sin Gluten",
-        "Vegano"
+        "Vegano",
+        "Sin Azúcar"
       ]
     },
     {
@@ -1475,7 +1504,8 @@
       "peso_porcion_g": 0,
       "filtros": [
         "Sin Gluten",
-        "Vegano"
+        "Vegano",
+        "Sin Azúcar"
       ]
     },
     {
@@ -1537,7 +1567,8 @@
       ],
       "peso_porcion_g": 100,
       "filtros": [
-        "Sin Gluten"
+        "Sin Gluten",
+        "Sin Azúcar"
       ]
     },
     {
@@ -1565,7 +1596,8 @@
       "peso_porcion_g": 130,
       "filtros": [
         "Sin Gluten",
-        "Vegano"
+        "Vegano",
+        "Sin Azúcar"
       ]
     },
     {
@@ -1637,7 +1669,8 @@
       ],
       "peso_porcion_g": 150,
       "filtros": [
-        "Vegano"
+        "Vegano",
+        "Sin Azúcar"
       ]
     },
     {
@@ -1694,7 +1727,8 @@
       ],
       "peso_porcion_g": 250,
       "filtros": [
-        "Vegano"
+        "Vegano",
+        "Sin Azúcar"
       ]
     },
     {
@@ -1751,7 +1785,8 @@
       ],
       "peso_porcion_g": 270,
       "filtros": [
-        "Sin Gluten"
+        "Sin Gluten",
+        "Sin Azúcar"
       ]
     },
     {
@@ -1823,7 +1858,8 @@
       ],
       "peso_porcion_g": 230,
       "filtros": [
-        "Sin Gluten"
+        "Sin Gluten",
+        "Sin Azúcar"
       ]
     },
     {
@@ -1856,7 +1892,8 @@
       "peso_porcion_g": 200,
       "filtros": [
         "Sin Gluten",
-        "Vegano"
+        "Vegano",
+        "Sin Azúcar"
       ]
     },
     {
@@ -1938,7 +1975,8 @@
       ],
       "peso_porcion_g": 160,
       "filtros": [
-        "Sin Gluten"
+        "Sin Gluten",
+        "Sin Azúcar"
       ]
     },
     {
@@ -1995,7 +2033,8 @@
       ],
       "peso_porcion_g": 150,
       "filtros": [
-        "Sin Gluten"
+        "Sin Gluten",
+        "Sin Azúcar"
       ]
     },
     {
@@ -2033,7 +2072,8 @@
       "peso_porcion_g": 160,
       "filtros": [
         "Sin Gluten",
-        "Vegano"
+        "Vegano",
+        "Sin Azúcar"
       ]
     },
     {
@@ -2076,7 +2116,8 @@
       "peso_porcion_g": 160,
       "filtros": [
         "Sin Gluten",
-        "Vegano"
+        "Vegano",
+        "Sin Azúcar"
       ]
     },
     {
@@ -2124,7 +2165,8 @@
       "peso_porcion_g": 180,
       "filtros": [
         "Sin Gluten",
-        "Vegetariano"
+        "Vegetariano",
+        "Sin Azúcar"
       ]
     },
     {
@@ -2157,7 +2199,8 @@
       "peso_porcion_g": 0,
       "filtros": [
         "Sin Gluten",
-        "Vegano"
+        "Vegano",
+        "Sin Azúcar"
       ]
     },
     {
@@ -2200,7 +2243,9 @@
       "peso_porcion_g": 160,
       "filtros": [
         "Sin Gluten",
-        "Vegano"
+        "Vegano",
+        "Sin Azúcar",
+        "Sin Sal"
       ]
     },
     {
@@ -2257,7 +2302,8 @@
       ],
       "peso_porcion_g": 160,
       "filtros": [
-        "Sin Gluten"
+        "Sin Gluten",
+        "Sin Azúcar"
       ]
     },
     {
@@ -2324,7 +2370,8 @@
       ],
       "peso_porcion_g": 200,
       "filtros": [
-        "Sin Gluten"
+        "Sin Gluten",
+        "Sin Azúcar"
       ]
     }
   ],

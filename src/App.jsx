@@ -63,8 +63,10 @@ function App() {
       <header
         className="relative text-white overflow-hidden"
         style={{
-          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #667eea 100%)',
-          backgroundSize: '400% 400%',
+          backgroundImage: 'linear-gradient(135deg, rgba(102, 126, 234, 0.85) 0%, rgba(118, 75, 162, 0.85) 25%, rgba(240, 147, 251, 0.85) 50%, rgba(79, 172, 254, 0.85) 75%, rgba(102, 126, 234, 0.85) 100%), url(https://images.unsplash.com/photo-1495521821757-a1efb6729352?w=1200&h=400&fit=crop)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundBlendMode: 'overlay',
           minHeight: '320px',
           display: 'flex',
           alignItems: 'center',
@@ -137,12 +139,13 @@ function App() {
 
           {/* Descripción con estilo refinado */}
           <p
-            className="text-base max-w-3xl leading-relaxed"
+            className="text-lg leading-relaxed max-w-4xl"
             style={{
-              color: 'rgba(255, 255, 255, 0.92)',
-              textShadow: '0 2px 6px rgba(0, 0, 0, 0.2)',
+              color: 'rgba(255, 255, 255, 0.95)',
+              textShadow: '0 2px 8px rgba(0, 0, 0, 0.3)',
               fontWeight: '300',
-              letterSpacing: '0.5px'
+              letterSpacing: '0.5px',
+              marginTop: '12px'
             }}
           >
             Calcula ingredientes, planifica tu semana y genera listas de compras automáticas con nuestra herramienta profesional

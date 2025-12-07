@@ -301,13 +301,26 @@ export default function WeeklyPlanner({ recetas }) {
                           <p className="text-gray-500 text-sm italic">Sin recetas programadas</p>
                         ) : (
                           <div className="space-y-2">
-                            {recetasDelDia.map((recipe, idx) => (
-                              <div
-                                key={idx}
-                                className="bg-white border border-gray-200 rounded-lg p-3 flex items-center justify-between hover:border-blue-300 transition-colors"
-                              >
-                                <div className="flex-1">
-                                  <p className="font-medium text-gray-800">{recipe.nombre}</p>
+                            {recetasDelDia.map((recipe, idx) => {
+                              // Obtener los filtros de la receta original
+                              const recetaOriginal = recetas.find(r => r.id === recipe.recetaId);
+                              const filtros = recetaOriginal?.filtros || [];
+
+                              return (
+                                <div
+                                  key={idx}
+                                  className="bg-white border border-gray-200 rounded-lg p-3 hover:border-blue-300 transition-colors"
+                                >
+                                  <div className="flex items-center justify-between mb-2">
+                                    <p className="font-medium text-gray-800">{recipe.nombre}</p>
+                                    <button
+                                      onClick={() => handleRemoveRecipe(dia, idx)}
+                                      className="text-red-600 hover:text-red-700 p-1 transition-colors"
+                                    >
+                                      <Trash2 size={18} />
+                                    </button>
+                                  </div>
+
                                   <div className="text-sm text-gray-600 space-y-1">
                                     <p>{recipe.porciones} porción{recipe.porciones !== 1 ? 'es' : ''}</p>
                                     {recipe.peso_porcion_g && recipe.peso_porcion_g > 0 ? (
@@ -318,15 +331,38 @@ export default function WeeklyPlanner({ recetas }) {
                                       )
                                     )}
                                   </div>
+
+                                  {/* Filtros/Características */}
+                                  {filtros.length > 0 && (
+                                    <div className="mt-2 flex flex-wrap gap-1">
+                                      {filtros.map(filtro => (
+                                        <span
+                                          key={filtro}
+                                          className={`inline-block px-2 py-1 rounded text-xs font-semibold text-white ${
+                                            filtro === 'Vegano'
+                                              ? 'bg-green-500'
+                                              : filtro === 'Sin Gluten'
+                                              ? 'bg-yellow-600'
+                                              : filtro === 'Vegetariano'
+                                              ? 'bg-blue-500'
+                                              : filtro === 'Sin Azúcar'
+                                              ? 'bg-orange-500'
+                                              : 'bg-red-500'
+                                          }`}
+                                        >
+                                          {filtro === 'Vegano' && '🌱 '}
+                                          {filtro === 'Sin Gluten' && '🌾 '}
+                                          {filtro === 'Vegetariano' && '🥬 '}
+                                          {filtro === 'Sin Azúcar' && '🍯 '}
+                                          {filtro === 'Sin Sal' && '🧂 '}
+                                          {filtro}
+                                        </span>
+                                      ))}
+                                    </div>
+                                  )}
                                 </div>
-                                <button
-                                  onClick={() => handleRemoveRecipe(dia, idx)}
-                                  className="text-red-600 hover:text-red-700 p-2 transition-colors"
-                                >
-                                  <Trash2 size={18} />
-                                </button>
-                              </div>
-                            ))}
+                              );
+                            })}
                           </div>
                         )}
                         <button

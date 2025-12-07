@@ -68,12 +68,18 @@ export default function RecipeCard({ receta, onSelect, isSelected = false, actio
                     ? 'bg-green-500'
                     : filtro === 'Sin Gluten'
                     ? 'bg-yellow-600'
-                    : 'bg-blue-500'
+                    : filtro === 'Vegetariano'
+                    ? 'bg-blue-500'
+                    : filtro === 'Sin Azúcar'
+                    ? 'bg-orange-500'
+                    : 'bg-red-500'
                 }`}
               >
                 {filtro === 'Vegano' && '🌱 '}
                 {filtro === 'Sin Gluten' && '🌾 '}
                 {filtro === 'Vegetariano' && '🥬 '}
+                {filtro === 'Sin Azúcar' && '🍯 '}
+                {filtro === 'Sin Sal' && '🧂 '}
                 {filtro}
               </span>
             ))}

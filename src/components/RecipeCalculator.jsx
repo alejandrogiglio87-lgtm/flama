@@ -15,7 +15,7 @@ export default function RecipeCalculator({ recetas, onAddToPlanner = null }) {
   const categorias = ['Todas', ...new Set(recetas.map(r => r.categoria))];
 
   // Obtener filtros disponibles
-  const availableFilters = ['Vegano', 'Sin Gluten', 'Vegetariano'];
+  const availableFilters = ['Vegano', 'Sin Gluten', 'Vegetariano', 'Sin Azúcar', 'Sin Sal'];
 
   // Filtrar recetas
   const filteredRecetas = recetas.filter(r => {
@@ -144,6 +144,8 @@ export default function RecipeCalculator({ recetas, onAddToPlanner = null }) {
                   {filter === 'Vegano' && '🌱 '}
                   {filter === 'Sin Gluten' && '🌾 '}
                   {filter === 'Vegetariano' && '🥬 '}
+                  {filter === 'Sin Azúcar' && '🍯 '}
+                  {filter === 'Sin Sal' && '🧂 '}
                   {filter}
                 </button>
               ))}

@@ -2026,6 +2026,21 @@
       "postre_sugerido": ""
     },
     {
+      "id": "ensalada-de-vegetales",
+      "nombre": "ENSALADA DE VEGETALES",
+      "categoria": "Ensalada/Verdura",
+      "imagen": "/images/ensalada-de-vegetales.jpg",
+      "ingredientes": [],
+      "peso_porcion_g": 50,
+      "filtros": [],
+      "preparacion": "1. Lavar y desinfectar los vegetales.\n2. De acuerdo al vegetal de estación seleccionado se corta en cubos; o se procesa o ralla; o se corta en finas tiras.\n3. Mezclar los vegetales.\n4. Aderezar momentos antes de servir.",
+      "acompañamientos": [],
+      "variantes": ["Zanahoria; pepino; remolacha; rabanito; repollo blanco morado, chaucha; alubia, tomate; maíz, cebolla colorada.", "Lechuga verde; morada; crespa; mantecosa (no se recomienda en servicios numerosos)"],
+      "tips": ["Usar siempre vegetales de estación", "Elegir dos o más vegetales diferentes; seleccionándolos de manera que se diferencien sus colores. Ej. repollo morado; zanahoria y maíz/ tomate y pepino/ chaucha; remolacha y zanahoria/cebolla morada y tomate"],
+      "temperatura_servicio": "Fría",
+      "postre_sugerido": ""
+    },
+    {
       "id": "masa-basica-para-tortas-tartas",
       "nombre": "MASA BÁSICA PARA TORTAS/TARTAS",
       "categoria": "Postre",

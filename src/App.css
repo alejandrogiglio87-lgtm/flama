@@ -43,20 +43,21 @@
 
 /* Estilos para impresión */
 @media print {
-  /* Ocultar elementos que no debemos imprimir */
+  /* Ocultar elementos específicos */
   nav,
   footer,
   .fixed {
     display: none !important;
   }
 
-  /* Ocultar solo los botones específicos */
+  /* Ocultar todos los botones */
   button {
     display: none !important;
   }
 
-  /* Mantener la navegación de tabs visible pero no imprimible */
-  nav {
+  /* Ocultar "Planes Guardados" específicamente */
+  /* Buscamos el div que contiene "Planes Guardados" */
+  main > div > div:last-child {
     display: none !important;
   }
 
@@ -90,7 +91,11 @@
     size: A4;
   }
 
-  /* Mantener diseño de grid */
+  /* Mantener diseño de grid pero con mejor distribución */
+  .lg\:grid-cols-4 {
+    grid-template-columns: 1fr !important;
+  }
+
   .grid {
     page-break-inside: avoid;
     break-inside: avoid;
@@ -110,59 +115,118 @@
   }
 
   .bg-gradient-to-r,
+  .from-blue-600,
+  .to-blue-500,
   .bg-blue-600,
   .bg-green-500,
   .bg-yellow-600,
   .bg-orange-500,
-  .bg-red-500 {
+  .bg-red-500,
+  .bg-blue-100,
+  .bg-gray-100,
+  .bg-gray-50,
+  .bg-gray-200 {
     -webkit-print-color-adjust: exact !important;
     color-adjust: exact !important;
   }
 
   /* Mantener texto visible */
-  .text-white {
+  .text-white,
+  .text-blue-700,
+  .text-blue-600,
+  .text-green-600,
+  .text-gray-800,
+  .text-gray-600,
+  .text-gray-500 {
     -webkit-print-color-adjust: exact !important;
     color-adjust: exact !important;
   }
 
   /* Reducir tamaño de fuente para mejor ajuste */
   h2 {
-    font-size: 16px;
-    margin: 15px 0 10px 0;
+    font-size: 15px;
+    margin: 12px 0 8px 0;
+    font-weight: bold;
   }
 
   h3 {
-    font-size: 14px;
-    margin: 10px 0 8px 0;
+    font-size: 13px;
+    margin: 8px 0 6px 0;
+  }
+
+  h4 {
+    font-size: 12px;
+    margin: 6px 0 4px 0;
   }
 
   p {
-    margin: 4px 0;
+    margin: 2px 0;
+    font-size: 11px;
   }
 
   /* Espaciado comprimido */
   .space-y-6 > * + * {
-    margin-top: 12px !important;
+    margin-top: 10px !important;
   }
 
   .space-y-3 > * + * {
-    margin-top: 6px !important;
+    margin-top: 4px !important;
   }
 
   .space-y-2 > * + * {
-    margin-top: 4px !important;
+    margin-top: 2px !important;
+  }
+
+  .space-y-1 > * + * {
+    margin-top: 1px !important;
   }
 
   /* Padding reducido */
   .p-6 {
-    padding: 12px !important;
+    padding: 10px !important;
   }
 
   .p-4 {
-    padding: 8px !important;
+    padding: 6px !important;
   }
 
   .p-3 {
-    padding: 6px !important;
+    padding: 4px !important;
+  }
+
+  .p-2 {
+    padding: 2px !important;
+  }
+
+  /* Ancho máximo reducido */
+  .max-h-64 {
+    max-height: none !important;
+  }
+
+  .max-h-48 {
+    max-height: none !important;
+  }
+
+  /* Mostrar overflow */
+  .overflow-y-auto {
+    overflow: visible !important;
+  }
+
+  /* Mantener gaps */
+  .gap-6 {
+    gap: 10px !important;
+  }
+
+  .gap-4 {
+    gap: 6px !important;
+  }
+
+  .gap-2 {
+    gap: 2px !important;
+  }
+
+  /* Asegurar que todos los elementos se expandan */
+  .flex-1 {
+    flex: 1 !important;
   }
 }

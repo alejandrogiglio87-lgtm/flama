@@ -1392,7 +1392,20 @@
       "filtros": [
         "Sin Gluten",
         "Sin Azúcar"
-      ]
+      ],
+      "preparacion": "CON PESCADO FRESCO:\nPelar, lavar y picar o procesar la cebolla, el ajo y la zanahoria.\nLavar y picar o procesar el morrón.\nHervir el pescado fresco (puede agregarse al agua de cocción hojas de laurel).\nEscurrir el agua y desmenuzar.\nBatir el huevo.\nMezclar el pescado desmenuzado con los vegetales, la avena, condimentos y la sal.\nPor último agregar el huevo batido y unir hasta que quede una mezcla homogénea.\nFormar hamburguesas y colocar en asadera aceitada (que puede espolvorearse con pan rallado).\nCocinar en horno moderado aproximadamente 30 minutos.\nDeben quedar doradas por fuera.\n\nCON ATÚN:\nPelar, lavar y picar o procesar la cebolla y la zanahoria.\nLavar y picar o procesar el morrón.\nEscurrir el agua del atún.\nBatir el huevo.\nMezclar el atún con los vegetales, la avena y los condimentos.\nPor último agregar el huevo batido y unir hasta que quede una mezcla homogénea.\nFormar hamburguesas y colocar en asadera aceitada (que puede espolvorearse con pan rallado).\nCocinar en horno moderado aproximadamente 30 minutos.\nDeben quedar doradas por fuera.",
+      "acompañamientos": [
+        "Arroz con vegetales",
+        "Papas al natural con perejil más ensalada de vegetales",
+        "Ensalada Jardinera"
+      ],
+      "variantes": [],
+      "tips": [
+        "Para servicios numerosos puede armarse en formato rectangular en asadera",
+        "Si se usa atún no agregar sal"
+      ],
+      "temperatura_servicio": "Caliente",
+      "postre_sugerido": "Fruta de estación"
     },
     {
       "id": "hortalizas-asadas",

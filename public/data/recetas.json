@@ -2378,21 +2378,6 @@
         "Sin Gluten",
         "Sin Azúcar"
       ]
-    },
-    {
-      "id": "polenta-plato-principal",
-      "nombre": "POLENTA/PLATO PRINCIPAL",
-      "categoria": "Plato Principal",
-      "imagen": "/images/polenta-plato-principal.jpg",
-      "ingredientes": [],
-      "peso_porcion_g": 320,
-      "filtros": [],
-      "preparacion": "1. Hervir 3/4 de la porción de agua. Agregar la sal.\n2. Por otro lado, mezclar la harina de maíz, la leche y el agua restante. Mezclar hasta disolver.\n3. Agregar la harina de maíz hidratada al agua hirviendo, revolviendo continuamente.\n4. Luego de haber alcanzado la ebullición, cocinar a fuego moderado, revolviendo continuamente hasta que espese.\n5. Retirar de la fuente de calor.",
-      "acompañamientos": [],
-      "variantes": [],
-      "tips": [],
-      "temperatura_servicio": "",
-      "postre_sugerido": ""
     }
   ]
 }

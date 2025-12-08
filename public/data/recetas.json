@@ -1879,7 +1879,7 @@
           "unidad": "g"
         },
         {
-          "nombre": "Leche fluida",
+          "nombre": "Leche",
           "cantidad": 120,
           "unidad": "ml"
         },
@@ -2054,7 +2054,7 @@
           "unidad": "g"
         },
         {
-          "nombre": "Leche fluida",
+          "nombre": "Leche",
           "cantidad": 50,
           "unidad": "ml"
         },
@@ -2098,7 +2098,7 @@
           "unidad": "ml"
         },
         {
-          "nombre": "Leche fluida",
+          "nombre": "Leche",
           "cantidad": 50,
           "unidad": "ml"
         },
@@ -2181,7 +2181,7 @@
       "imagen": "/images/salsa-blanca-liviana.jpg",
       "ingredientes": [
         {
-          "nombre": "Leche fluida",
+          "nombre": "Leche",
           "cantidad": 75,
           "unidad": "ml"
         },
